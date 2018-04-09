@@ -1,0 +1,5 @@
+verilog work "../core_1553_verilog/ipcore_dir/blk_mem_1553.v"
+verilog work "../source/dword/encoder_1553.v"
+verilog work "../source/dword/core_1553.v"
+verilog work "../source/clock_module.v"
+verilog work "../source/dword/top_1553.v"

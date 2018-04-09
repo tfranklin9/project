@@ -1,0 +1,1060 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.55 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.55 secs
+ 
+--> Reading design: top_1553.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_1553.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_1553"
+Output Format                      : NGC
+Target Device                      : xc6slx25-2-ftg256
+
+---- Source Options
+Top Module Name                    : top_1553
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"../core_1553_verilog/ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\tfranklin9\projects\1553\core_1553_verilog\ipcore_dir\blk_mem_1553.v" into library work
+Parsing module <blk_mem_1553>.
+Analyzing Verilog file "C:\Users\tfranklin9\projects\1553\source\dword\encoder_1553.v" into library work
+Parsing module <encoder_1553>.
+Analyzing Verilog file "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" into library work
+Parsing module <core_1553>.
+Analyzing Verilog file "C:\Users\tfranklin9\projects\1553\source\clock_module.v" into library work
+Parsing module <clock_module>.
+Analyzing Verilog file "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" into library work
+Parsing module <top_1553>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <top_1553>.
+Reading initialization file \"c:/Users/tfranklin9/projects/1553/source/mem.data\".
+
+Elaborating module <encoder_1553>.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\encoder_1553.v" Line 76: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\encoder_1553.v" Line 134: Assignment to is_csw_reg ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\encoder_1553.v" Line 148: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\encoder_1553.v" Line 158: Result of 7-bit expression is truncated to fit in 6-bit target.
+
+Elaborating module <core_1553(BC=1)>.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 215: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 295: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 474: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 503: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 510: Assignment to change ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 566: Assignment to select ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 575: Assignment to nodata ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 579: Assignment to txdata ignored, since the identifier is never used
+
+Elaborating module <blk_mem_1553>.
+WARNING:HDLCompiler:1499 - "C:\Users\tfranklin9\projects\1553\core_1553_verilog\ipcore_dir\blk_mem_1553.v" Line 39: Empty module <blk_mem_1553> remains a black box.
+WARNING:HDLCompiler:189 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 635: Size mismatch in connection of port <doutb>. Formal port size is 18-bit while actual signal size is 17-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 216: Assignment to rx_perr_BC ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 218: Assignment to tx_dval_BC ignored, since the identifier is never used
+
+Elaborating module <core_1553(BC=0)>.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 215: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 295: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 474: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 503: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 510: Assignment to change ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 566: Assignment to select ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 575: Assignment to nodata ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 579: Assignment to txdata ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 635: Size mismatch in connection of port <doutb>. Formal port size is 18-bit while actual signal size is 17-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 240: Assignment to rx_dword_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 241: Assignment to rx_dval_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 242: Assignment to rx_csw_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 243: Assignment to rx_dw_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 244: Assignment to rx_perr_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 246: Assignment to tx_dval_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 249: Assignment to debug_core_RT ignored, since the identifier is never used
+
+Elaborating module <clock_module>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=12.0,CLKFX_DIVIDE=6,CLKFX_MULTIPLY=2,CLKIN_DIVIDE_BY_2="TRUE",CLKIN_PERIOD=20.833,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="2X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+
+Elaborating module <BUFG>.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 278: Assignment to rxdata_BC ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 388: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 397: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 406: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 416: Result of 10-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 447: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 119: Net <mem_datin_RT[17]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 121: Net <mem_addra_RT[6]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 123: Net <mem_wea_RT> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top_1553>.
+    Related source file is "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v".
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 197: Output port <rx_dword> of the instance <u1_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 197: Output port <rx_dval> of the instance <u1_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 197: Output port <rx_perr> of the instance <u1_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 197: Output port <tx_dval> of the instance <u1_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 225: Output port <rx_dword> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 225: Output port <debug> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 225: Output port <rx_dval> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 225: Output port <rx_csw> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 225: Output port <rx_dw> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 225: Output port <rx_perr> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 225: Output port <tx_dval> of the instance <u2_core> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <mem_datin_RT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mem_addra_RT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mem_wea_RT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mem_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:3015 - Contents of array <mem_data> may be accessed with an index that does not cover the full array size or with a negative index. The RAM size is reduced to the index upper access or for only positive index values.
+    Found 128x18-bit single-port Read Only RAM <Mram_mem_data> for signal <mem_data>.
+    Found 1-bit register for signal <first_wr>.
+    Found 3-bit register for signal <rx_data_BC>.
+    Found 3-bit register for signal <rx_data_n_BC>.
+    Found 3-bit register for signal <rx_data_RT>.
+    Found 3-bit register for signal <rx_data_n_RT>.
+    Found 3-bit register for signal <rxdw_enc>.
+    Found 3-bit register for signal <rxcsw_enc>.
+    Found 6-bit register for signal <rxdw>.
+    Found 6-bit register for signal <rxcsw>.
+    Found 6-bit register for signal <enc_cnt>.
+    Found 7-bit register for signal <mem_addra_BC>.
+    Found 1-bit register for signal <mem_wea_BC>.
+    Found 1-bit register for signal <reset_slow>.
+    Found 8-bit register for signal <reset_slow_buf>.
+    Found 6-bit adder for signal <enc_cnt[5]_GND_1_o_add_18_OUT> created at line 388.
+    Found 7-bit adder for signal <mem_addra_BC[6]_GND_1_o_add_30_OUT> created at line 447.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  54 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+Unit <top_1553> synthesized.
+
+Synthesizing Unit <encoder_1553>.
+    Related source file is "C:\Users\tfranklin9\projects\1553\source\dword\encoder_1553.v".
+    Found 6-bit register for signal <busy_cnt>.
+    Found 6-bit register for signal <busy_cnt_dummy>.
+    Found 6-bit register for signal <sync_bits>.
+    Found 6-bit register for signal <sync_bits_n>.
+    Found 6-bit register for signal <dwcnt>.
+    Found 17-bit register for signal <data_reg>.
+    Found 1-bit register for signal <cnt_en>.
+    Found 1-bit register for signal <cnt_en_dummy>.
+    Found 1-bit register for signal <cnt_en_reg>.
+    Found 1-bit register for signal <cnt_en_reg_dummy>.
+    Found 1-bit register for signal <tx_dval>.
+    Found 1-bit register for signal <tx_data>.
+    Found 1-bit register for signal <tx_data_n>.
+    Found 1-bit register for signal <tx_dval_csw>.
+    Found 6-bit adder for signal <dwcnt[5]_GND_2_o_add_2_OUT> created at line 76.
+    Found 6-bit adder for signal <busy_cnt[5]_GND_2_o_add_11_OUT> created at line 148.
+    Found 6-bit adder for signal <busy_cnt_dummy[5]_GND_2_o_add_14_OUT> created at line 158.
+    Found 1-bit 41-to-1 multiplexer for signal <busy_cnt[5]_X_2_o_Mux_27_o> created at line 249.
+    Found 1-bit 41-to-1 multiplexer for signal <busy_cnt[5]_X_2_o_Mux_28_o> created at line 250.
+    Found 6-bit comparator lessequal for signal <n0096> created at line 253
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  55 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   8 Multiplexer(s).
+Unit <encoder_1553> synthesized.
+
+Synthesizing Unit <core_1553_1>.
+    Related source file is "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v".
+        BC = 1
+        SIZE = 4
+        IDLE = 4'b0001
+        READ = 4'b0010
+        SHIFT1 = 4'b0100
+        SHIFT2 = 4'b1000
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" line 627: Output port <doutb> of the instance <blk_mem_1553_INST> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <cnt>.
+    Found 24-bit register for signal <sync_sftreg>.
+    Found 24-bit register for signal <sync_sftreg_n>.
+    Found 5-bit register for signal <data_sftreg_n>.
+    Found 5-bit register for signal <bit_cnt>.
+    Found 5-bit register for signal <rt_address>.
+    Found 5-bit register for signal <bitcnt>.
+    Found 5-bit register for signal <data_sftreg>.
+    Found 17-bit register for signal <dword_int>.
+    Found 16-bit register for signal <rx_dword>.
+    Found 31-bit register for signal <data_sftreg_out>.
+    Found 31-bit register for signal <data_sftreg_out_n>.
+    Found 3-bit register for signal <samplecnt>.
+    Found 4-bit register for signal <state>.
+    Found 1-bit register for signal <syncdw_d>.
+    Found 1-bit register for signal <synccsw_d>.
+    Found 1-bit register for signal <cnt_enb>.
+    Found 1-bit register for signal <sync_csw_reg>.
+    Found 1-bit register for signal <sync_dw_reg>.
+    Found 1-bit register for signal <rx_dval>.
+    Found 1-bit register for signal <rx_perr>.
+    Found 1-bit register for signal <start_shift>.
+    Found 1-bit register for signal <txdval>.
+    Found 1-bit register for signal <enb>.
+    Found 1-bit register for signal <shift_data>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 4                                              |
+    | Clock              | dec_clk (rising_edge)                          |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit adder for signal <cnt[7]_GND_3_o_add_13_OUT> created at line 215.
+    Found 5-bit adder for signal <bit_cnt[4]_GND_3_o_add_27_OUT> created at line 295.
+    Found 5-bit adder for signal <bitcnt[4]_GND_3_o_add_87_OUT> created at line 474.
+    Found 3-bit adder for signal <samplecnt[2]_GND_3_o_add_94_OUT> created at line 503.
+    Found 1-bit comparator not equal for signal <n0053> created at line 274
+    Found 5-bit comparator greater for signal <bit_cnt[4]_GND_3_o_LessThan_33_o> created at line 314
+    Found 3-bit comparator greater for signal <samplecnt[2]_GND_3_o_LessThan_99_o> created at line 531
+    Found 3-bit comparator greater for signal <samplecnt[2]_PWR_3_o_LessThan_105_o> created at line 544
+    Found 5-bit comparator greater for signal <bitcnt[4]_PWR_3_o_LessThan_110_o> created at line 551
+    Found 5-bit comparator lessequal for signal <n0119> created at line 591
+    Found 5-bit comparator lessequal for signal <n0121> created at line 591
+    Found 3-bit comparator greater for signal <samplecnt[2]_GND_3_o_LessThan_144_o> created at line 595
+    Found 5-bit comparator lessequal for signal <n0127> created at line 599
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred 190 D-type flip-flop(s).
+	inferred   9 Comparator(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <core_1553_1> synthesized.
+
+Synthesizing Unit <core_1553_2>.
+    Related source file is "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v".
+        BC = 0
+        SIZE = 4
+        IDLE = 4'b0001
+        READ = 4'b0010
+        SHIFT1 = 4'b0100
+        SHIFT2 = 4'b1000
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" line 627: Output port <doutb> of the instance <blk_mem_1553_INST> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <cnt>.
+    Found 24-bit register for signal <sync_sftreg>.
+    Found 24-bit register for signal <sync_sftreg_n>.
+    Found 5-bit register for signal <data_sftreg_n>.
+    Found 5-bit register for signal <bit_cnt>.
+    Found 5-bit register for signal <rt_address>.
+    Found 5-bit register for signal <bitcnt>.
+    Found 5-bit register for signal <data_sftreg>.
+    Found 17-bit register for signal <dword_int>.
+    Found 16-bit register for signal <rx_dword>.
+    Found 31-bit register for signal <data_sftreg_out>.
+    Found 31-bit register for signal <data_sftreg_out_n>.
+    Found 3-bit register for signal <samplecnt>.
+    Found 4-bit register for signal <state>.
+    Found 1-bit register for signal <syncdw_d>.
+    Found 1-bit register for signal <synccsw_d>.
+    Found 1-bit register for signal <cnt_enb>.
+    Found 1-bit register for signal <sync_csw_reg>.
+    Found 1-bit register for signal <sync_dw_reg>.
+    Found 1-bit register for signal <rx_dval>.
+    Found 1-bit register for signal <rx_perr>.
+    Found 1-bit register for signal <start_shift>.
+    Found 1-bit register for signal <txdval>.
+    Found 1-bit register for signal <enb>.
+    Found 1-bit register for signal <shift_data>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 4                                              |
+    | Clock              | dec_clk (rising_edge)                          |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit adder for signal <cnt[7]_GND_6_o_add_13_OUT> created at line 215.
+    Found 5-bit adder for signal <bit_cnt[4]_GND_6_o_add_27_OUT> created at line 295.
+    Found 5-bit adder for signal <bitcnt[4]_GND_6_o_add_87_OUT> created at line 474.
+    Found 3-bit adder for signal <samplecnt[2]_GND_6_o_add_94_OUT> created at line 503.
+    Found 1-bit comparator not equal for signal <n0053> created at line 274
+    Found 5-bit comparator greater for signal <bit_cnt[4]_GND_6_o_LessThan_33_o> created at line 314
+    Found 3-bit comparator greater for signal <samplecnt[2]_GND_6_o_LessThan_99_o> created at line 531
+    Found 3-bit comparator greater for signal <samplecnt[2]_PWR_5_o_LessThan_105_o> created at line 544
+    Found 5-bit comparator greater for signal <bitcnt[4]_PWR_5_o_LessThan_110_o> created at line 551
+    Found 5-bit comparator lessequal for signal <n0119> created at line 591
+    Found 5-bit comparator lessequal for signal <n0121> created at line 591
+    Found 3-bit comparator greater for signal <samplecnt[2]_GND_6_o_LessThan_144_o> created at line 595
+    Found 5-bit comparator lessequal for signal <n0127> created at line 599
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred 190 D-type flip-flop(s).
+	inferred   9 Comparator(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <core_1553_2> synthesized.
+
+Synthesizing Unit <clock_module>.
+    Related source file is "C:\Users\tfranklin9\projects\1553\source\clock_module.v".
+    Summary:
+	no macro.
+Unit <clock_module> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 128x18-bit single-port Read Only RAM                  : 1
+# Adders/Subtractors                                   : 13
+ 3-bit adder                                           : 2
+ 5-bit adder                                           : 4
+ 6-bit adder                                           : 4
+ 7-bit adder                                           : 1
+ 8-bit adder                                           : 2
+# Registers                                            : 76
+ 1-bit register                                        : 33
+ 16-bit register                                       : 2
+ 17-bit register                                       : 3
+ 24-bit register                                       : 4
+ 3-bit register                                        : 8
+ 31-bit register                                       : 4
+ 5-bit register                                        : 10
+ 6-bit register                                        : 8
+ 7-bit register                                        : 1
+ 8-bit register                                        : 3
+# Comparators                                          : 19
+ 1-bit comparator not equal                            : 2
+ 3-bit comparator greater                              : 6
+ 5-bit comparator greater                              : 4
+ 5-bit comparator lessequal                            : 6
+ 6-bit comparator lessequal                            : 1
+# Multiplexers                                         : 33
+ 1-bit 2-to-1 multiplexer                              : 14
+ 1-bit 41-to-1 multiplexer                             : 2
+ 16-bit 2-to-1 multiplexer                             : 2
+ 17-bit 2-to-1 multiplexer                             : 3
+ 3-bit 2-to-1 multiplexer                              : 2
+ 5-bit 2-to-1 multiplexer                              : 4
+ 6-bit 2-to-1 multiplexer                              : 3
+ 7-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 2
+# FSMs                                                 : 2
+# Xors                                                 : 5
+ 1-bit xor16                                           : 3
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <../core_1553_verilog/ipcore_dir/blk_mem_1553.ngc>.
+Loading core <blk_mem_1553> for timing and area information for instance <blk_mem_1553_INST>.
+Loading core <blk_mem_1553> for timing and area information for instance <blk_mem_1553_INST>.
+INFO:Xst:2261 - The FF/Latch <sync_bits_3> in Unit <u1_encoder> is equivalent to the following 5 FFs/Latches, which will be removed : <sync_bits_4> <sync_bits_5> <sync_bits_n_0> <sync_bits_n_1> <sync_bits_n_2> 
+INFO:Xst:2261 - The FF/Latch <sync_bits_0> in Unit <u1_encoder> is equivalent to the following 5 FFs/Latches, which will be removed : <sync_bits_1> <sync_bits_2> <sync_bits_n_3> <sync_bits_n_4> <sync_bits_n_5> 
+WARNING:Xst:2677 - Node <data_sftreg_out_15> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_16> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_17> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_18> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_19> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_20> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_21> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_22> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_23> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_24> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_25> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_26> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_27> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_28> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_29> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_30> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_15> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_16> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_17> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_18> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_19> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_20> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_21> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_22> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_23> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_24> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_25> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_26> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_27> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_28> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_29> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_30> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_15> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_16> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_17> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_18> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_19> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_20> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_21> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_22> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_23> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_24> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_25> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_26> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_27> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_28> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_29> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_30> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_15> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_16> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_17> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_18> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_19> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_20> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_21> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_22> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_23> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_24> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_25> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_26> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_27> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_28> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_29> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_30> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <rxdw_enc_2> of sequential type is unconnected in block <top_1553>.
+
+Synthesizing (advanced) Unit <core_1553_1>.
+The following registers are absorbed into counter <cnt>: 1 register on signal <cnt>.
+The following registers are absorbed into counter <samplecnt>: 1 register on signal <samplecnt>.
+The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
+The following registers are absorbed into counter <bitcnt>: 1 register on signal <bitcnt>.
+Unit <core_1553_1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <core_1553_2>.
+The following registers are absorbed into counter <cnt>: 1 register on signal <cnt>.
+The following registers are absorbed into counter <samplecnt>: 1 register on signal <samplecnt>.
+The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
+The following registers are absorbed into counter <bitcnt>: 1 register on signal <bitcnt>.
+Unit <core_1553_2> synthesized (advanced).
+
+Synthesizing (advanced) Unit <encoder_1553>.
+The following registers are absorbed into counter <busy_cnt>: 1 register on signal <busy_cnt>.
+The following registers are absorbed into counter <busy_cnt_dummy>: 1 register on signal <busy_cnt_dummy>.
+The following registers are absorbed into counter <dwcnt>: 1 register on signal <dwcnt>.
+Unit <encoder_1553> synthesized (advanced).
+
+Synthesizing (advanced) Unit <top_1553>.
+The following registers are absorbed into counter <enc_cnt>: 1 register on signal <enc_cnt>.
+The following registers are absorbed into counter <mem_addra_BC>: 1 register on signal <mem_addra_BC>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_mem_data> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 18-bit                   |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <mem_addra_BC>  |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <top_1553> synthesized (advanced).
+WARNING:Xst:2677 - Node <data_sftreg_out_15> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_16> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_17> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_18> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_19> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_20> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_21> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_22> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_23> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_24> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_25> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_26> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_27> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_28> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_29> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_30> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_15> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_16> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_17> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_18> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_19> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_20> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_21> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_22> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_23> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_24> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_25> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_26> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_27> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_28> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_29> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_30> of sequential type is unconnected in block <core_1553_1>.
+WARNING:Xst:2677 - Node <data_sftreg_out_15> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_16> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_17> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_18> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_19> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_20> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_21> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_22> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_23> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_24> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_25> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_26> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_27> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_28> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_29> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_30> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_15> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_16> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_17> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_18> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_19> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_20> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_21> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_22> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_23> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_24> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_25> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_26> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_27> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_28> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_29> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_30> of sequential type is unconnected in block <core_1553_2>.
+WARNING:Xst:2677 - Node <rxdw_enc_2> of sequential type is unconnected in block <top_1553>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 128x18-bit single-port distributed Read Only RAM      : 1
+# Counters                                             : 13
+ 3-bit up counter                                      : 2
+ 5-bit up counter                                      : 4
+ 6-bit up counter                                      : 4
+ 7-bit up counter                                      : 1
+ 8-bit up counter                                      : 2
+# Registers                                            : 351
+ Flip-Flops                                            : 351
+# Comparators                                          : 19
+ 1-bit comparator not equal                            : 2
+ 3-bit comparator greater                              : 6
+ 5-bit comparator greater                              : 4
+ 5-bit comparator lessequal                            : 6
+ 6-bit comparator lessequal                            : 1
+# Multiplexers                                         : 21
+ 1-bit 2-to-1 multiplexer                              : 14
+ 1-bit 41-to-1 multiplexer                             : 2
+ 16-bit 2-to-1 multiplexer                             : 2
+ 17-bit 2-to-1 multiplexer                             : 3
+# FSMs                                                 : 2
+# Xors                                                 : 5
+ 1-bit xor16                                           : 3
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <sync_bits_n_0> in Unit <encoder_1553> is equivalent to the following 5 FFs/Latches, which will be removed : <sync_bits_n_1> <sync_bits_n_2> <sync_bits_3> <sync_bits_4> <sync_bits_5> 
+INFO:Xst:2261 - The FF/Latch <sync_bits_n_3> in Unit <encoder_1553> is equivalent to the following 5 FFs/Latches, which will be removed : <sync_bits_n_4> <sync_bits_n_5> <sync_bits_0> <sync_bits_1> <sync_bits_2> 
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <u1_core/FSM_0> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 00
+ 0010  | 01
+ 0100  | 11
+ 1000  | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <u2_core/FSM_1> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 00
+ 0010  | 01
+ 0100  | 11
+ 1000  | 10
+-------------------
+WARNING:Xst:1710 - FF/Latch <data_reg_14> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_12> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_11> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_10> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_9> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_8> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_6> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_4> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_3> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_2> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_1> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reg_0> (without init value) has a constant value of 0 in block <encoder_1553>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <enc_cnt_4> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <enc_cnt_5> of sequential type is unconnected in block <top_1553>.
+INFO:Xst:2261 - The FF/Latch <data_reg_16> in Unit <encoder_1553> is equivalent to the following 4 FFs/Latches, which will be removed : <data_reg_15> <data_reg_13> <data_reg_7> <data_reg_5> 
+
+Optimizing unit <top_1553> ...
+
+Optimizing unit <core_1553_1> ...
+
+Optimizing unit <core_1553_2> ...
+
+Optimizing unit <encoder_1553> ...
+WARNING:Xst:2677 - Node <u1_core/state_FSM_FFd2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/bitcnt_4> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/bitcnt_3> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/bitcnt_2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/bitcnt_1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/bitcnt_0> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/state_FSM_FFd1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/samplecnt_2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/samplecnt_1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/samplecnt_0> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_perr> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/txdval> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_0> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_3> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_4> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_5> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_6> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_7> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_8> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_9> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_10> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_11> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_12> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_13> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_14> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dword_15> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_0> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_3> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_4> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_5> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_6> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_7> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_8> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_9> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_10> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_11> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_12> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_13> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_14> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_15> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/dword_int_16> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/shift_data> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/start_shift> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_dval> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/state_FSM_FFd2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/bitcnt_4> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/bitcnt_3> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/bitcnt_2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/bitcnt_1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/bitcnt_0> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/state_FSM_FFd1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/samplecnt_2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/samplecnt_1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/samplecnt_0> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_perr> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/txdval> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_0> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_3> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_4> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_5> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_6> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_7> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_8> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_9> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_10> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_11> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_12> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_13> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_14> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dword_15> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_0> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_3> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_4> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_5> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_6> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_7> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_8> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_9> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_10> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_11> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_12> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_13> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_14> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_15> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/dword_int_16> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/shift_data> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/start_shift> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/sync_dw_reg> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/rx_dval> of sequential type is unconnected in block <top_1553>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_1553, actual ratio is 3.
+FlipFlop reset_slow has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <top_1553> :
+	Found 44-bit shift register for signal <u1_core/data_sftreg_out_n_14>.
+	Found 15-bit shift register for signal <u1_core/data_sftreg_out_14>.
+	Found 44-bit shift register for signal <u2_core/data_sftreg_out_n_14>.
+	Found 15-bit shift register for signal <u2_core/data_sftreg_out_14>.
+Unit <top_1553> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 187
+ Flip-Flops                                            : 187
+# Shift Registers                                      : 4
+ 15-bit shift register                                 : 2
+ 44-bit shift register                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top_1553.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 190
+#      GND                         : 3
+#      INV                         : 6
+#      LUT2                        : 34
+#      LUT3                        : 10
+#      LUT4                        : 27
+#      LUT5                        : 17
+#      LUT6                        : 58
+#      MUXCY                       : 14
+#      MUXF7                       : 2
+#      VCC                         : 3
+#      XORCY                       : 16
+# FlipFlops/Latches                : 238
+#      FD                          : 11
+#      FDC                         : 129
+#      FDCE                        : 77
+#      FDE                         : 4
+#      FDP                         : 17
+# RAMS                             : 2
+#      RAMB8BWER                   : 2
+# Shift Registers                  : 6
+#      SRLC16E                     : 2
+#      SRLC32E                     : 4
+# Clock Buffers                    : 5
+#      BUFG                        : 5
+# IO Buffers                       : 29
+#      IBUF                        : 8
+#      IBUFG                       : 1
+#      OBUF                        : 20
+# DCMs                             : 1
+#      DCM_SP                      : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx25ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             238  out of  30064     0%  
+ Number of Slice LUTs:                  158  out of  15032     1%  
+    Number used as Logic:               152  out of  15032     1%  
+    Number used as Memory:                6  out of   3664     0%  
+       Number used as SRL:                6
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    304
+   Number with an unused Flip Flop:      66  out of    304    21%  
+   Number with an unused LUT:           146  out of    304    48%  
+   Number of fully used LUT-FF pairs:    92  out of    304    30%  
+   Number of unique control sets:        14
+
+IO Utilization: 
+ Number of IOs:                          30
+ Number of bonded IOBs:                  29  out of    186    15%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of     52     1%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                5  out of     16    31%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | DCM_SP:CLK0            | 22    |
+clk                                | DCM_SP:CLKDV           | 38    |
+clk                                | DCM_SP:CLK2X           | 12    |
+clk                                | DCM_SP:CLKFX           | 176   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 4.104ns (Maximum Frequency: 243.665MHz)
+   Minimum input arrival time before clock: 2.083ns
+   Maximum output required time after clock: 8.534ns
+   Maximum combinational path delay: 6.045ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.104ns (frequency: 243.665MHz)
+  Total number of paths / destination ports: 1539 / 508
+-------------------------------------------------------------------------
+Delay:               2.052ns (Levels of Logic = 0)
+  Source:            reset_slow_1 (FF)
+  Destination:       rx_data_n_BC_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising 2.0X
+
+  Data Path: reset_slow_1 to rx_data_n_BC_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              12   0.525   1.068  reset_slow_1 (reset_slow_1)
+     FDC:CLR                   0.459          rx_data_n_BC_0
+    ----------------------------------------
+    Total                      2.052ns (0.984ns logic, 1.068ns route)
+                                       (48.0% logic, 52.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              2.083ns (Levels of Logic = 1)
+  Source:            rxa_n_BC (PAD)
+  Destination:       rx_data_n_BC_0 (FF)
+  Destination Clock: clk rising 2.0X
+
+  Data Path: rxa_n_BC to rx_data_n_BC_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rxa_n_BC_IBUF (rxa_n_BC_IBUF)
+     FDC:D                     0.074          rx_data_n_BC_0
+    ----------------------------------------
+    Total                      2.083ns (1.402ns logic, 0.681ns route)
+                                       (67.3% logic, 32.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 95 / 17
+-------------------------------------------------------------------------
+Offset:              8.534ns (Levels of Logic = 4)
+  Source:            u1_core/sync_sftreg_20 (FF)
+  Destination:       debug_out<5> (PAD)
+  Source Clock:      clk rising 0.3X
+
+  Data Path: u1_core/sync_sftreg_20 to debug_out<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.525   1.221  u1_core/sync_sftreg_20 (u1_core/sync_sftreg_20)
+     LUT6:I0->O            1   0.254   1.137  u1_core/syncdw1 (u1_core/syncdw1)
+     LUT6:I0->O            5   0.254   1.296  u1_core/syncdw5 (u1_core/syncdw)
+     LUT6:I0->O            1   0.254   0.681  u1_core/sync_found1 (debug_out_5_OBUF)
+     OBUF:I->O                 2.912          debug_out_5_OBUF (debug_out<5>)
+    ----------------------------------------
+    Total                      8.534ns (4.199ns logic, 4.335ns route)
+                                       (49.2% logic, 50.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Delay:               6.045ns (Levels of Logic = 3)
+  Source:            switch7 (PAD)
+  Destination:       txa_p_BC (PAD)
+
+  Data Path: switch7 to txa_p_BC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.328   0.874  switch7_IBUF (stat0_OBUF)
+     LUT4:I2->O            1   0.250   0.681  Mmux_txa_p_BC11 (txa_p_BC_OBUF)
+     OBUF:I->O                 2.912          txa_p_BC_OBUF (txa_p_BC)
+    ----------------------------------------
+    Total                      6.045ns (4.490ns logic, 1.555ns route)
+                                       (74.3% logic, 25.7% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.891|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 10.74 secs
+ 
+--> 
+
+Total memory usage is 294836 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  287 (   0 filtered)
+Number of infos    :   19 (   0 filtered)
+
