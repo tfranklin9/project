@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/tfranklin9/projects/1553/simple_passthrough/passthru/test_1553_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test_1553" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="35" />
+   <wvobject fp_name="/test_1553/rxa_p" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rxa_p</obj_property>
+      <obj_property name="ObjectShortName">rxa_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/rxa_n" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rxa_n</obj_property>
+      <obj_property name="ObjectShortName">rxa_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/txa_p" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txa_p</obj_property>
+      <obj_property name="ObjectShortName">txa_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/txa_n" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txa_n</obj_property>
+      <obj_property name="ObjectShortName">txa_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/tx_dval" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_dval</obj_property>
+      <obj_property name="ObjectShortName">tx_dval</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/tx_busy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_busy</obj_property>
+      <obj_property name="ObjectShortName">tx_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/tx_busy_test" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_busy_test</obj_property>
+      <obj_property name="ObjectShortName">tx_busy_test</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/debug_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">debug_in[19:0]</obj_property>
+      <obj_property name="ObjectShortName">debug_in[19:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/debug_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">debug_out[5:0]</obj_property>
+      <obj_property name="ObjectShortName">debug_out[5:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/test_datout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">test_datout[19:0]</obj_property>
+      <obj_property name="ObjectShortName">test_datout[19:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/loopback" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">loopback</obj_property>
+      <obj_property name="ObjectShortName">loopback</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/serial_data" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">serial_data</obj_property>
+      <obj_property name="ObjectShortName">serial_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/datin" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">datin[19:0]</obj_property>
+      <obj_property name="ObjectShortName">datin[19:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/test_dword" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">test_dword[15:0]</obj_property>
+      <obj_property name="ObjectShortName">test_dword[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/test_csw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">test_csw</obj_property>
+      <obj_property name="ObjectShortName">test_csw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/test_dw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">test_dw</obj_property>
+      <obj_property name="ObjectShortName">test_dw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/WR" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">WR</obj_property>
+      <obj_property name="ObjectShortName">WR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/busy_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">busy_i</obj_property>
+      <obj_property name="ObjectShortName">busy_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/first_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">first_i</obj_property>
+      <obj_property name="ObjectShortName">first_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/tx_dval_test" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_dval_test</obj_property>
+      <obj_property name="ObjectShortName">tx_dval_test</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/dec_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dec_clk</obj_property>
+      <obj_property name="ObjectShortName">dec_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/sysclk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sysclk</obj_property>
+      <obj_property name="ObjectShortName">sysclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/rst_n" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/tx_dword" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_dword[15:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_dword[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/tx_csw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_csw</obj_property>
+      <obj_property name="ObjectShortName">tx_csw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/tx_dw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_dw</obj_property>
+      <obj_property name="ObjectShortName">tx_dw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/tx_write" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_write</obj_property>
+      <obj_property name="ObjectShortName">tx_write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/test_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">test_data[0:511,17:0]</obj_property>
+      <obj_property name="ObjectShortName">test_data[0:511,17:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/rom_add" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rom_add[8:0]</obj_property>
+      <obj_property name="ObjectShortName">rom_add[8:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/wr_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/first_wr" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">first_wr</obj_property>
+      <obj_property name="ObjectShortName">first_wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/WREN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">WREN[1:0]</obj_property>
+      <obj_property name="ObjectShortName">WREN[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/busy" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">busy[1:0]</obj_property>
+      <obj_property name="ObjectShortName">busy[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="group60" type="group">
+      <obj_property name="label">dut</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/test_1553/DUT/fxclk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fxclk</obj_property>
+         <obj_property name="ObjectShortName">fxclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/reset_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reset_n</obj_property>
+         <obj_property name="ObjectShortName">reset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/rxa_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rxa_n</obj_property>
+         <obj_property name="ObjectShortName">rxa_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/rxa_p" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rxa_p</obj_property>
+         <obj_property name="ObjectShortName">rxa_p</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/rxb_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rxb_n</obj_property>
+         <obj_property name="ObjectShortName">rxb_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/rxb_p" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rxb_p</obj_property>
+         <obj_property name="ObjectShortName">rxb_p</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/txa_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">txa_n</obj_property>
+         <obj_property name="ObjectShortName">txa_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/txa_p" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">txa_p</obj_property>
+         <obj_property name="ObjectShortName">txa_p</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/txb_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">txb_n</obj_property>
+         <obj_property name="ObjectShortName">txb_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/txb_p" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">txb_p</obj_property>
+         <obj_property name="ObjectShortName">txb_p</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/led1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">led1[9:0]</obj_property>
+         <obj_property name="ObjectShortName">led1[9:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/led2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">led2[9:0]</obj_property>
+         <obj_property name="ObjectShortName">led2[9:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/led3" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">led3[9:0]</obj_property>
+         <obj_property name="ObjectShortName">led3[9:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/rst_out" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst_out</obj_property>
+         <obj_property name="ObjectShortName">rst_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/enc_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">enc_clk</obj_property>
+         <obj_property name="ObjectShortName">enc_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/dec_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dec_clk</obj_property>
+         <obj_property name="ObjectShortName">dec_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/LOCKED" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">LOCKED</obj_property>
+         <obj_property name="ObjectShortName">LOCKED</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/CLK_VALID" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK_VALID</obj_property>
+         <obj_property name="ObjectShortName">CLK_VALID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/tx_a" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">tx_a[2:0]</obj_property>
+         <obj_property name="ObjectShortName">tx_a[2:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/tx_b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">tx_b[2:0]</obj_property>
+         <obj_property name="ObjectShortName">tx_b[2:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/cnt2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cnt2[9:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt2[9:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/cnt3" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cnt3[9:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt3[9:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/led2_cnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">led2_cnt[9:0]</obj_property>
+         <obj_property name="ObjectShortName">led2_cnt[9:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/led3_cnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">led3_cnt[9:0]</obj_property>
+         <obj_property name="ObjectShortName">led3_cnt[9:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
