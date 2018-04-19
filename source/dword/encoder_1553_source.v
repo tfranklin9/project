@@ -57,8 +57,8 @@ always @(posedge enc_clk or negedge rst_n) begin
    if (!rst_n) begin
       cnt_en <= 1'b0 ;
       first  <= 1'b1 ;
-//   else if (tx_csw || tx_dw ) 
-   end else if (busy_cnt < 'd38) begin //tx_csw || tx_dw ) 
+   end else if (tx_csw || tx_dw ) begin
+//   end else if (busy_cnt < 'd38) begin //tx_csw || tx_dw ) 
       cnt_en <= 1'b1 ;
    end else if (busy_cnt == 'd38) begin
       cnt_en <= 1'b0 ;
@@ -95,14 +95,18 @@ always @(posedge enc_clk or negedge rst_n) begin
 end
 
 // 
-assign txdword = 16'hF101;
+// rt    t/r sb    count
+// 00000 0   00000 00000
+// 00011 0   00011 00111
+// 0001 1000 0110 0111 = 1 8 6 7
+assign txdword = 16'h1867;
 
 // Generate busy signal for the user interface.
 assign tx_busy = cnt_en ;
 
 // Generate parity for the given 16 bit word data. 
-//assign parity = ^(tx_dword) ;
-assign parity = ^(txdword) ;
+assign parity = ^(tx_dword) ;
+//assign parity = ^(txdword) ;
 
 // Register input data word along with generated parity.
 always @(posedge enc_clk or negedge rst_n) begin
@@ -110,8 +114,8 @@ always @(posedge enc_clk or negedge rst_n) begin
       data_reg <= 17'h0000 ;
    //else if ((tx_csw || tx_dw) && !cnt_en) 
    else if (!cnt_en) 
-      //data_reg <= {tx_dword, parity} ;
-      data_reg <= {txdword, parity} ;
+      data_reg <= {tx_dword, parity} ;
+      //data_reg <= {txdword, parity} ;
    else if (!cnt_en ) 
       data_reg <= 17'h0000 ;
    else  
@@ -122,8 +126,8 @@ end
 always @(posedge enc_clk or negedge rst_n) begin
    if (!rst_n)  
       sync_bits <= 6'b000_000 ;
-   //else if (tx_csw) 
-   else if (first || word_cnt == 0) 
+   else if (tx_csw) 
+   //else if (first || word_cnt == 0) 
       sync_bits <= 6'b111_000 ;
    else if (tx_dw) 
       sync_bits <= 6'b000_111 ;

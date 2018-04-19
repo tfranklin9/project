@@ -84,6 +84,17 @@ output         stat3;
 reg [15:0]    tx_dword;
 reg           tx_csw;
 reg           tx_dw;
+wire [0:4]    rt_address;
+wire [0:4]    sub_address;
+wire [0:4]    dwcnt_mcode;
+wire          tr;
+wire          parity_bit;
+wire [0:4]    rt_address_RT;
+wire [0:4]    sub_address_RT;
+wire [0:4]    dwcnt_mcode_RT;
+wire          tr_RT;
+wire          parity_bit_RT;
+
 
 // Receive Signals
 wire [15:0]   rx_dword_RT;
@@ -103,6 +114,21 @@ wire          serial_data ;
 //wire [19:0]   debug;
 wire [7:0]    debug_core_BC;
 wire [7:0]    debug_core_RT;
+wire          rtadd_match;
+wire          subadd_match;
+wire          tr_match;
+wire [0:4]    rt_filter;
+wire [0:4]    sub_filter;
+wire          tr_filter;
+wire          address_match;
+reg           filtermatch;
+wire          filter_match;
+reg           filtermatch_d;
+reg           filtermatch_dd;
+reg           filtermatch_ddd;
+wire          end_of_payload;
+wire          lastword;
+wire          lastword_RT;
 
 reg [7:0]     reset_slow_buf = 8'b0;
 reg           reset_slow ;
@@ -129,16 +155,18 @@ reg [2:0] rx_data_RT ;
 reg [2:0] rx_data_n_RT ; 
 
 // outputs.
-assign txa_p_BC = bypass ? tx_data_BC   : (tx_dval_csw ? tx_data_BC : tx_data_dw) ;
-assign txa_n_BC = bypass ? tx_data_n_BC : (tx_dval_csw ? tx_data_n_BC : tx_data_n_dw) ;
-//assign txa_p_BC = tx_dval_csw ? tx_data_BC : tx_data_dw ;
-//assign txa_n_BC = tx_dval_csw ? tx_data_n_BC : tx_data_n_dw ;
+//assign txa_p_BC = bypass ? tx_data_BC   : (tx_dval_csw ? tx_data_BC : tx_data_dw) ;
+//assign txa_n_BC = bypass ? tx_data_n_BC : (tx_dval_csw ? tx_data_n_BC : tx_data_n_dw) ;
+// only pass encoded data when there is a match, else pass what's coming in.
+assign txa_p_BC = bypass ? tx_data_BC   : (tx_dval_csw ? tx_data_BC : (!((txdval_enc && filter_match) || (txdval_enc && !filter_match)
+) ? tx_data_BC : tx_data_delay[27] )) ;
+assign txa_n_BC = bypass ? tx_data_n_BC : (tx_dval_csw ? tx_data_n_BC : (!((txdval_enc && filter_match) || (txdval_enc && !filter_match)
+) ? tx_data_n_BC : tx_data_delay_n[27] )) ;
 
-//assign txa_p_BC = tx_data_BC;
-//assign txa_n_BC = tx_data_n_BC;
+//(txdval_enc && filter_match) || (txdval_enc && !filter_match)
+
 assign txa_p_RT = tx_data_RT;
 assign txa_n_RT = tx_data_n_RT;
-
 
 // generate reset 
 wire reset;
@@ -171,6 +199,7 @@ reg [15:0] rxdata_RT;
 reg rxcsw_BC, rxdw_BC, rxdval_BC;
 reg rxcsw_RT, rxdw_RT, rxdval_RT;
 wire tx_dval_enc;
+wire txdval;
 
 encoder_1553 u1_encoder (
             // Clock and Reset
@@ -179,10 +208,18 @@ encoder_1553 u1_encoder (
 
             // Inputs
 //            .tx_dword   ( rxdata ),
+            .filter_match ( filter_match ),
             .tx_csw     ( rxcsw_edge ),
             .tx_dw      ( rxdw_edge ),
+            .rt_address ( rt_address ),
+            .tr         ( tr ),
+            .sub_address ( sub_address ),
+            .dwcnt_mcode ( dwcnt_mcode ),
+            .parity_bit ( parity_bit ),
 
             // Outputs
+            .end_of_payload ( end_of_payload ),
+            .last_word   ( lastword ),
             .tx_busy     ( tx_busy ),
             .tx_data     ( tx_data_dw ), 
             .tx_data_n   ( tx_data_n_dw ), 
@@ -192,6 +229,60 @@ encoder_1553 u1_encoder (
 
 //assign serial_data = loopback ? (tx_data & tx_dval) : rx_data ;
 assign tx_dval = tx_dval_enc;
+assign txdval = dval_delay[27];
+//
+// hardwire filters for now
+assign rt_filter  = 5'h0A;
+assign sub_filter = 5'h01;
+assign tr_filter  = 1'b1;
+
+// filter matching
+assign rtadd_match  = (rt_address  == rt_filter);
+assign subadd_match = (sub_address == sub_filter);
+assign tr_match     = (tr == tr_filter);
+assign address_match = (rtadd_match && subadd_match );  // add direction later
+
+always @ (posedge enc_clk or posedge reset_slow)
+    begin
+	    if ( reset_slow ) begin
+          filtermatch <= 1'd0;
+        end else if ( address_match ) begin
+          filtermatch <= 1'b1;
+        end else if ( end_of_payload ) begin
+          filtermatch <= 1'b0; 
+		end
+end
+
+always @ (posedge enc_clk or posedge reset_slow)
+    begin
+	    if ( reset_slow ) begin
+          filtermatch_d  <= 1'd0;
+          filtermatch_dd <= 1'd0;
+          filtermatch_ddd <= 1'd0;
+        end else begin
+          filtermatch_d  <= filtermatch;
+          filtermatch_dd <= filtermatch_d;
+          filtermatch_ddd <= filtermatch_dd;
+		end
+end
+assign filter_match = filtermatch | filtermatch_d | filtermatch_dd | filtermatch_ddd;
+
+reg txdval_ddd,txdval_dd,txdval_d;
+wire txdval_enc;
+always @ (posedge enc_clk or posedge reset_slow)
+    begin
+	    if ( reset_slow ) begin
+          txdval_d   <= 1'd0;
+          txdval_dd  <= 1'd0;
+          txdval_ddd <= 1'd0;
+        end else begin
+          txdval_d  <= txdval;
+          txdval_dd <= txdval_d;
+          txdval_ddd <= txdval_dd;
+		end
+end
+assign txdval_enc = txdval | txdval_d | txdval_dd | txdval_ddd;
+
 
 core_1553 #( .BC(1))
          u1_core (
@@ -207,6 +298,7 @@ core_1553 #( .BC(1))
             .mem_addra  ( mem_addra_BC ),
             .mem_datin  ( mem_datin_BC ),
             .bypass     ( bypass_BC ),
+            .lastword   ( lastword ),
 
             // Outputs
             .rx_dword   ( rx_dword_BC ), 
@@ -215,9 +307,15 @@ core_1553 #( .BC(1))
             .rx_dw      ( rx_dw_BC ),
             .rx_perr    ( rx_perr_BC ),
 
-            .tx_dval    ( tx_dval_BC),
+            .tx_dval    ( tx_dval_BC ),
+            .rt_address ( rt_address ),
+            .tr         ( tr ),
+            .sub_address ( sub_address ),
+            .dwcnt_mcode ( dwcnt_mcode ),
+            .parity_bit ( parity_bit ),
             .tx_data    ( tx_data_BC),
             .tx_data_n  ( tx_data_n_BC),
+
             .debug      ( debug_core_BC)
             ) ;
 
@@ -235,6 +333,7 @@ core_1553 #( .BC(0))
             .mem_addra  ( mem_addra_RT ),
             .mem_datin  ( mem_datin_RT ),
             .bypass     ( bypass_RT ),
+            .lastword   ( lastword_RT ),
 
             // Outputs
             .rx_dword   ( rx_dword_RT ), 
@@ -244,6 +343,11 @@ core_1553 #( .BC(0))
             .rx_perr    ( rx_perr_RT ),
 
             .tx_dval    ( tx_dval_RT),
+            .rt_address ( rt_address_RT ),
+            .tr         ( tr_RT ),
+            .sub_address ( sub_address_RT ),
+            .dwcnt_mcode ( dwcnt_mcode_RT ),
+            .parity_bit ( parity_bit_RT ),
             .tx_data    ( tx_data_RT),
             .tx_data_n  ( tx_data_n_RT),
             .debug      ( debug_core_RT)
@@ -273,6 +377,24 @@ assign stat0 = bypass;
 assign stat1 = enc_cnt[1];
 assign stat2 = enc_cnt[2];
 assign stat3 = enc_cnt[3];
+
+// delay encode
+reg [0:40] tx_data_delay;
+reg [0:40] tx_data_delay_n;
+reg [0:40] dval_delay;
+//always @ (negedge enc_clk or posedge reset_slow)
+always @ (posedge sys_clk or posedge reset_slow)
+    begin
+	    if ( reset_slow ) begin
+          dval_delay      <= 41'd0;
+          tx_data_delay   <= 41'd0;
+          tx_data_delay_n <= 41'd0;
+        end else begin
+          dval_delay      <= {dval_delay[1:40],tx_dval_enc};
+          tx_data_delay   <= {tx_data_delay[1:40],tx_data_dw};
+          tx_data_delay_n <= {tx_data_delay_n[1:40],tx_data_n_dw};
+		end
+end
 
 // sync and stretch rx_signals
 always @ (posedge dec_clk or posedge reset_slow)
@@ -423,7 +545,7 @@ end
 //assign error = rx_dval && !(rxbus == test_data[add]);
 
 //assign debug_out = {rx_dval,enc_cnt[2],WRERR,RDERR,FULL,EMPTY};//{rx_csw,rx_dw,rx_dval,rx_dword};          
-assign debug_out = {rxdw_edge,tx_dval_csw,debug_core_BC[5],debug_core_BC[4],tx_data_n_BC,tx_data_n_dw,tx_data_BC,tx_data_dw};//{rx_csw,rx_dw,rx_dval,rx_dword};          
+assign debug_out = {(rxdw_edge || rxcsw_edge),subadd_match,filter_match,txdval_enc,rtadd_match,tx_data_dw,tx_data_BC,lastword};//{rx_csw,rx_dw,rx_dval,rx_dword};          
 
 //////////////////////////////////////////////////
 // This logic is just for testing.

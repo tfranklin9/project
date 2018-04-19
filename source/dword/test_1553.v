@@ -88,7 +88,7 @@ wire test_dw;
 
 assign test_csw = WR ? test_data[rom_add][17] : 0;
 assign test_dw = WR ? test_data[rom_add][16] : 0;
-assign test_dword = WR ? test_data[rom_add] : 16'd0;
+assign test_dword = WR ? test_data[rom_add][15:0] : 16'd0;
 wire rxa_p_BC, rxa_n_BC, rxb_p_BC, rxb_n_BC;
 wire source;
 wire tx_dval_source;
@@ -100,7 +100,7 @@ encoder_1553_source BC_source (
             // Inputs
             .tx_dword   ( test_dword ),
             .tx_csw     ( test_csw ),
-            .tx_dw      ( 1'b1 ), //test_dw ),
+            .tx_dw      ( test_dw ), // 1'b1 ), //test_dw ),
 
             // Outputs
             .tx_busy    ( tx_busy_test ),

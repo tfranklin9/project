@@ -16,10 +16,18 @@ module encoder_1553 (
 
             // Inputs
             //tx_dword ,  // Hardwire Dataword to pattern
+            filter_match ,
             tx_csw ,    // Only used when a DW is being passed.
             tx_dw ,
+            rt_address ,
+            tr ,
+            sub_address ,
+            dwcnt_mcode ,
+            parity_bit ,
 
             // Outputs
+            end_of_payload,
+            last_word,
             tx_busy ,
             tx_data , 
             tx_data_n , 
@@ -32,9 +40,17 @@ input          enc_clk ;   // 2Mhz encoder clock.
 input          rst_n ;     // Asynchronous reset.
 
 //input [0:15]   tx_dword ;  // Input data word transmit.
+input          filter_match ;
 input          tx_csw ;    // "tx_dword" has command or status word.
 input          tx_dw ;     // "tx_dword" has data word.
+input [0:4]    rt_address;
+input          tr;
+input [0:4]    sub_address;
+input [0:4]    dwcnt_mcode;
+input          parity_bit;
 
+output         end_of_payload;
+output         last_word;
 output         tx_busy ;   // Encoder is not ready to accept next word.
 output         tx_data ;   // Serial transmit data output. 
 output         tx_data_n ;   // Serial transmit data output. 
@@ -57,13 +73,63 @@ wire [0:40]    enc_data ;
 wire [0:40]    enc_data2 ;
 wire           data_out ;
 
-wire [0:15]    tx_dword ;
+reg [0:15]    tx_dword ;
 reg  is_csw;
 reg  is_csw_reg;
 wire dword;
 wire endofpayload;
 wire endofword, firstword;
-assign tx_dword = 16'h0505;
+//assign tx_dword = 16'h0505;
+
+// Hardwired ROM
+always @(dwcnt)
+begin
+    case (dwcnt)
+        5'd0: tx_dword <= 16'h0000;
+        5'd1: tx_dword <= 16'h0000;
+        5'd2: tx_dword <= 16'h0000;
+        5'd3: tx_dword <= 16'h0000;
+        5'd4: tx_dword <= 16'h0000;
+        5'd5: tx_dword <= 16'h0000;
+        5'd6: tx_dword <= 16'h0000;
+        5'd7: tx_dword <= 16'h0000;
+        5'd8: tx_dword <= 16'h0000;
+        5'd9: tx_dword <= 16'h0000;
+        5'd10: tx_dword <= 16'hEB60;  //Radar altitude
+        5'd11: tx_dword <= 16'h0000;
+        5'd12: tx_dword <= 16'h0000;
+        5'd13: tx_dword <= 16'h0000;
+        5'd14: tx_dword <= 16'h0000;
+        5'd15: tx_dword <= 16'h3FFF;  //Engine Torque 1
+        5'd16: tx_dword <= 16'hBFFF;  //Engine Torque 2
+        5'd17: tx_dword <= 16'h0000;  //Engine Temp 1
+        5'd18: tx_dword <= 16'h0020;  //Engine Temp 2
+        5'd19: tx_dword <= 16'h0000;
+        5'd20: tx_dword <= 16'h0000;
+        5'd21: tx_dword <= 16'h0000;
+        5'd22: tx_dword <= 16'h0000;
+        5'd23: tx_dword <= 16'h0000;
+        5'd24: tx_dword <= 16'h0000;
+        5'd25: tx_dword <= 16'h0000;
+        5'd26: tx_dword <= 16'h0000;
+        5'd27: tx_dword <= 16'h0000;
+        5'd28: tx_dword <= 16'h0000;
+        5'd29: tx_dword <= 16'h0000;
+        5'd30: tx_dword <= 16'h0000;
+        5'd31: tx_dword <= 16'h0000;
+    endcase
+end
+
+// register data word conut
+reg [0:5] dwcnt_mcode_reg;
+always @(posedge enc_clk or negedge rst_n) begin
+   if (!rst_n) begin  
+      dwcnt_mcode_reg <= 5'd0 ;
+   //end else if (tx_dw && tx_dval_csw ) begin
+   end else begin
+      dwcnt_mcode_reg <= 5'd22; //dwcnt_mcode ;
+   end
+end
 
 // Count number of datawords
 reg [5:0] dwcnt;
@@ -77,9 +143,22 @@ always @(posedge enc_clk or negedge rst_n) begin
    end
 end
 assign firstword = tx_dw && dwcnt == 0;
-assign endofpayload = (dwcnt == 32 ) && ~cnt_en && cnt_en_reg;
+//assign endofpayload = (dwcnt == 32 ) && ~cnt_en && cnt_en_reg;
+assign endofpayload = (dwcnt == dwcnt_mcode_reg) && ~cnt_en && cnt_en_reg;
 assign endofword = ~cnt_en && cnt_en_reg;
 assign dword = (firstword || endofword) && !endofpayload;
+//assign end_of_payload = (dwcnt == dwcnt_mcode_reg) && endofword ;
+assign last_word = (dwcnt == dwcnt_mcode_reg); 
+
+reg end_of_payload_d;
+always @(posedge enc_clk or negedge rst_n) begin
+   if (!rst_n) begin  
+      end_of_payload_d <= 1'b0 ;
+   end else begin 
+      end_of_payload_d <= (dwcnt == dwcnt_mcode_reg) && endofword ;
+   end
+end
+assign end_of_payload = end_of_payload_d;
 
 // Count number of clocks required to encode and serialize
 // the input data.
