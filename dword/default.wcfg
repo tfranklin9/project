@@ -10,61 +10,447 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="66" />
+   <WVObjectSize size="43" />
    <wave_markers>
-      <marker time="13358146197000" label="" />
+      <marker time="1174555685000" label="" />
    </wave_markers>
-   <wvobject fp_name="/test_1553/clk" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
+   <wvobject fp_name="/test_1553/DUT/rxdw_enc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rxdw_enc[0:3]</obj_property>
+      <obj_property name="ObjectShortName">rxdw_enc[0:3]</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_1553/sysclk" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sysclk</obj_property>
-      <obj_property name="ObjectShortName">sysclk</obj_property>
+   <wvobject fp_name="/test_1553/DUT/rxdw_edge" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rxdw_edge</obj_property>
+      <obj_property name="ObjectShortName">rxdw_edge</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_1553/tx_busy_test" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">tx_busy_test</obj_property>
-      <obj_property name="ObjectShortName">tx_busy_test</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/sync_found" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sync_found</obj_property>
-      <obj_property name="ObjectShortName">sync_found</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider227" type="divider">
-      <obj_property name="label">encoder</obj_property>
+   <wvobject fp_name="divider158" type="divider">
+      <obj_property name="label">New Divider</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">128 128 255</obj_property>
       <obj_property name="TextColor">230 230 230</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/firstword" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">firstword</obj_property>
-      <obj_property name="ObjectShortName">firstword</obj_property>
+   <wvobject fp_name="group186" type="group">
+      <obj_property name="label">core</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/test_1553/DUT/u1_core/dec_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dec_clk</obj_property>
+         <obj_property name="ObjectShortName">dec_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sys_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sys_clk</obj_property>
+         <obj_property name="ObjectShortName">sys_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rst_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst_n</obj_property>
+         <obj_property name="ObjectShortName">rst_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rx_data" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rx_data</obj_property>
+         <obj_property name="ObjectShortName">rx_data</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rx_data_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rx_data_n</obj_property>
+         <obj_property name="ObjectShortName">rx_data_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/mem_wea" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">mem_wea</obj_property>
+         <obj_property name="ObjectShortName">mem_wea</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/mem_addra" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">mem_addra[6:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_addra[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/mem_datin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">mem_datin[17:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_datin[17:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/bypass" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">bypass</obj_property>
+         <obj_property name="ObjectShortName">bypass</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/lastword" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lastword</obj_property>
+         <obj_property name="ObjectShortName">lastword</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rx_csw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rx_csw</obj_property>
+         <obj_property name="ObjectShortName">rx_csw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rx_dw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rx_dw</obj_property>
+         <obj_property name="ObjectShortName">rx_dw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/tx_data" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tx_data</obj_property>
+         <obj_property name="ObjectShortName">tx_data</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/tx_data_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tx_data_n</obj_property>
+         <obj_property name="ObjectShortName">tx_data_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/tx_dval" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tx_dval</obj_property>
+         <obj_property name="ObjectShortName">tx_dval</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rt_address" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rt_address[0:4]</obj_property>
+         <obj_property name="ObjectShortName">rt_address[0:4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/tr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tr</obj_property>
+         <obj_property name="ObjectShortName">tr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sub_address" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sub_address[0:4]</obj_property>
+         <obj_property name="ObjectShortName">sub_address[0:4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/dwcnt_mcode" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dwcnt_mcode[0:4]</obj_property>
+         <obj_property name="ObjectShortName">dwcnt_mcode[0:4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/parity_bit" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">parity_bit</obj_property>
+         <obj_property name="ObjectShortName">parity_bit</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/debug" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">debug[7:0]</obj_property>
+         <obj_property name="ObjectShortName">debug[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/data_edge" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">data_edge</obj_property>
+         <obj_property name="ObjectShortName">data_edge</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sync_csw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sync_csw</obj_property>
+         <obj_property name="ObjectShortName">sync_csw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sync_dw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sync_dw</obj_property>
+         <obj_property name="ObjectShortName">sync_dw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sync_found" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sync_found</obj_property>
+         <obj_property name="ObjectShortName">sync_found</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/data_sample" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">data_sample</obj_property>
+         <obj_property name="ObjectShortName">data_sample</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/parity" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">parity</obj_property>
+         <obj_property name="ObjectShortName">parity</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/is_cw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">is_cw</obj_property>
+         <obj_property name="ObjectShortName">is_cw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/is_sw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">is_sw</obj_property>
+         <obj_property name="ObjectShortName">is_sw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/is_dw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">is_dw</obj_property>
+         <obj_property name="ObjectShortName">is_dw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/passthru" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">passthru[0:16]</obj_property>
+         <obj_property name="ObjectShortName">passthru[0:16]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/select" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">select[3:0]</obj_property>
+         <obj_property name="ObjectShortName">select[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/data_reg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_reg[16:0]</obj_property>
+         <obj_property name="ObjectShortName">data_reg[16:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/mem_addrb" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">mem_addrb[6:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_addrb[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/synccsw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">synccsw</obj_property>
+         <obj_property name="ObjectShortName">synccsw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/syncdw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">syncdw</obj_property>
+         <obj_property name="ObjectShortName">syncdw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/syncdword" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">syncdword</obj_property>
+         <obj_property name="ObjectShortName">syncdword</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/synccsword" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">synccsword</obj_property>
+         <obj_property name="ObjectShortName">synccsword</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/nodata" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">nodata</obj_property>
+         <obj_property name="ObjectShortName">nodata</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/enc_bit_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">enc_bit_n</obj_property>
+         <obj_property name="ObjectShortName">enc_bit_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rx_dword" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rx_dword[0:15]</obj_property>
+         <obj_property name="ObjectShortName">rx_dword[0:15]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rx_dval" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rx_dval</obj_property>
+         <obj_property name="ObjectShortName">rx_dval</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rx_perr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rx_perr</obj_property>
+         <obj_property name="ObjectShortName">rx_perr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sync_sftreg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sync_sftreg[0:23]</obj_property>
+         <obj_property name="ObjectShortName">sync_sftreg[0:23]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/data_sftreg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_sftreg[0:4]</obj_property>
+         <obj_property name="ObjectShortName">data_sftreg[0:4]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sync_sftreg_n" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sync_sftreg_n[0:23]</obj_property>
+         <obj_property name="ObjectShortName">sync_sftreg_n[0:23]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/data_sftreg_n" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_sftreg_n[0:4]</obj_property>
+         <obj_property name="ObjectShortName">data_sftreg_n[0:4]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/cnt_enb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cnt_enb</obj_property>
+         <obj_property name="ObjectShortName">cnt_enb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/cnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cnt[7:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/bit_cnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">bit_cnt[4:0]</obj_property>
+         <obj_property name="ObjectShortName">bit_cnt[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/dword_int" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dword_int[0:16]</obj_property>
+         <obj_property name="ObjectShortName">dword_int[0:16]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sync_csw_reg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sync_csw_reg</obj_property>
+         <obj_property name="ObjectShortName">sync_csw_reg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sync_dw_reg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sync_dw_reg</obj_property>
+         <obj_property name="ObjectShortName">sync_dw_reg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rtaddress" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rtaddress[0:4]</obj_property>
+         <obj_property name="ObjectShortName">rtaddress[0:4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/subaddress" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">subaddress[0:4]</obj_property>
+         <obj_property name="ObjectShortName">subaddress[0:4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/dwcntmcode" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dwcntmcode[0:4]</obj_property>
+         <obj_property name="ObjectShortName">dwcntmcode[0:4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/tr_reg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tr_reg</obj_property>
+         <obj_property name="ObjectShortName">tr_reg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/paritybit" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">paritybit</obj_property>
+         <obj_property name="ObjectShortName">paritybit</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/rsvd" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rsvd[0:2]</obj_property>
+         <obj_property name="ObjectShortName">rsvd[0:2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/message_error" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">message_error</obj_property>
+         <obj_property name="ObjectShortName">message_error</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/inst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">inst</obj_property>
+         <obj_property name="ObjectShortName">inst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/srv_rqst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">srv_rqst</obj_property>
+         <obj_property name="ObjectShortName">srv_rqst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/bc_rcvd" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">bc_rcvd</obj_property>
+         <obj_property name="ObjectShortName">bc_rcvd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/busy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">busy</obj_property>
+         <obj_property name="ObjectShortName">busy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sub_flag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sub_flag</obj_property>
+         <obj_property name="ObjectShortName">sub_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/dbctrl_acc" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dbctrl_acc</obj_property>
+         <obj_property name="ObjectShortName">dbctrl_acc</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/term_flag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">term_flag</obj_property>
+         <obj_property name="ObjectShortName">term_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/data_sftreg_out" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_sftreg_out[0:31]</obj_property>
+         <obj_property name="ObjectShortName">data_sftreg_out[0:31]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/data_sftreg_out_n" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_sftreg_out_n[0:31]</obj_property>
+         <obj_property name="ObjectShortName">data_sftreg_out_n[0:31]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/cw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cw</obj_property>
+         <obj_property name="ObjectShortName">cw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/dw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dw</obj_property>
+         <obj_property name="ObjectShortName">dw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/sw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sw</obj_property>
+         <obj_property name="ObjectShortName">sw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/start_shift" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">start_shift</obj_property>
+         <obj_property name="ObjectShortName">start_shift</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/shift_data" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">shift_data</obj_property>
+         <obj_property name="ObjectShortName">shift_data</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/bitcnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">bitcnt[4:0]</obj_property>
+         <obj_property name="ObjectShortName">bitcnt[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/enc_bit" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">enc_bit</obj_property>
+         <obj_property name="ObjectShortName">enc_bit</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/change" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">change</obj_property>
+         <obj_property name="ObjectShortName">change</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/samplecnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">samplecnt[2:0]</obj_property>
+         <obj_property name="ObjectShortName">samplecnt[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/txdval" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">txdval</obj_property>
+         <obj_property name="ObjectShortName">txdval</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/txdata" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">txdata</obj_property>
+         <obj_property name="ObjectShortName">txdata</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/txdata_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">txdata_n</obj_property>
+         <obj_property name="ObjectShortName">txdata_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/enb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">enb</obj_property>
+         <obj_property name="ObjectShortName">enb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/state" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/syncdw_d" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">syncdw_d</obj_property>
+         <obj_property name="ObjectShortName">syncdw_d</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/synccsw_d" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">synccsw_d</obj_property>
+         <obj_property name="ObjectShortName">synccsw_d</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/BC" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">BC[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BC[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/SIZE" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/IDLE" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">IDLE[3:0]</obj_property>
+         <obj_property name="ObjectShortName">IDLE[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/READ" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">READ[3:0]</obj_property>
+         <obj_property name="ObjectShortName">READ[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/SHIFT1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SHIFT1[3:0]</obj_property>
+         <obj_property name="ObjectShortName">SHIFT1[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_1553/DUT/u1_core/SHIFT2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SHIFT2[3:0]</obj_property>
+         <obj_property name="ObjectShortName">SHIFT2[3:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/endofword" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">endofword</obj_property>
-      <obj_property name="ObjectShortName">endofword</obj_property>
+   <wvobject fp_name="divider158" type="divider">
+      <obj_property name="label">New Divider</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/dword" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">dword</obj_property>
-      <obj_property name="ObjectShortName">dword</obj_property>
+   <wvobject fp_name="/test_1553/DUT/u1_core/rt_address" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rt_address[0:4]</obj_property>
+      <obj_property name="ObjectShortName">rt_address[0:4]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/endofpayload" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">endofpayload</obj_property>
-      <obj_property name="ObjectShortName">endofpayload</obj_property>
+   <wvobject fp_name="/test_1553/DUT/u1_core/sub_address" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sub_address[0:4]</obj_property>
+      <obj_property name="ObjectShortName">sub_address[0:4]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_core/dwcnt_mcode" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dwcnt_mcode[0:4]</obj_property>
+      <obj_property name="ObjectShortName">dwcnt_mcode[0:4]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_core/tr" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tr</obj_property>
+      <obj_property name="ObjectShortName">tr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/address_match" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">address_match</obj_property>
+      <obj_property name="ObjectShortName">address_match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/filter_match" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">filter_match</obj_property>
+      <obj_property name="ObjectShortName">filter_match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/tx_data_BC" type="logic" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_data_BC</obj_property>
+      <obj_property name="ObjectShortName">tx_data_BC</obj_property>
+      <obj_property name="label">tx_data_BC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/tx_data_n_BC" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_data_n_BC</obj_property>
+      <obj_property name="ObjectShortName">tx_data_n_BC</obj_property>
    </wvobject>
    <wvobject fp_name="/test_1553/DUT/u1_encoder/dwcnt" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">dwcnt[5:0]</obj_property>
       <obj_property name="ObjectShortName">dwcnt[5:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_1553/DUT/tx_dval" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">tx_dval</obj_property>
-      <obj_property name="ObjectShortName">tx_dval</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/tx_dval_csw" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">tx_dval_csw</obj_property>
-      <obj_property name="ObjectShortName">tx_dval_csw</obj_property>
-   </wvobject>
    <wvobject fp_name="/test_1553/DUT/tx_data_dw" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">tx_data_dw</obj_property>
       <obj_property name="ObjectShortName">tx_data_dw</obj_property>
@@ -72,207 +458,11 @@
    <wvobject fp_name="/test_1553/DUT/tx_data_n_dw" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">tx_data_n_dw</obj_property>
       <obj_property name="ObjectShortName">tx_data_n_dw</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/cnt_en" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">cnt_en</obj_property>
-      <obj_property name="ObjectShortName">cnt_en</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/cnt_en_reg" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">cnt_en_reg</obj_property>
-      <obj_property name="ObjectShortName">cnt_en_reg</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/enc_data" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">enc_data[0:40]</obj_property>
-      <obj_property name="ObjectShortName">enc_data[0:40]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/tx_busy" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">tx_busy</obj_property>
-      <obj_property name="ObjectShortName">tx_busy</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/data_reg" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">data_reg[0:16]</obj_property>
-      <obj_property name="ObjectShortName">data_reg[0:16]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/busy_cnt" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">busy_cnt[5:0]</obj_property>
-      <obj_property name="ObjectShortName">busy_cnt[5:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_encoder/parity" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">parity</obj_property>
-      <obj_property name="ObjectShortName">parity</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/rx_dw_BC" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rx_dw_BC</obj_property>
-      <obj_property name="ObjectShortName">rx_dw_BC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/rxdw" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rxdw[0:5]</obj_property>
-      <obj_property name="ObjectShortName">rxdw[0:5]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/rxdw_enc" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rxdw_enc[0:2]</obj_property>
-      <obj_property name="ObjectShortName">rxdw_enc[0:2]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/rx_data_word" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rx_data_word</obj_property>
-      <obj_property name="ObjectShortName">rx_data_word</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/rxdw_edge" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rxdw_edge</obj_property>
-      <obj_property name="ObjectShortName">rxdw_edge</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider227" type="divider">
-      <obj_property name="label">core</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/sync_dw" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sync_dw</obj_property>
-      <obj_property name="ObjectShortName">sync_dw</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/sync_csw" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sync_csw</obj_property>
-      <obj_property name="ObjectShortName">sync_csw</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/data_edge" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">data_edge</obj_property>
-      <obj_property name="ObjectShortName">data_edge</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/data_sample" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">data_sample</obj_property>
-      <obj_property name="ObjectShortName">data_sample</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="CustomSignalColor">#ffff00</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/cnt_enb" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">cnt_enb</obj_property>
-      <obj_property name="ObjectShortName">cnt_enb</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/cnt" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">cnt[7:0]</obj_property>
-      <obj_property name="ObjectShortName">cnt[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/bit_cnt" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">bit_cnt[4:0]</obj_property>
-      <obj_property name="ObjectShortName">bit_cnt[4:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/sync_csw_reg" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sync_csw_reg</obj_property>
-      <obj_property name="ObjectShortName">sync_csw_reg</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/sync_dw_reg" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sync_dw_reg</obj_property>
-      <obj_property name="ObjectShortName">sync_dw_reg</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/data_sftreg" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">data_sftreg[0:4]</obj_property>
-      <obj_property name="ObjectShortName">data_sftreg[0:4]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/sync_sftreg" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">sync_sftreg[0:23]</obj_property>
-      <obj_property name="ObjectShortName">sync_sftreg[0:23]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/data_sftreg_out" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">data_sftreg_out[0:31]</obj_property>
-      <obj_property name="ObjectShortName">data_sftreg_out[0:31]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/rx_csw" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rx_csw</obj_property>
-      <obj_property name="ObjectShortName">rx_csw</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/rx_dw" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rx_dw</obj_property>
-      <obj_property name="ObjectShortName">rx_dw</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/sync_csw" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sync_csw</obj_property>
-      <obj_property name="ObjectShortName">sync_csw</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/u1_core/sync_dw" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sync_dw</obj_property>
-      <obj_property name="ObjectShortName">sync_dw</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider89" type="divider">
-      <obj_property name="label">test</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/rx_data_BC" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rx_data_BC[2:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_data_BC[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/rx_data_n_BC" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rx_data_n_BC[2:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_data_n_BC[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/enc_clk" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">enc_clk</obj_property>
-      <obj_property name="ObjectShortName">enc_clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/rxa_p_BC" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rxa_p_BC</obj_property>
-      <obj_property name="ObjectShortName">rxa_p_BC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/dec_clk" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">dec_clk</obj_property>
-      <obj_property name="ObjectShortName">dec_clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/sysclk" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sysclk</obj_property>
-      <obj_property name="ObjectShortName">sysclk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/tx_busy_test" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">tx_busy_test</obj_property>
-      <obj_property name="ObjectShortName">tx_busy_test</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/tx_dval_source" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">tx_dval_source</obj_property>
-      <obj_property name="ObjectShortName">tx_dval_source</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/source" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">source</obj_property>
-      <obj_property name="ObjectShortName">source</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/rxa_p_BC" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rxa_p_BC</obj_property>
-      <obj_property name="ObjectShortName">rxa_p_BC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/rxa_n_BC" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rxa_n_BC</obj_property>
-      <obj_property name="ObjectShortName">rxa_n_BC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/BC_source/word_cnt" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">word_cnt[9:0]</obj_property>
-      <obj_property name="ObjectShortName">word_cnt[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider227" type="divider">
-      <obj_property name="label">outputs</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
    </wvobject>
    <wvobject fp_name="/test_1553/DUT/bypass" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">bypass</obj_property>
       <obj_property name="ObjectShortName">bypass</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_1553/DUT/tx_data_dw" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">tx_data_dw</obj_property>
-      <obj_property name="ObjectShortName">tx_data_dw</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/tx_data_n_dw" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">tx_data_n_dw</obj_property>
-      <obj_property name="ObjectShortName">tx_data_n_dw</obj_property>
-   </wvobject>
    <wvobject fp_name="/test_1553/DUT/tx_dval" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">tx_dval</obj_property>
       <obj_property name="ObjectShortName">tx_dval</obj_property>
@@ -280,14 +470,6 @@
    <wvobject fp_name="/test_1553/DUT/tx_dval_csw" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">tx_dval_csw</obj_property>
       <obj_property name="ObjectShortName">tx_dval_csw</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/tx_data_BC" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">tx_data_BC</obj_property>
-      <obj_property name="ObjectShortName">tx_data_BC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_1553/DUT/tx_data_n_BC" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">tx_data_n_BC</obj_property>
-      <obj_property name="ObjectShortName">tx_data_n_BC</obj_property>
    </wvobject>
    <wvobject fp_name="/test_1553/DUT/txa_p_BC" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">txa_p_BC</obj_property>
@@ -296,5 +478,101 @@
    <wvobject fp_name="/test_1553/DUT/txa_n_BC" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">txa_n_BC</obj_property>
       <obj_property name="ObjectShortName">txa_n_BC</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider68" type="divider">
+      <obj_property name="label">New Divider</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_encoder/dwcnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dwcnt[5:0]</obj_property>
+      <obj_property name="ObjectShortName">dwcnt[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_encoder/dwcnt_mcode" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dwcnt_mcode[0:4]</obj_property>
+      <obj_property name="ObjectShortName">dwcnt_mcode[0:4]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_encoder/dwcnt_mcode_reg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dwcnt_mcode_reg[0:5]</obj_property>
+      <obj_property name="ObjectShortName">dwcnt_mcode_reg[0:5]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/rt_filter" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rt_filter[0:4]</obj_property>
+      <obj_property name="ObjectShortName">rt_filter[0:4]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/sub_filter" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sub_filter[0:4]</obj_property>
+      <obj_property name="ObjectShortName">sub_filter[0:4]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_core/dwcnt_mcode" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dwcnt_mcode[0:4]</obj_property>
+      <obj_property name="ObjectShortName">dwcnt_mcode[0:4]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/address_match" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">address_match</obj_property>
+      <obj_property name="ObjectShortName">address_match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/rtadd_match" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rtadd_match</obj_property>
+      <obj_property name="ObjectShortName">rtadd_match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/subadd_match" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">subadd_match</obj_property>
+      <obj_property name="ObjectShortName">subadd_match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_encoder/tx_dval" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_dval</obj_property>
+      <obj_property name="ObjectShortName">tx_dval</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/filter_match" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">filter_match</obj_property>
+      <obj_property name="ObjectShortName">filter_match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/txdval_dd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txdval_dd</obj_property>
+      <obj_property name="ObjectShortName">txdval_dd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/txdval_d" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txdval_d</obj_property>
+      <obj_property name="ObjectShortName">txdval_d</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/tx_dval_enc" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_dval_enc</obj_property>
+      <obj_property name="ObjectShortName">tx_dval_enc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/txdval" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txdval</obj_property>
+      <obj_property name="ObjectShortName">txdval</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/txdval_enc" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txdval_enc</obj_property>
+      <obj_property name="ObjectShortName">txdval_enc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/end_of_payload" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">end_of_payload</obj_property>
+      <obj_property name="ObjectShortName">end_of_payload</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_encoder/endofpayload" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">endofpayload</obj_property>
+      <obj_property name="ObjectShortName">endofpayload</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_encoder/tx_csw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_csw</obj_property>
+      <obj_property name="ObjectShortName">tx_csw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_encoder/tx_dw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_dw</obj_property>
+      <obj_property name="ObjectShortName">tx_dw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_1553/DUT/u1_encoder/firstword" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">firstword</obj_property>
+      <obj_property name="ObjectShortName">firstword</obj_property>
    </wvobject>
 </wave_config>

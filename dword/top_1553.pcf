@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Mar 23 11:34:54 2018
+// Written by: Map P.20131013 on Wed Apr 18 13:42:49 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -37,41 +37,63 @@ TIMEGRP clk_out = BEL "reset_slow_buf_0" BEL "reset_slow_buf_1" BEL
         "reset_slow_buf_5" BEL "reset_slow_buf_6" BEL "reset_slow_buf_7" BEL
         "clk_out_BUFG" BEL "reset_slow" BEL "reset_slow_1";
 TIMEGRP clock_generation_clkdv = BEL "rxdw_enc_0" BEL "rxdw_enc_1" BEL
-        "rxcsw_enc_2" BEL "rxcsw_enc_1" BEL "rxcsw_enc_0" BEL "enc_cnt_0" BEL
-        "enc_cnt_1" BEL "enc_cnt_2" BEL "enc_cnt_3" BEL
-        "clock_generation/clkout1_buf" BEL "u1_encoder/dwcnt_5" BEL
-        "u1_encoder/dwcnt_4" BEL "u1_encoder/dwcnt_3" BEL "u1_encoder/dwcnt_2"
-        BEL "u1_encoder/dwcnt_1" BEL "u1_encoder/dwcnt_0" BEL
+        "rxcsw_enc_2" BEL "rxcsw_enc_1" BEL "rxcsw_enc_0" BEL "filtermatch_d"
+        BEL "txdval_d" BEL "filtermatch_dd" BEL "txdval_dd" BEL
+        "filtermatch_ddd" BEL "txdval_ddd" BEL "enc_cnt_0" BEL "enc_cnt_1" BEL
+        "enc_cnt_2" BEL "enc_cnt_3" BEL "clock_generation/clkout1_buf" BEL
         "u1_encoder/busy_cnt_dummy_5" BEL "u1_encoder/busy_cnt_dummy_4" BEL
         "u1_encoder/busy_cnt_dummy_3" BEL "u1_encoder/busy_cnt_dummy_2" BEL
         "u1_encoder/busy_cnt_dummy_1" BEL "u1_encoder/busy_cnt_dummy_0" BEL
         "u1_encoder/busy_cnt_5" BEL "u1_encoder/busy_cnt_4" BEL
         "u1_encoder/busy_cnt_3" BEL "u1_encoder/busy_cnt_2" BEL
         "u1_encoder/busy_cnt_1" BEL "u1_encoder/busy_cnt_0" BEL
-        "u1_encoder/tx_data" BEL "u1_encoder/tx_data_n" BEL
-        "u1_encoder/cnt_en_reg_dummy" BEL "u1_encoder/cnt_en_reg" BEL
-        "u1_encoder/tx_dval" BEL "u1_encoder/tx_dval_csw" BEL
-        "u1_encoder/sync_bits_n_3" BEL "u1_encoder/sync_bits_n_0" BEL
-        "u1_encoder/data_reg_16" BEL "u1_encoder/cnt_en" BEL
-        "u1_encoder/cnt_en_dummy";
+        "u1_encoder/dwcnt_5" BEL "u1_encoder/dwcnt_4" BEL "u1_encoder/dwcnt_3"
+        BEL "u1_encoder/dwcnt_2" BEL "u1_encoder/dwcnt_1" BEL
+        "u1_encoder/dwcnt_0" BEL "u1_encoder/tx_data" BEL
+        "u1_encoder/tx_data_n" BEL "u1_encoder/data_reg_0" BEL
+        "u1_encoder/data_reg_1" BEL "u1_encoder/data_reg_9" BEL
+        "u1_encoder/data_reg_10" BEL "u1_encoder/data_reg_15" BEL
+        "u1_encoder/data_reg_16" BEL "u1_encoder/cnt_en_reg" BEL
+        "u1_encoder/cnt_en_reg_dummy" BEL "u1_encoder/tx_dval" BEL
+        "u1_encoder/sync_bits_3" BEL "u1_encoder/sync_bits_0" BEL
+        "u1_encoder/tx_dval_csw" BEL "u1_encoder/dwcnt_mcode_reg" BEL
+        "u1_encoder/end_of_payload_d" BEL "filtermatch" BEL
+        "u1_encoder/cnt_en_dummy" BEL "u1_encoder/cnt_en";
 PIN SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1> = BEL
         "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1" PINNAME O;
 PIN clock_generation/dcm_sp_inst_pins<3> = BEL "clock_generation/dcm_sp_inst"
         PINNAME CLKFB;
-TIMEGRP clock_generation_clk2x = BEL "rx_data_n_BC_0" BEL "rx_data_n_BC_1" BEL
-        "rx_data_n_BC_2" BEL "rx_data_BC_0" BEL "rx_data_BC_1" BEL
-        "rx_data_BC_2" BEL "rx_data_RT_0" BEL "rx_data_RT_1" BEL
-        "rx_data_RT_2" BEL "rx_data_n_RT_0" BEL "rx_data_n_RT_1" BEL
-        "rx_data_n_RT_2" BEL "clock_generation/clkout3_buf" BEL
-        "clock_generation/clkf_buf" PIN
+TIMEGRP clock_generation_clk2x = BEL "rx_data_BC_0" BEL "rx_data_BC_1" BEL
+        "rx_data_BC_2" BEL "rx_data_n_RT_0" BEL "rx_data_n_RT_1" BEL
+        "rx_data_n_RT_2" BEL "rx_data_n_BC_0" BEL "rx_data_n_BC_1" BEL
+        "rx_data_n_BC_2" BEL "rx_data_RT_0" BEL "rx_data_RT_1" BEL
+        "rx_data_RT_2" BEL "clock_generation/clkout3_buf" BEL
+        "Mshreg_dval_delay_13" BEL "dval_delay_131" BEL
+        "Mshreg_tx_data_delay_13" BEL "tx_data_delay_131" BEL
+        "Mshreg_tx_data_delay_n_13" BEL "tx_data_delay_n_131" BEL
+        "reset_slow_1_shift1" BEL "reset_slow_1_shift2" BEL
+        "reset_slow_1_shift3" BEL "reset_slow_1_shift4" BEL
+        "reset_slow_1_shift5" BEL "reset_slow_1_shift6" BEL
+        "reset_slow_1_shift7" BEL "reset_slow_1_shift8" BEL
+        "reset_slow_1_shift9" BEL "reset_slow_1_shift10" BEL
+        "reset_slow_1_shift11" BEL "reset_slow_1_shift12" BEL
+        "reset_slow_1_shift13" BEL "dval_delay_13" BEL "tx_data_delay_13" BEL
+        "tx_data_delay_n_13" BEL "clock_generation/clkf_buf" PIN
         "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1>" PIN
         "clock_generation/dcm_sp_inst_pins<3>";
 TIMEGRP clock_generation_clkfx = BEL "rxdw_5" BEL "rxdw_4" BEL "rxdw_3" BEL
         "rxdw_2" BEL "rxdw_1" BEL "rxdw_0" BEL "rxcsw_5" BEL "rxcsw_4" BEL
         "rxcsw_3" BEL "rxcsw_2" BEL "rxcsw_1" BEL "rxcsw_0" BEL
-        "clock_generation/clkout2_buf" BEL "u1_core/cnt_7" BEL "u1_core/cnt_6"
-        BEL "u1_core/cnt_5" BEL "u1_core/cnt_4" BEL "u1_core/cnt_3" BEL
+        "clock_generation/clkout2_buf" BEL "u1_core/bit_cnt_4" BEL
+        "u1_core/bit_cnt_3" BEL "u1_core/bit_cnt_2" BEL "u1_core/bit_cnt_1"
+        BEL "u1_core/bit_cnt_0" BEL "u1_core/cnt_7" BEL "u1_core/cnt_6" BEL
+        "u1_core/cnt_5" BEL "u1_core/cnt_4" BEL "u1_core/cnt_3" BEL
         "u1_core/cnt_2" BEL "u1_core/cnt_1" BEL "u1_core/cnt_0" BEL
+        "u1_core/subaddress_0" BEL "u1_core/subaddress_1" BEL
+        "u1_core/subaddress_2" BEL "u1_core/subaddress_3" BEL
+        "u1_core/subaddress_4" BEL "u1_core/rtaddress_0" BEL
+        "u1_core/rtaddress_1" BEL "u1_core/rtaddress_2" BEL
+        "u1_core/rtaddress_3" BEL "u1_core/rtaddress_4" BEL
         "u1_core/sync_sftreg_0" BEL "u1_core/sync_sftreg_1" BEL
         "u1_core/sync_sftreg_2" BEL "u1_core/sync_sftreg_3" BEL
         "u1_core/sync_sftreg_4" BEL "u1_core/sync_sftreg_5" BEL
@@ -84,7 +106,7 @@ TIMEGRP clock_generation_clkfx = BEL "rxdw_5" BEL "rxdw_4" BEL "rxdw_3" BEL
         "u1_core/sync_sftreg_18" BEL "u1_core/sync_sftreg_19" BEL
         "u1_core/sync_sftreg_20" BEL "u1_core/sync_sftreg_21" BEL
         "u1_core/sync_sftreg_22" BEL "u1_core/sync_sftreg_23" BEL
-        "u1_core/synccsw_d" BEL "u1_core/syncdw_d" BEL "u1_core/data_sftreg_0"
+        "u1_core/syncdw_d" BEL "u1_core/synccsw_d" BEL "u1_core/data_sftreg_0"
         BEL "u1_core/data_sftreg_1" BEL "u1_core/data_sftreg_2" BEL
         "u1_core/data_sftreg_3" BEL "u1_core/data_sftreg_4" BEL
         "u2_core/sync_sftreg_0" BEL "u2_core/sync_sftreg_1" BEL
@@ -98,39 +120,38 @@ TIMEGRP clock_generation_clkfx = BEL "rxdw_5" BEL "rxdw_4" BEL "rxdw_3" BEL
         "u2_core/sync_sftreg_16" BEL "u2_core/sync_sftreg_17" BEL
         "u2_core/sync_sftreg_18" BEL "u2_core/sync_sftreg_19" BEL
         "u2_core/sync_sftreg_20" BEL "u2_core/sync_sftreg_21" BEL
-        "u2_core/sync_sftreg_22" BEL "u2_core/sync_sftreg_23" BEL
-        "u2_core/data_sftreg_0" BEL "u2_core/data_sftreg_1" BEL
-        "u2_core/data_sftreg_2" BEL "u2_core/data_sftreg_3" BEL
-        "u2_core/data_sftreg_4" BEL "u1_core/sync_csw_reg" BEL
-        "u1_core/cnt_enb" BEL "u1_core/sync_dw_reg" BEL
-        "u1_core/Mshreg_data_sftreg_out_n_14_0" BEL
-        "u1_core/Mshreg_data_sftreg_out_n_14_1" BEL
-        "u1_core/data_sftreg_out_n_141" BEL
-        "u1_core/Mshreg_data_sftreg_out_14" BEL "u1_core/data_sftreg_out_141"
-        BEL "u2_core/Mshreg_data_sftreg_out_n_14_0" BEL
-        "u2_core/Mshreg_data_sftreg_out_n_14_1" BEL
-        "u2_core/data_sftreg_out_n_141" BEL
-        "u2_core/Mshreg_data_sftreg_out_14" BEL "u2_core/data_sftreg_out_141"
-        BEL "reset_slow_shift1" BEL "reset_slow_shift2" BEL
-        "reset_slow_shift3" BEL "reset_slow_shift4" BEL "reset_slow_shift5"
-        BEL "reset_slow_shift6" BEL "reset_slow_shift7" BEL
-        "reset_slow_shift8" BEL "reset_slow_shift9" BEL "reset_slow_shift10"
-        BEL "reset_slow_shift11" BEL "reset_slow_shift12" BEL
-        "reset_slow_shift13" BEL "reset_slow_shift14" BEL "reset_slow_shift15"
-        BEL "reset_slow_shift16" BEL "reset_slow_shift17" BEL
-        "reset_slow_shift18" BEL "reset_slow_shift19" BEL "reset_slow_shift20"
-        BEL "reset_slow_shift21" BEL "reset_slow_shift22" BEL
-        "reset_slow_shift23" BEL "reset_slow_shift24" BEL "reset_slow_shift25"
-        BEL "reset_slow_shift26" BEL "reset_slow_shift27" BEL
-        "reset_slow_shift28" BEL "reset_slow_shift29" BEL "reset_slow_shift30"
-        BEL "reset_slow_shift31" BEL "reset_slow_shift32" BEL
-        "reset_slow_shift33" BEL "reset_slow_shift34" BEL "reset_slow_shift35"
-        BEL "reset_slow_shift36" BEL "reset_slow_shift37" BEL
-        "reset_slow_shift38" BEL "reset_slow_shift39" BEL "reset_slow_shift40"
-        BEL "reset_slow_shift41" BEL "reset_slow_shift42" BEL
-        "reset_slow_shift43" BEL "u1_core/data_sftreg_out_14" BEL
-        "u2_core/data_sftreg_out_14" BEL "u1_core/data_sftreg_out_n_14" BEL
-        "u2_core/data_sftreg_out_n_14";
+        "u2_core/sync_sftreg_22" BEL "u2_core/data_sftreg_3" BEL
+        "u2_core/data_sftreg_4" BEL "u1_core/sync_dw_reg" BEL
+        "u1_core/sync_csw_reg" BEL "u1_core/cnt_enb" BEL
+        "u1_core/Mshreg_data_sftreg_out_n_15_0" BEL
+        "u1_core/Mshreg_data_sftreg_out_n_15_1" BEL
+        "u1_core/data_sftreg_out_n_151" BEL
+        "u1_core/Mshreg_data_sftreg_out_15" BEL "u1_core/data_sftreg_out_151"
+        BEL "u2_core/Mshreg_data_sftreg_out_n_15_0" BEL
+        "u2_core/Mshreg_data_sftreg_out_n_15_1" BEL
+        "u2_core/data_sftreg_out_n_151" BEL
+        "u2_core/Mshreg_data_sftreg_out_15" BEL "u2_core/data_sftreg_out_151"
+        BEL "u2_core/Mshreg_sync_sftreg_23" BEL "u2_core/sync_sftreg_231" BEL
+        "reset_slow_shift1" BEL "reset_slow_shift2" BEL "reset_slow_shift3"
+        BEL "reset_slow_shift4" BEL "reset_slow_shift5" BEL
+        "reset_slow_shift6" BEL "reset_slow_shift7" BEL "reset_slow_shift8"
+        BEL "reset_slow_shift9" BEL "reset_slow_shift10" BEL
+        "reset_slow_shift11" BEL "reset_slow_shift12" BEL "reset_slow_shift13"
+        BEL "reset_slow_shift14" BEL "reset_slow_shift15" BEL
+        "reset_slow_shift16" BEL "reset_slow_shift17" BEL "reset_slow_shift18"
+        BEL "reset_slow_shift19" BEL "reset_slow_shift20" BEL
+        "reset_slow_shift21" BEL "reset_slow_shift22" BEL "reset_slow_shift23"
+        BEL "reset_slow_shift24" BEL "reset_slow_shift25" BEL
+        "reset_slow_shift26" BEL "reset_slow_shift27" BEL "reset_slow_shift28"
+        BEL "reset_slow_shift29" BEL "reset_slow_shift30" BEL
+        "reset_slow_shift31" BEL "reset_slow_shift32" BEL "reset_slow_shift33"
+        BEL "reset_slow_shift34" BEL "reset_slow_shift35" BEL
+        "reset_slow_shift36" BEL "reset_slow_shift37" BEL "reset_slow_shift38"
+        BEL "reset_slow_shift39" BEL "reset_slow_shift40" BEL
+        "reset_slow_shift41" BEL "reset_slow_shift42" BEL "reset_slow_shift43"
+        BEL "reset_slow_shift44" BEL "u2_core/sync_sftreg_23" BEL
+        "u1_core/data_sftreg_out_15" BEL "u2_core/data_sftreg_out_15" BEL
+        "u1_core/data_sftreg_out_n_15" BEL "u2_core/data_sftreg_out_n_15";
 PIN SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_0"
         PINNAME DIVCLK;
 PIN clock_generation/dcm_sp_inst_pins<5> = BEL "clock_generation/dcm_sp_inst"
@@ -138,12 +159,12 @@ PIN clock_generation/dcm_sp_inst_pins<5> = BEL "clock_generation/dcm_sp_inst"
 TIMEGRP fxclk = PIN "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
         "clock_generation/dcm_sp_inst_pins<5>";
 ts_fxclk = PERIOD TIMEGRP "fxclk" 48 MHz HIGH 50%;
-TS_clock_generation_clkdv = PERIOD TIMEGRP "clock_generation_clkdv" ts_fxclk /
-        24 HIGH 50%;
 TS_clock_generation_clk2x = PERIOD TIMEGRP "clock_generation_clk2x" ts_fxclk
         HIGH 50%;
 TS_clock_generation_clkfx = PERIOD TIMEGRP "clock_generation_clkfx" ts_fxclk *
         0.166666667 HIGH 50%;
 TS_clk_out = PERIOD TIMEGRP "clk_out" ts_fxclk / 2 HIGH 50%;
+TS_clock_generation_clkdv = PERIOD TIMEGRP "clock_generation_clkdv" ts_fxclk /
+        24 HIGH 50%;
 SCHEMATIC END;
 

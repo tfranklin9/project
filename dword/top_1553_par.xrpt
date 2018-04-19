@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Fri Mar 23 11:35:05 2018">
+  <application stringID="par" timeStamp="Wed Apr 18 13:42:55 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\SynaptiCAD\bin\win32;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;c:\Qt\Tools\mingw530_32\bin\;c:\Qt\5.9.1\mingw53_32\bin\;C:\SynaptiCAD\bin;C:\Users\tfranklin9\AppData\Local\Programs\Python\Python35\Scripts\;C:\Users\tfranklin9\AppData\Local\Programs\Python\Python35\;C:\Users\tfranklin9\AppData\Local\Microsoft\WindowsApps;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\iverilog\bin;C:\iverilog\gtkwave\bin;c:\altera\13.0sp1\quartus\bin64\;&quot;C:\SynaptiCAD\bin\win32;C:\Users\tfranklin9\Downloads\verilog2vhdl\11APR2013\bin&quot;;C:\Users\tfranklin9\AppData\Roaming\Dashlane\5.8.0.17084\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\tfranklin9\AppData\Roaming\Dashlane\5.8.0.17084\ucrt"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\SynaptiCAD\bin\win32;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;c:\Qt\Tools\mingw530_32\bin\;c:\Qt\5.9.1\mingw53_32\bin\;C:\SynaptiCAD\bin;C:\Program Files\Git\cmd;C:\Users\tfranklin9\AppData\Local\Programs\Python\Python35\Scripts\;C:\Users\tfranklin9\AppData\Local\Programs\Python\Python35\;C:\Users\tfranklin9\AppData\Local\Microsoft\WindowsApps;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\iverilog\bin;C:\iverilog\gtkwave\bin;c:\altera\13.0sp1\quartus\bin64\;&quot;C:\SynaptiCAD\bin\win32;C:\Users\tfranklin9\Downloads\verilog2vhdl\11APR2013\bin&quot;;C:\Users\tfranklin9\AppData\Roaming\Dashlane\5.10.0.18444\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\tfranklin9\AppData\Roaming\Dashlane\5.10.0.18444\ucrt"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -51,12 +51,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="22 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="20 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="9 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="9 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="23 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="20 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="10 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="9 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -71,40 +71,48 @@
           <column label="Net Skew(ns)" stringID="NET_SKEW"/>
           <column label="Max Delay(ns)" stringID="MAX_DELAY"/>
           <row stringID="row" value="1">
-            <item label="Clock Net" stringID="CLOCK_NET" value="enc_clk"/>
-            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
-            <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y1"/>
-            <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="16.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.208000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.756000"/>
-          </row>
-          <row stringID="row" value="2">
-            <item label="Clock Net" stringID="CLOCK_NET" value="clk_out_BUFG"/>
-            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
-            <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y2"/>
-            <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="3.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.002000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.548000"/>
-          </row>
-          <row stringID="row" value="3">
-            <item label="Clock Net" stringID="CLOCK_NET" value="sys_clk"/>
-            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
-            <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X3Y13"/>
-            <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="4.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.047000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.599000"/>
-          </row>
-          <row stringID="row" value="4">
             <item label="Clock Net" stringID="CLOCK_NET" value="dec_clk"/>
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y4"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="33.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.189000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.731000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="40.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.150000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.678000"/>
+          </row>
+          <row stringID="row" value="2">
+            <item label="Clock Net" stringID="CLOCK_NET" value="enc_clk"/>
+            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
+            <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y1"/>
+            <item label="Locked" stringID="LOCKED" value="No"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="22.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.222000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.756000"/>
+          </row>
+          <row stringID="row" value="3">
+            <item label="Clock Net" stringID="CLOCK_NET" value="clk_out_BUFG"/>
+            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
+            <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y2"/>
+            <item label="Locked" stringID="LOCKED" value="No"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="4.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.009000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.542000"/>
+          </row>
+          <row stringID="row" value="4">
+            <item label="Clock Net" stringID="CLOCK_NET" value="sys_clk"/>
+            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
+            <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X3Y13"/>
+            <item label="Locked" stringID="LOCKED" value="No"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="10.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.083000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.609000"/>
+          </row>
+          <row stringID="row" value="5">
+            <item label="Clock Net" stringID="CLOCK_NET" value="u1_encoder/dwcnt&lt;5>"/>
+            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
+            <item label="Resource" stringID="RESOURCE" value="Local"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="15.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.231000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="0.892000"/>
           </row>
         </table>
       </section>
@@ -1983,14 +1991,14 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Fri Mar 23 11:35:06 2018">
+  <application stringID="Par" timeStamp="Wed Apr 18 13:42:55 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\SynaptiCAD\bin\win32;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;c:\Qt\Tools\mingw530_32\bin\;c:\Qt\5.9.1\mingw53_32\bin\;C:\SynaptiCAD\bin;C:\Users\tfranklin9\AppData\Local\Programs\Python\Python35\Scripts\;C:\Users\tfranklin9\AppData\Local\Programs\Python\Python35\;C:\Users\tfranklin9\AppData\Local\Microsoft\WindowsApps;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\iverilog\bin;C:\iverilog\gtkwave\bin;c:\altera\13.0sp1\quartus\bin64\;&quot;C:\SynaptiCAD\bin\win32;C:\Users\tfranklin9\Downloads\verilog2vhdl\11APR2013\bin&quot;;C:\Users\tfranklin9\AppData\Roaming\Dashlane\5.8.0.17084\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\tfranklin9\AppData\Roaming\Dashlane\5.8.0.17084\ucrt"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\SynaptiCAD\bin\win32;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;c:\Qt\Tools\mingw530_32\bin\;c:\Qt\5.9.1\mingw53_32\bin\;C:\SynaptiCAD\bin;C:\Program Files\Git\cmd;C:\Users\tfranklin9\AppData\Local\Programs\Python\Python35\Scripts\;C:\Users\tfranklin9\AppData\Local\Programs\Python\Python35\;C:\Users\tfranklin9\AppData\Local\Microsoft\WindowsApps;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\iverilog\bin;C:\iverilog\gtkwave\bin;c:\altera\13.0sp1\quartus\bin64\;&quot;C:\SynaptiCAD\bin\win32;C:\Users\tfranklin9\Downloads\verilog2vhdl\11APR2013\bin&quot;;C:\Users\tfranklin9\AppData\Roaming\Dashlane\5.10.0.18444\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\tfranklin9\AppData\Roaming\Dashlane\5.10.0.18444\ucrt"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -2021,16 +2029,16 @@
     </section>
     <task label="Device Utilization Summary" stringID="PAR_DEVICE_UTLIZATION">
       <section stringID="PAR_SLICE_REPORTING">
-        <item AVAILABLE="30064" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="194">
-          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="194"/>
-          <item dataType="int" stringID="PAR_NUM_SLICE_LATCH" value="0"/>
+        <item AVAILABLE="30064" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="246">
+          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="241"/>
+          <item dataType="int" stringID="PAR_NUM_SLICE_LATCH" value="5"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHTHRU" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="0"/>
         </item>
-        <item AVAILABLE="15032" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="120">
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="60"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="20"/>
+        <item AVAILABLE="15032" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="163">
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="1"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="88"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="33"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ANDO6" value="0"/>
@@ -2041,24 +2049,24 @@
           <item dataType="int" stringID="PAR_NUM_SPRAM_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SPRAM_O5ANDO6" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SRL_O5ONLY" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_SRL_O6ONLY" value="6"/>
+          <item dataType="int" stringID="PAR_NUM_SRL_O6ONLY" value="10"/>
           <item dataType="int" stringID="PAR_NUM_SRL_O5ANDO6" value="0"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO6" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO5" value="34"/>
+          <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO5" value="31"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_O5ANDO6" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_FLOP" value="34"/>
+          <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_FLOP" value="31"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_CARRY4" value="0"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-        <item AVAILABLE="3758" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="62">
-          <item AVAILABLE="963" dataType="int" stringID="PAR_NUM_SLICEL" value="4"/>
-          <item AVAILABLE="916" dataType="int" stringID="PAR_NUM_SLICEM" value="3"/>
-          <item AVAILABLE="1879" dataType="int" stringID="PAR_NUM_SLICEX" value="55"/>
+        <item AVAILABLE="3758" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="80">
+          <item AVAILABLE="963" dataType="int" stringID="PAR_NUM_SLICEL" value="5"/>
+          <item AVAILABLE="916" dataType="int" stringID="PAR_NUM_SLICEM" value="5"/>
+          <item AVAILABLE="1879" dataType="int" stringID="PAR_NUM_SLICEX" value="70"/>
         </item>
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="182">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="30"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="62"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="90"/>
+        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="242">
+          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="39"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="79"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="124"/>
         </item>
       </section>
       <section stringID="PAR_IOB_REPORTING">
