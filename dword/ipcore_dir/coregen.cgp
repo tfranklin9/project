@@ -1,6 +1,6 @@
 SET busformat = BusFormatAngleBracketNotRipped
 SET designentry = VHDL
-SET device = xc6slx25
+SET device = xc6slx16
 SET devicefamily = spartan6
 SET flowvendor = Other
 SET package = ftg256

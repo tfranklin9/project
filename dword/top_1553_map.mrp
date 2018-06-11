@@ -3,53 +3,53 @@ Xilinx Mapping Report File for Design 'top_1553'
 
 Design Information
 ------------------
-Command Line   : map -intstyle ise -p xc6slx25-ftg256-2 -w -logic_opt off -ol
+Command Line   : map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol
 high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
 -pr off -lc off -power off -o top_1553_map.ncd top_1553.ngd top_1553.pcf 
-Target Device  : xc6slx25
+Target Device  : xc6slx16
 Target Package : ftg256
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Wed Apr 18 13:42:42 2018
+Mapped Date    : Fri Jun 08 12:26:32 2018
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Slice Logic Utilization:
-  Number of Slice Registers:                   246 out of  30,064    1%
-    Number used as Flip Flops:                 241
+  Number of Slice Registers:                   212 out of  18,224    1%
+    Number used as Flip Flops:                 207
     Number used as Latches:                      5
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        163 out of  15,032    1%
-    Number used as logic:                      122 out of  15,032    1%
-      Number using O6 output only:              88
-      Number using O5 output only:               1
+  Number of Slice LUTs:                        153 out of   9,112    1%
+    Number used as logic:                      120 out of   9,112    1%
+      Number using O6 output only:              87
+      Number using O5 output only:               0
       Number using O5 and O6:                   33
       Number used as ROM:                        0
-    Number used as Memory:                      10 out of   3,664    1%
+    Number used as Memory:                       6 out of   2,176    1%
       Number used as Dual Port RAM:              0
       Number used as Single Port RAM:            0
-      Number used as Shift Register:            10
-        Number using O6 output only:            10
+      Number used as Shift Register:             6
+        Number using O6 output only:             6
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:     31
-      Number with same-slice register load:     31
+    Number used exclusively as route-thrus:     27
+      Number with same-slice register load:     27
       Number with same-slice carry load:         0
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    80 out of   3,758    2%
-  Number of MUXCYs used:                         8 out of   7,516    1%
-  Number of LUT Flip Flop pairs used:          242
-    Number with an unused Flip Flop:            39 out of     242   16%
-    Number with an unused LUT:                  79 out of     242   32%
-    Number of fully used LUT-FF pairs:         124 out of     242   51%
+  Number of occupied Slices:                    71 out of   2,278    3%
+  Number of MUXCYs used:                         8 out of   4,556    1%
+  Number of LUT Flip Flop pairs used:          217
+    Number with an unused Flip Flop:            42 out of     217   19%
+    Number with an unused LUT:                  64 out of     217   29%
+    Number of fully used LUT-FF pairs:         111 out of     217   51%
     Number of unique control sets:              16
     Number of slice register sites lost
-      to control set restrictions:              56 out of  30,064    1%
+      to control set restrictions:              54 out of  18,224    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -62,28 +62,28 @@ IO Utilization:
     Number of LOCed IOBs:                       29 out of      30   96%
 
 Specific Feature Utilization:
-  Number of RAMB16BWERs:                         0 out of      52    0%
-  Number of RAMB8BWERs:                          0 out of     104    0%
+  Number of RAMB16BWERs:                         0 out of      32    0%
+  Number of RAMB8BWERs:                          0 out of      64    0%
   Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
     Number used as BUFIO2s:                      1
     Number used as BUFIO2_2CLKs:                 0
   Number of BUFIO2FB/BUFIO2FB_2CLKs:             1 out of      32    3%
     Number used as BUFIO2FBs:                    1
     Number used as BUFIO2FB_2CLKs:               0
-  Number of BUFG/BUFGMUXs:                       5 out of      16   31%
-    Number used as BUFGs:                        5
+  Number of BUFG/BUFGMUXs:                       4 out of      16   25%
+    Number used as BUFGs:                        4
     Number used as BUFGMUX:                      0
   Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
     Number used as DCMs:                         1
     Number used as DCM_CLKGENs:                  0
-  Number of ILOGIC2/ISERDES2s:                   0 out of     272    0%
-  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     272    0%
-  Number of OLOGIC2/OSERDES2s:                   0 out of     272    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     248    0%
+  Number of OLOGIC2/OSERDES2s:                   0 out of     248    0%
   Number of BSCANs:                              0 out of       4    0%
-  Number of BUFHs:                               0 out of     160    0%
+  Number of BUFHs:                               0 out of     128    0%
   Number of BUFPLLs:                             0 out of       8    0%
   Number of BUFPLL_MCBs:                         0 out of       4    0%
-  Number of DSP48A1s:                            0 out of      38    0%
+  Number of DSP48A1s:                            0 out of      32    0%
   Number of ICAPs:                               0 out of       1    0%
   Number of MCBs:                                0 out of       2    0%
   Number of PCILOGICSEs:                         0 out of       2    0%
@@ -92,10 +92,10 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.98
+Average Fanout of Non-Clock Nets:                3.14
 
-Peak Memory Usage:  502 MB
-Total REAL time to MAP completion:  7 secs 
+Peak Memory Usage:  467 MB
+Total REAL time to MAP completion:  9 secs 
 Total CPU time to MAP completion:   7 secs 
 
 Table of Contents
@@ -122,14 +122,14 @@ Section 2 - Warnings
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network reset_slow_2 has no load.
-INFO:LIT:395 - The above info message is repeated 38 more times for the
+INFO:LIT:243 - Logical network reset_slow_3 has no load.
+INFO:LIT:395 - The above info message is repeated 37 more times for the
    following (max. 5 shown):
-   reset_slow_3,
    switch8_IBUF,
    u2_core/blk_mem_1553_INST/doutb<17>,
    u2_core/blk_mem_1553_INST/doutb<16>,
-   u2_core/blk_mem_1553_INST/doutb<15>
+   u2_core/blk_mem_1553_INST/doutb<15>,
+   u2_core/blk_mem_1553_INST/doutb<14>
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
@@ -151,9 +151,9 @@ INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-  94 block(s) removed
+  29 block(s) removed
    2 block(s) optimized away
- 128 signal(s) removed
+  63 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -168,8 +168,6 @@ To quickly locate the original cause for the removal of a chain of logic, look
 above the place where that logic is listed in the trimming report, then locate
 the lines that are least indented (begin at the leftmost edge).
 
-The signal "reset_slow_2" is loadless and has been removed.
- Loadless block "reset_slow_2" (FF) removed.
 The signal "reset_slow_3" is loadless and has been removed.
  Loadless block "reset_slow_3" (FF) removed.
 The signal "u2_core/blk_mem_1553_INST/doutb<17>" is sourceless and has been
@@ -254,16 +252,16 @@ The trimmed logic reported below is either:
    2. part of disabled logic
    3. a side-effect of other trimmed logic
 
-The signal "first_wr" is unused and has been removed.
- Unused block "first_wr" (FF) removed.
-  The signal "reset_slow_inv" is unused and has been removed.
-   Unused block "reset_slow_inv1_INV_0" (BUF) removed.
-    The signal "reset_slow_4" is unused and has been removed.
-     Unused block "reset_slow_4" (FF) removed.
 The signal "mem_addra_BC<6>" is unused and has been removed.
  Unused block "mem_addra_BC_6" (FF) removed.
+  The signal "reset_slow_inv" is unused and has been removed.
+   Unused block "reset_slow_inv1_INV_0" (BUF) removed.
+    The signal "reset_slow_1" is unused and has been removed.
+     Unused block "reset_slow_1" (FF) removed.
   The signal "Mcount_mem_addra_BC6" is unused and has been removed.
    Unused block "Mcount_mem_addra_BC_xor<6>11" (ROM) removed.
+    The signal "first_wr" is unused and has been removed.
+     Unused block "first_wr" (FF) removed.
     The signal "mem_addra_BC<5>" is unused and has been removed.
      Unused block "mem_addra_BC_5" (FF) removed.
       The signal "Mcount_mem_addra_BC5" is unused and has been removed.
@@ -292,140 +290,12 @@ The signal "mem_addra_BC<6>" is unused and has been removed.
          Unused block "Mcount_mem_addra_BC_xor<3>111" (ROM) removed.
 The signal "mem_wea_BC" is unused and has been removed.
  Unused block "mem_wea_BC" (FF) removed.
-The signal "u1_core/GND_19_o_GND_19_o_AND_118_o" is unused and has been removed.
- Unused block "u1_core/GND_19_o_GND_19_o_AND_118_o" (ROM) removed.
+The signal "u1_core/GND_19_o_GND_19_o_AND_117_o" is unused and has been removed.
+ Unused block "u1_core/GND_19_o_GND_19_o_AND_117_o" (ROM) removed.
   The signal "N2" is unused and has been removed.
-   Unused block "u1_core/GND_19_o_GND_19_o_AND_118_o_SW0" (ROM) removed.
+   Unused block "u1_core/GND_19_o_GND_19_o_AND_117_o_SW0" (ROM) removed.
 The signal "u1_core/enb" is unused and has been removed.
  Unused block "u1_core/enb" (FF) removed.
-The signal "u2_core/_n0320_inv11" is unused and has been removed.
- Unused block "u2_core/_n0320_inv111" (ROM) removed.
-  The signal "u2_core/cnt<6>" is unused and has been removed.
-   Unused block "u2_core/cnt_6" (FF) removed.
-    The signal "u2_core/Mcount_cnt6" is unused and has been removed.
-     Unused block "u2_core/Mcount_cnt_xor<6>" (XOR) removed.
-      The signal "u2_core/Mcount_cnt_cy<5>" is unused and has been removed.
-       Unused block "u2_core/Mcount_cnt_cy<5>" (MUX) removed.
-        The signal "u2_core/Mcount_cnt_cy<4>" is unused and has been removed.
-         Unused block "u2_core/Mcount_cnt_cy<4>" (MUX) removed.
-          The signal "u2_core/Mcount_cnt_cy<3>" is unused and has been removed.
-           Unused block "u2_core/Mcount_cnt_cy<3>" (MUX) removed.
-            The signal "u2_core/Mcount_cnt_cy<2>" is unused and has been removed.
-             Unused block "u2_core/Mcount_cnt_cy<2>" (MUX) removed.
-              The signal "u2_core/Mcount_cnt_cy<1>" is unused and has been removed.
-               Unused block "u2_core/Mcount_cnt_cy<1>" (MUX) removed.
-                The signal "u2_core/Mcount_cnt_cy<0>" is unused and has been removed.
-                 Unused block "u2_core/Mcount_cnt_cy<0>" (MUX) removed.
-                  The signal "u2_core/cnt_enb" is unused and has been removed.
-                   Unused block "u2_core/cnt_enb" (FF) removed.
-                    The signal "u2_core/cnt_enb_rstpot" is unused and has been removed.
-                     Unused block "u2_core/cnt_enb_rstpot" (ROM) removed.
-                      The signal "N40" is unused and has been removed.
-                       Unused block "u2_core/cnt_enb_rstpot_SW1" (ROM) removed.
-                        The signal "u2_core/cnt<5>" is unused and has been removed.
-                         Unused block "u2_core/cnt_5" (FF) removed.
-                          The signal "u2_core/Mcount_cnt5" is unused and has been removed.
-                           Unused block "u2_core/Mcount_cnt_xor<5>" (XOR) removed.
-                            The signal "u2_core/Mcount_cnt_lut<5>" is unused and has been removed.
-                             Unused block "u2_core/Mcount_cnt_lut<5>" (ROM) removed.
-                        The signal "u2_core/cnt<3>" is unused and has been removed.
-                         Unused block "u2_core/cnt_3" (FF) removed.
-                          The signal "u2_core/Mcount_cnt3" is unused and has been removed.
-                           Unused block "u2_core/Mcount_cnt_xor<3>" (XOR) removed.
-                            The signal "u2_core/Mcount_cnt_lut<3>" is unused and has been removed.
-                             Unused block "u2_core/Mcount_cnt_lut<3>" (ROM) removed.
-                        The signal "u2_core/cnt<4>" is unused and has been removed.
-                         Unused block "u2_core/cnt_4" (FF) removed.
-                          The signal "u2_core/Mcount_cnt4" is unused and has been removed.
-                           Unused block "u2_core/Mcount_cnt_xor<4>" (XOR) removed.
-                            The signal "u2_core/Mcount_cnt_lut<4>" is unused and has been removed.
-                             Unused block "u2_core/Mcount_cnt_lut<4>" (ROM) removed.
-                        The signal "u2_core/cnt<7>" is unused and has been removed.
-                         Unused block "u2_core/cnt_7" (FF) removed.
-                          The signal "u2_core/Mcount_cnt7" is unused and has been removed.
-                           Unused block "u2_core/Mcount_cnt_xor<7>" (XOR) removed.
-                            The signal "u2_core/Mcount_cnt_cy<6>" is unused and has been removed.
-                             Unused block "u2_core/Mcount_cnt_cy<6>" (MUX) removed.
-                              The signal "u2_core/Mcount_cnt_lut<6>" is unused and has been removed.
-                               Unused block "u2_core/Mcount_cnt_lut<6>" (ROM) removed.
-                            The signal "u2_core/Mcount_cnt_lut<7>" is unused and has been removed.
-                             Unused block "u2_core/Mcount_cnt_lut<7>" (ROM) removed.
-                        The signal "u2_core/cnt<2>" is unused and has been removed.
-                         Unused block "u2_core/cnt_2" (FF) removed.
-                          The signal "u2_core/Mcount_cnt2" is unused and has been removed.
-                           Unused block "u2_core/Mcount_cnt_xor<2>" (XOR) removed.
-                            The signal "u2_core/Mcount_cnt_lut<2>" is unused and has been removed.
-                             Unused block "u2_core/Mcount_cnt_lut<2>" (ROM) removed.
-                      The signal "u2_core/cnt<0>" is unused and has been removed.
-                       Unused block "u2_core/cnt_0" (FF) removed.
-                        The signal "u2_core/Mcount_cnt" is unused and has been removed.
-                         Unused block "u2_core/Mcount_cnt_xor<0>" (XOR) removed.
-                          The signal "u2_core/Mcount_cnt_lut<0>" is unused and has been removed.
-                           Unused block "u2_core/Mcount_cnt_lut<0>" (ROM) removed.
-                      The signal "u2_core/cnt<1>" is unused and has been removed.
-                       Unused block "u2_core/cnt_1" (FF) removed.
-                        The signal "u2_core/Mcount_cnt1" is unused and has been removed.
-                         Unused block "u2_core/Mcount_cnt_xor<1>" (XOR) removed.
-                          The signal "u2_core/Mcount_cnt_lut<1>" is unused and has been removed.
-                           Unused block "u2_core/Mcount_cnt_lut<1>" (ROM) removed.
-                      The signal "u2_core/sync_dw" is unused and has been removed.
-                       Unused block "u2_core/sync_dw1" (ROM) removed.
-                        The signal "u2_core/syncdw" is unused and has been removed.
-                         Unused block "u2_core/syncdw5" (ROM) removed.
-                          The signal "u2_core/syncdw1" is unused and has been removed.
-                           Unused block "u2_core/syncdw1" (ROM) removed.
-                          The signal "N36" is unused and has been removed.
-                           Unused block "u2_core/syncdw2_SW0" (ROM) removed.
-                          The signal "u2_core/syncdw4" is unused and has been removed.
-                           Unused block "u2_core/syncdw4" (ROM) removed.
-                          The signal "u2_core/syncdw3" is unused and has been removed.
-                           Unused block "u2_core/syncdw3" (ROM) removed.
-                        The signal "u2_core/syncdw_d" is unused and has been removed.
-                         Unused block "u2_core/syncdw_d" (FF) removed.
-                      The signal "u2_core/sync_csw" is unused and has been removed.
-                       Unused block "u2_core/sync_csw1" (ROM) removed.
-                        The signal "u2_core/synccsw" is unused and has been removed.
-                         Unused block "u2_core/synccsw5" (ROM) removed.
-                          The signal "u2_core/synccsw3" is unused and has been removed.
-                           Unused block "u2_core/synccsw3" (ROM) removed.
-                            The signal "u2_core/synccsw2" is unused and has been removed.
-                             Unused block "u2_core/synccsw2" (ROM) removed.
-                            The signal "u2_core/synccsw1" is unused and has been removed.
-                             Unused block "u2_core/synccsw1" (ROM) removed.
-                          The signal "u2_core/synccsw4" is unused and has been removed.
-                           Unused block "u2_core/synccsw4" (ROM) removed.
-                        The signal "u2_core/synccsw_d" is unused and has been removed.
-                         Unused block "u2_core/synccsw_d" (FF) removed.
-The signal "u2_core/Mcount_bit_cnt_xor<1>11" is unused and has been removed.
- Unused block "u2_core/Mcount_bit_cnt_xor<1>111" (ROM) removed.
-The signal "u2_core/Mcount_bit_cnt4" is unused and has been removed.
- Unused block "u2_core/Mcount_bit_cnt_xor<4>11" (ROM) removed.
-  The signal "u2_core/bit_cnt<4>" is unused and has been removed.
-   Unused block "u2_core/bit_cnt_4" (FF) removed.
-    The signal "u2_core/_n0309_inv" is unused and has been removed.
-     Unused block "u2_core/_n0309_inv1" (ROM) removed.
-  The signal "u2_core/bit_cnt<0>" is unused and has been removed.
-   Unused block "u2_core/bit_cnt_0" (FF) removed.
-    The signal "u2_core/Mcount_bit_cnt" is unused and has been removed.
-     Unused block "u2_core/Mcount_bit_cnt_xor<0>11" (ROM) removed.
-  The signal "u2_core/bit_cnt<1>" is unused and has been removed.
-   Unused block "u2_core/bit_cnt_1" (FF) removed.
-    The signal "u2_core/Mcount_bit_cnt1" is unused and has been removed.
-     Unused block "u2_core/Mcount_bit_cnt_xor<1>11" (ROM) removed.
-  The signal "u2_core/bit_cnt<2>" is unused and has been removed.
-   Unused block "u2_core/bit_cnt_2" (FF) removed.
-    The signal "u2_core/Mcount_bit_cnt2" is unused and has been removed.
-     Unused block "u2_core/Mcount_bit_cnt_xor<2>11" (ROM) removed.
-  The signal "u2_core/bit_cnt<3>" is unused and has been removed.
-   Unused block "u2_core/bit_cnt_3" (FF) removed.
-    The signal "u2_core/Mcount_bit_cnt3" is unused and has been removed.
-     Unused block "u2_core/Mcount_bit_cnt_xor<3>11" (ROM) removed.
-The signal "u2_core/GND_22_o_GND_22_o_AND_175_o" is unused and has been removed.
- Unused block "u2_core/GND_22_o_GND_22_o_AND_175_o" (ROM) removed.
-  The signal "N6" is unused and has been removed.
-   Unused block "u2_core/GND_22_o_GND_22_o_AND_175_o_SW0" (ROM) removed.
-The signal "u2_core/enb" is unused and has been removed.
- Unused block "u2_core/enb" (FF) removed.
 Unused block
 "u1_core/blk_mem_1553_INST/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_ge
 n/valid.cstr/ramloop[0].ram.r/s6_init.ram/SDP.WIDE_PRIM9.ram" (RAMB8BWER)
@@ -455,6 +325,7 @@ Section 6 - IOB Properties
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | clk                                | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| csw                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | debug_out<0>                       | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | debug_out<1>                       | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | debug_out<2>                       | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
@@ -463,11 +334,12 @@ Section 6 - IOB Properties
 | debug_out<5>                       | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | debug_out<6>                       | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | debug_out<7>                       | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| dw                                 | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| enc_data                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| enc_data_en                        | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | reset_n                            | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLUP   |          |
 | rxa_n_BC                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
-| rxa_n_RT                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | rxa_p_BC                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
-| rxa_p_RT                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | rxena                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | rxenb                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | stat0                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
@@ -481,9 +353,7 @@ Section 6 - IOB Properties
 | tx_busy                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | tx_dval                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | txa_n_BC                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
-| txa_n_RT                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | txa_p_BC                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
-| txa_p_RT                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 7 - RPMs
