@@ -26,6 +26,8 @@ wire tx_dval;   // Indicates data on "tx_data" is valid.
 wire tx_busy;   // Indicates encoder is busy.       
 wire tx_busy_test;   // Indicates encoder is busy.       
 
+wire rxa_p_BC, rxa_n_BC, rxb_p_BC, rxb_n_BC;
+
 wire [19:0]  debug_in ;   // Debug signals for transmit
 wire [5:0]   debug_out ;  // Debug signals for receive
 wire [19:0]  test_datout; // test bus
@@ -49,14 +51,14 @@ top_1553 DUT(
             // Inputs
             .rxa_p_BC ( rxa_p_BC ),
             .rxa_n_BC ( rxa_n_BC ),
-            .rxa_p_RT ( rxa_p_RT ),
-            .rxa_n_RT ( rxa_n_RT ),
+            //.rxa_p_RT ( rxa_p_RT ),
+            //.rxa_n_RT ( rxa_n_RT ),
 
             // Outputs
             .txa_p_BC ( txa_p_BC ), 
             .txa_n_BC ( txa_n_BC ), 
-            .txa_p_RT ( txa_p_RT ), 
-            .txa_n_RT ( txa_n_RT ), 
+            //.txa_p_RT ( txa_p_RT ), 
+            //.txa_n_RT ( txa_n_RT ), 
             .tx_dval ( tx_dval ), 
             .tx_busy ( tx_busy ), 
             
@@ -72,7 +74,12 @@ top_1553 DUT(
             .stat0 (),
             .stat1 (),
             .stat2 (),
-            .stat3 ()
+            .stat3 (),
+
+            .csw (),
+            .dw (),
+            .enc_data (),
+            .enc_data_en ()
             );
             
 
@@ -89,7 +96,6 @@ wire test_dw;
 assign test_csw = WR ? test_data[rom_add][17] : 0;
 assign test_dw = WR ? test_data[rom_add][16] : 0;
 assign test_dword = WR ? test_data[rom_add][15:0] : 16'd0;
-wire rxa_p_BC, rxa_n_BC, rxb_p_BC, rxb_n_BC;
 wire source;
 wire tx_dval_source;
 encoder_1553_source BC_source (             
@@ -106,7 +112,8 @@ encoder_1553_source BC_source (
             .tx_busy    ( tx_busy_test ),
 //            .tx_data    ( rxa_p_BC ), 
             .tx_data    ( source ), 
-            .tx_dval    ( tx_dval_source )
+            .tx_dval    ( tx_dval_source ),
+            .fetch_next ( fetch_next ) 
             ) ;
 
 assign #17.153 rxa_p_BC = source;
