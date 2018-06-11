@@ -22,7 +22,8 @@ module encoder_1553_source (
             // Outputs
             tx_busy ,
             tx_data , 
-            tx_dval 
+            tx_dval ,
+            fetch_next
             ) ;
 
 
@@ -36,6 +37,7 @@ input          tx_dw ;     // "tx_dword" has data word.
 output         tx_busy ;   // Encoder is not ready to accept next word.
 output         tx_data ;   // Serial transmit data output. 
 output         tx_dval ;   // Indicates data on "tx_data" is valid.
+output         fetch_next ;
 
 reg            cnt_en ;
 reg            cnt_en_reg ;
@@ -93,6 +95,7 @@ always @(posedge enc_clk or negedge rst_n) begin
    else 
       busy_cnt  <= 'd0 ;
 end
+assign fetch_next = (busy_cnt == 6'b100110) ? 1'b1 : 1'b0;
 
 // 
 // rt    t/r sb    count
