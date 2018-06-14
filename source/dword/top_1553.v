@@ -22,15 +22,15 @@ module top_1553 (
             // Inputs
             rxa_p_BC ,
             rxa_n_BC ,
-            rxa_p_RT ,
-            rxa_n_RT ,
+            //rxa_p_RT ,
+            //rxa_n_RT ,
             
             // Outputs
             //tx_data , 
             txa_p_BC ,
             txa_n_BC ,
-            txa_p_RT ,
-            txa_n_RT ,
+            //txa_p_RT ,
+            //txa_n_RT ,
             tx_dval , 
             tx_busy ,
             
@@ -48,7 +48,13 @@ module top_1553 (
             stat0,
             stat1,
             stat2,
-            stat3
+            stat3,
+
+            // capture signals 
+            csw,
+            dw,
+            enc_data,
+            enc_data_en
             );
             
 input          clk ;       // System clock.
@@ -56,13 +62,13 @@ input          reset_n ;     // Asynchronous reset.
 
 input          rxa_p_BC ;   // Serial transmit data input. 
 input          rxa_n_BC ;   // Serial transmit data input. 
-input          rxa_p_RT ;   // Serial transmit data input. 
-input          rxa_n_RT ;   // Serial transmit data input. 
+//input          rxa_p_RT ;   // Serial transmit data input. 
+//input          rxa_n_RT ;   // Serial transmit data input. 
 
 output         txa_p_BC ;   // Serial transmit data input. 
 output         txa_n_BC ;   // Serial transmit data input. 
-output         txa_p_RT ;   // Serial transmit data input. 
-output         txa_n_RT ;   // Serial transmit data input. 
+//output         txa_p_RT ;   // Serial transmit data input. 
+//output         txa_n_RT ;   // Serial transmit data input. 
 
 output         tx_dval ;   // Indicates data on "tx_data" is valid.       
 output         tx_busy ;   // Indicates tx is busy
@@ -77,8 +83,10 @@ output         stat0;
 output         stat1;
 output         stat2;
 output         stat3;
-
-
+output         csw;
+output         dw;
+output         enc_data;
+output         enc_data_en;
 
 // Transmitt signals
 reg [15:0]    tx_dword;
@@ -108,6 +116,7 @@ wire          rx_csw_RT;
 
 // misc
 wire          enc_clk ;
+wire          enc_clk2 ;
 wire          dec_clk ;
 wire          sys_clk ;
 wire          serial_data ;
@@ -165,16 +174,16 @@ assign txa_n_BC = bypass ? tx_data_n_BC : (tx_dval_csw ? tx_data_n_BC : (!((txdv
 
 //(txdval_enc && filter_match) || (txdval_enc && !filter_match)
 
-assign txa_p_RT = tx_data_RT;
-assign txa_n_RT = tx_data_n_RT;
+//assign txa_p_RT = tx_data_RT;
+//assign txa_n_RT = tx_data_n_RT;
 
 // generate reset 
 wire reset;
-wire clk_out;
 assign reset = !reset_n;
-always @(posedge clk_out)
+always @(posedge sys_clk)
 begin
-    reset_slow_buf <= { (!LOCKED&&!CLK_VALID), reset_slow_buf[7:1] };
+    //reset_slow_buf <= { (!LOCKED&&!CLK_VALID), reset_slow_buf[7:1] };
+    reset_slow_buf <= { (!LOCKED), reset_slow_buf[7:1] };
     reset_slow     <= reset_slow_buf != 8'd0;
 end
 
@@ -189,8 +198,10 @@ always @ (posedge sys_clk or posedge reset_slow)
         end else  begin
             rx_data_BC   = {rx_data_BC[1:0],   rxa_p_BC}; 
             rx_data_n_BC = {rx_data_n_BC[1:0], rxa_n_BC}; 
-            rx_data_RT   = {rx_data_RT[1:0],   rxa_p_RT}; 
-            rx_data_n_RT = {rx_data_n_RT[1:0], rxa_n_RT};
+            rx_data_RT   = 3'b000;
+            rx_data_n_RT = 3'b000;
+            //rx_data_RT   = {rx_data_RT[1:0],   rxa_p_RT}; 
+            //rx_data_n_RT = {rx_data_n_RT[1:0], rxa_n_RT};
 		end
 end
 
@@ -283,12 +294,15 @@ always @ (posedge enc_clk or posedge reset_slow)
 end
 assign txdval_enc = txdval | txdval_d | txdval_dd | txdval_ddd;
 
+// signals for 1553 capture
+assign csw = rx_csw_BC;
+assign dw  = rx_dw_BC;
 
 core_1553 #( .BC(1))
          u1_core (
             // Clock and Reset
             .dec_clk    ( dec_clk ),
-            .sys_clk    ( clk_out ),
+            .sys_clk    ( sys_clk ),
             .rst_n      ( !reset_slow ),
 
             // Inputs
@@ -316,14 +330,16 @@ core_1553 #( .BC(1))
             .tx_data    ( tx_data_BC),
             .tx_data_n  ( tx_data_n_BC),
 
-            .debug      ( debug_core_BC)
+            .debug      ( debug_core_BC),
+            .enc_data   ( enc_data ),    // serial encoded data out
+            .enc_data_en( enc_data_en )
             ) ;
 
 core_1553 #( .BC(0))
          u2_core (
             // Clock and Reset
             .dec_clk    ( dec_clk ),
-            .sys_clk    ( clk_out ),
+            .sys_clk    ( sys_clk ),
             .rst_n      ( !reset_slow ),
 
             // Inputs
@@ -350,22 +366,50 @@ core_1553 #( .BC(0))
             .parity_bit ( parity_bit_RT ),
             .tx_data    ( tx_data_RT),
             .tx_data_n  ( tx_data_n_RT),
-            .debug      ( debug_core_RT)
+            .debug      ( debug_core_RT),
+            .enc_data   (  ),    // serial encoded data out
+            .enc_data_en(  )
             ) ;
 
 clock_module clock_generation (
             // Clock in ports
             .CLK_IN1 ( clk ),     // Input clock 48 MHz
             // Clock out ports
-            .CLK_OUT1( enc_clk ),     // 2MHz encode clock
+            .CLK_OUT1( enc_clk ),    // 2MHz encode clock
             .CLK_OUT2( dec_clk ),     // 8MHz decode clock
-            .CLK_OUT3( sys_clk ),     // 8MHz decode clock
+            .CLK_OUT3( sys_clk ),     // 16MHz decode clock
             // Status and control signals
             .RESET( reset ),         // IN
             .LOCKED( LOCKED ),        // OUT
-            .CLK_VALID( CLK_VALID ),   // OUT	
-            .CLK_OUT ( clk_out )   
+            .CLK_VALID( CLK_VALID )   // OUT	
             );   
+
+//
+//// generate slow count. Only needed for Vivado supported parts 
+//reg [1:0] clkcnt = 2'd0;
+////wire encclk_en = 1'b0;
+//always @(posedge enc_clk2 or posedge reset)
+//begin
+//    if (reset) begin
+//        clkcnt <= 2'd0;
+//    end else begin
+//        clkcnt <= clkcnt + 1;
+//    end
+//end
+//assign encclk_en = &clkcnt;
+
+//BUFGCE #(
+//    .CE_TYPE("SYNC"),
+//    .IS_CE_INVERTED(1'b0), // Programmable inversion on CE
+//    .IS_I_INVERTED(1'b0)   // Programmable inversion on Input
+//)
+//BUFGCE_inst (
+//    .O(enc_clk),    // 1-bit output: Buffer
+//    .CE(encclk_en), // 1-bit input: Buffer enable
+//    .I(enc_clk2)    // 1-bit input: Buffer
+//);
+// End of BUFGCE_inst instantiation
+
 
 // 1590 outputs
 assign bypass = switch7 ;
@@ -520,7 +564,7 @@ begin
     end
 end
 
-always @(posedge clk_out or posedge reset_slow)
+always @(posedge sys_clk or posedge reset_slow)
 begin
     if (reset_slow) begin
         sys_cnt <= 5'd0;
@@ -555,7 +599,7 @@ initial $readmemh("c:/Users/tfranklin9/projects/1553/source/mem.data", mem_data)
 reg  [17:0] mem_data [0:511];
 reg  first_wr;
 
-always @(posedge clk_out or negedge reset_slow)
+always @(posedge sys_clk or negedge reset_slow)
 begin
     if (!reset_slow) begin
         mem_addra_BC <= 7'd0;

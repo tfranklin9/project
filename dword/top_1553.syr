@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: top_1553.prj
 
@@ -46,7 +46,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "top_1553"
 Output Format                      : NGC
-Target Device                      : xc6slx25-2-ftg256
+Target Device                      : xc6slx16-2-ftg256
 
 ---- Source Options
 Top Module Name                    : top_1553
@@ -122,6 +122,7 @@ Parsing module <top_1553>.
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
+WARNING:HDLCompiler:1016 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 374: Port CLK_OUT is not connected to this instance
 
 Elaborating module <top_1553>.
 Reading initialization file \"c:/Users/tfranklin9/projects/1553/source/mem.data\".
@@ -131,47 +132,49 @@ WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\encode
 WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\encoder_1553.v" Line 213: Assignment to is_csw_reg ignored, since the identifier is never used
 WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\encoder_1553.v" Line 227: Result of 7-bit expression is truncated to fit in 6-bit target.
 WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\encoder_1553.v" Line 237: Result of 7-bit expression is truncated to fit in 6-bit target.
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 242: Assignment to tr_match ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 253: Assignment to tr_match ignored, since the identifier is never used
 
 Elaborating module <core_1553(BC=1)>.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 227: Result of 9-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 307: Result of 6-bit expression is truncated to fit in 5-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 502: Result of 6-bit expression is truncated to fit in 5-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 531: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 538: Assignment to change ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 594: Assignment to select ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 603: Assignment to nodata ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 607: Assignment to txdata ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 232: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 324: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 527: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 556: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 563: Assignment to change ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 619: Assignment to select ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 628: Assignment to nodata ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 632: Assignment to txdata ignored, since the identifier is never used
 
 Elaborating module <blk_mem_1553>.
 WARNING:HDLCompiler:1499 - "C:\Users\tfranklin9\projects\1553\core_1553_verilog\ipcore_dir\blk_mem_1553.v" Line 39: Empty module <blk_mem_1553> remains a black box.
-WARNING:HDLCompiler:189 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 663: Size mismatch in connection of port <doutb>. Formal port size is 18-bit while actual signal size is 17-bit.
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 308: Assignment to rx_perr_BC ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 310: Assignment to tx_dval_BC ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 319: Assignment to debug_core_BC ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 688: Size mismatch in connection of port <doutb>. Formal port size is 18-bit while actual signal size is 17-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 322: Assignment to rx_perr_BC ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 324: Assignment to tx_dval_BC ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 333: Assignment to debug_core_BC ignored, since the identifier is never used
 
 Elaborating module <core_1553(BC=0)>.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 227: Result of 9-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 307: Result of 6-bit expression is truncated to fit in 5-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 502: Result of 6-bit expression is truncated to fit in 5-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 531: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 538: Assignment to change ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 594: Assignment to select ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 603: Assignment to nodata ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 607: Assignment to txdata ignored, since the identifier is never used
-WARNING:HDLCompiler:189 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 663: Size mismatch in connection of port <doutb>. Formal port size is 18-bit while actual signal size is 17-bit.
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 339: Assignment to rx_dword_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 340: Assignment to rx_dval_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 341: Assignment to rx_csw_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 342: Assignment to rx_dw_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 343: Assignment to rx_perr_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 345: Assignment to tx_dval_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 346: Assignment to rt_address_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 347: Assignment to tr_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 348: Assignment to sub_address_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 349: Assignment to dwcnt_mcode_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 350: Assignment to parity_bit_RT ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 353: Assignment to debug_core_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 232: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 324: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 527: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 556: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 563: Assignment to change ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 619: Assignment to select ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 628: Assignment to nodata ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 632: Assignment to txdata ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" Line 688: Size mismatch in connection of port <doutb>. Formal port size is 18-bit while actual signal size is 17-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 355: Assignment to rx_dword_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 356: Assignment to rx_dval_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 357: Assignment to rx_csw_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 358: Assignment to rx_dw_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 359: Assignment to rx_perr_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 361: Assignment to tx_dval_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 362: Assignment to rt_address_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 363: Assignment to tr_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 364: Assignment to sub_address_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 365: Assignment to dwcnt_mcode_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 366: Assignment to parity_bit_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 367: Assignment to tx_data_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 368: Assignment to tx_data_n_RT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 369: Assignment to debug_core_RT ignored, since the identifier is never used
 
 Elaborating module <clock_module>.
 
@@ -180,16 +183,17 @@ Elaborating module <IBUFG>.
 Elaborating module <DCM_SP(CLKDV_DIVIDE=12.0,CLKFX_DIVIDE=6,CLKFX_MULTIPLY=2,CLKIN_DIVIDE_BY_2="TRUE",CLKIN_PERIOD=20.833,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="2X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
 
 Elaborating module <BUFG>.
-WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 400: Assignment to rxdata_BC ignored, since the identifier is never used
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 510: Result of 7-bit expression is truncated to fit in 6-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 519: Result of 7-bit expression is truncated to fit in 6-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 528: Result of 7-bit expression is truncated to fit in 6-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 538: Result of 10-bit expression is truncated to fit in 9-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 569: Result of 8-bit expression is truncated to fit in 7-bit target.
-WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 131: Net <lastword_RT> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 145: Net <mem_datin_RT[17]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 147: Net <mem_addra_RT[6]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 149: Net <mem_wea_RT> does not have a driver.
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 384: Assignment to CLK_VALID ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 444: Assignment to rxdata_BC ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 554: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 563: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 572: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 582: Result of 10-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 613: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 140: Net <lastword_RT> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 154: Net <mem_datin_RT[17]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 156: Net <mem_addra_RT[6]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" Line 158: Net <mem_wea_RT> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -197,23 +201,29 @@ WARNING:HDLCompiler:634 - "C:\Users\tfranklin9\projects\1553\source\dword\top_15
 
 Synthesizing Unit <top_1553>.
     Related source file is "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v".
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 288: Output port <rx_dword> of the instance <u1_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 288: Output port <debug> of the instance <u1_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 288: Output port <rx_dval> of the instance <u1_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 288: Output port <rx_perr> of the instance <u1_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 288: Output port <tx_dval> of the instance <u1_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <rx_dword> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <rt_address> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <sub_address> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <dwcnt_mcode> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <debug> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <rx_dval> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <rx_csw> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <rx_dw> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <rx_perr> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <tx_dval> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <tr> of the instance <u2_core> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 323: Output port <parity_bit> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 302: Output port <rx_dword> of the instance <u1_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 302: Output port <debug> of the instance <u1_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 302: Output port <rx_dval> of the instance <u1_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 302: Output port <rx_perr> of the instance <u1_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 302: Output port <tx_dval> of the instance <u1_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <rx_dword> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <rt_address> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <sub_address> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <dwcnt_mcode> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <debug> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <rx_dval> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <rx_csw> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <rx_dw> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <rx_perr> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <tx_data> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <tx_data_n> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <tx_dval> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <tr> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <parity_bit> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <enc_data> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 339: Output port <enc_data_en> of the instance <u2_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 374: Output port <CLK_VALID> of the instance <clock_generation> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\top_1553.v" line 374: Output port <CLK_OUT> of the instance <clock_generation> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <mem_datin_RT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <mem_addra_RT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <lastword_RT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -221,11 +231,8 @@ WARNING:Xst:653 - Signal <mem_wea_RT> is used but never assigned. This sourceles
 WARNING:Xst:653 - Signal <mem_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:3015 - Contents of array <mem_data> may be accessed with an index that does not cover the full array size or with a negative index. The RAM size is reduced to the index upper access or for only positive index values.
     Found 128x18-bit single-port Read Only RAM <Mram_mem_data> for signal <mem_data>.
-    Found 1-bit register for signal <first_wr>.
     Found 3-bit register for signal <rx_data_BC>.
     Found 3-bit register for signal <rx_data_n_BC>.
-    Found 3-bit register for signal <rx_data_RT>.
-    Found 3-bit register for signal <rx_data_n_RT>.
     Found 3-bit register for signal <rxdw_enc>.
     Found 3-bit register for signal <rxcsw_enc>.
     Found 40-bit register for signal <dval_delay>.
@@ -243,14 +250,17 @@ WARNING:Xst:3015 - Contents of array <mem_data> may be accessed with an index th
     Found 1-bit register for signal <txdval_dd>.
     Found 1-bit register for signal <txdval_ddd>.
     Found 1-bit register for signal <mem_wea_BC>.
+    Found 1-bit register for signal <first_wr>.
     Found 1-bit register for signal <reset_slow>.
     Found 8-bit register for signal <reset_slow_buf>.
-    Found 6-bit adder for signal <enc_cnt[5]_GND_1_o_add_26_OUT> created at line 510.
-    Found 7-bit adder for signal <mem_addra_BC[6]_GND_1_o_add_37_OUT> created at line 569.
+    Found 6-bit adder for signal <enc_cnt[5]_GND_1_o_add_26_OUT> created at line 554.
+    Found 7-bit adder for signal <mem_addra_BC[6]_GND_1_o_add_37_OUT> created at line 613.
+    WARNING:Xst:2404 -  FFs/Latches <rx_data_RT<0:0>> (without init value) have a constant value of 0 in block <top_1553>.
+    WARNING:Xst:2404 -  FFs/Latches <rx_data_n_RT<2:2>> (without init value) have a constant value of 0 in block <top_1553>.
     Summary:
 	inferred   1 RAM(s).
 	inferred   2 Adder/Subtractor(s).
-	inferred 181 D-type flip-flop(s).
+	inferred 175 D-type flip-flop(s).
 	inferred   7 Multiplexer(s).
 Unit <top_1553> synthesized.
 
@@ -324,7 +334,7 @@ Synthesizing Unit <core_1553_1>.
         READ = 4'b0010
         SHIFT1 = 4'b0100
         SHIFT2 = 4'b1000
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" line 655: Output port <doutb> of the instance <blk_mem_1553_INST> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" line 680: Output port <doutb> of the instance <blk_mem_1553_INST> is unconnected or connected to loadless signal.
     Found 8-bit register for signal <cnt>.
     Found 24-bit register for signal <sync_sftreg>.
     Found 24-bit register for signal <sync_sftreg_n>.
@@ -344,6 +354,7 @@ INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" lin
     Found 1-bit register for signal <syncdw_d>.
     Found 1-bit register for signal <synccsw_d>.
     Found 1-bit register for signal <cnt_enb>.
+    Found 1-bit register for signal <encdata_en>.
     Found 1-bit register for signal <sync_csw_reg>.
     Found 1-bit register for signal <sync_dw_reg>.
     Found 1-bit register for signal <rx_dval>.
@@ -367,25 +378,24 @@ INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" lin
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit adder for signal <cnt[7]_GND_19_o_add_13_OUT> created at line 227.
-    Found 5-bit adder for signal <bit_cnt[4]_GND_19_o_add_27_OUT> created at line 307.
-    Found 5-bit adder for signal <bitcnt[4]_GND_19_o_add_92_OUT> created at line 502.
-    Found 3-bit adder for signal <samplecnt[2]_GND_19_o_add_99_OUT> created at line 531.
-    Found 1-bit comparator not equal for signal <n0053> created at line 286
-    Found 5-bit comparator greater for signal <bit_cnt[4]_GND_19_o_LessThan_33_o> created at line 328
-    Found 5-bit comparator greater for signal <GND_19_o_bit_cnt[4]_LessThan_39_o> created at line 352
-    Found 5-bit comparator greater for signal <n0081> created at line 352
-    Found 5-bit comparator lessequal for signal <n0090> created at line 362
-    Found 3-bit comparator greater for signal <samplecnt[2]_GND_19_o_LessThan_104_o> created at line 559
-    Found 3-bit comparator greater for signal <samplecnt[2]_PWR_19_o_LessThan_110_o> created at line 572
-    Found 5-bit comparator greater for signal <bitcnt[4]_PWR_19_o_LessThan_115_o> created at line 579
-    Found 5-bit comparator lessequal for signal <n0146> created at line 619
-    Found 3-bit comparator greater for signal <samplecnt[2]_GND_19_o_LessThan_149_o> created at line 623
-    Found 5-bit comparator lessequal for signal <n0154> created at line 627
+    Found 8-bit adder for signal <cnt[7]_GND_19_o_add_13_OUT> created at line 232.
+    Found 5-bit adder for signal <bit_cnt[4]_GND_19_o_add_25_OUT> created at line 324.
+    Found 5-bit adder for signal <bitcnt[4]_GND_19_o_add_90_OUT> created at line 527.
+    Found 3-bit adder for signal <samplecnt[2]_GND_19_o_add_97_OUT> created at line 556.
+    Found 5-bit comparator greater for signal <bit_cnt[4]_GND_19_o_LessThan_31_o> created at line 345
+    Found 5-bit comparator greater for signal <GND_19_o_bit_cnt[4]_LessThan_37_o> created at line 369
+    Found 5-bit comparator greater for signal <n0081> created at line 369
+    Found 5-bit comparator lessequal for signal <n0090> created at line 379
+    Found 3-bit comparator greater for signal <samplecnt[2]_GND_19_o_LessThan_102_o> created at line 584
+    Found 3-bit comparator greater for signal <samplecnt[2]_PWR_19_o_LessThan_108_o> created at line 597
+    Found 5-bit comparator greater for signal <bitcnt[4]_PWR_19_o_LessThan_113_o> created at line 604
+    Found 5-bit comparator lessequal for signal <n0146> created at line 644
+    Found 3-bit comparator greater for signal <samplecnt[2]_GND_19_o_LessThan_147_o> created at line 648
+    Found 5-bit comparator lessequal for signal <n0154> created at line 652
     Summary:
 	inferred   4 Adder/Subtractor(s).
-	inferred 202 D-type flip-flop(s).
-	inferred  11 Comparator(s).
+	inferred 203 D-type flip-flop(s).
+	inferred  10 Comparator(s).
 	inferred  13 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <core_1553_1> synthesized.
@@ -398,7 +408,7 @@ Synthesizing Unit <core_1553_2>.
         READ = 4'b0010
         SHIFT1 = 4'b0100
         SHIFT2 = 4'b1000
-INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" line 655: Output port <doutb> of the instance <blk_mem_1553_INST> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" line 680: Output port <doutb> of the instance <blk_mem_1553_INST> is unconnected or connected to loadless signal.
     Found 8-bit register for signal <cnt>.
     Found 24-bit register for signal <sync_sftreg>.
     Found 24-bit register for signal <sync_sftreg_n>.
@@ -418,6 +428,7 @@ INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" lin
     Found 1-bit register for signal <syncdw_d>.
     Found 1-bit register for signal <synccsw_d>.
     Found 1-bit register for signal <cnt_enb>.
+    Found 1-bit register for signal <encdata_en>.
     Found 1-bit register for signal <sync_csw_reg>.
     Found 1-bit register for signal <sync_dw_reg>.
     Found 1-bit register for signal <rx_dval>.
@@ -441,22 +452,21 @@ INFO:Xst:3210 - "C:\Users\tfranklin9\projects\1553\source\dword\core_1553.v" lin
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit adder for signal <cnt[7]_GND_22_o_add_13_OUT> created at line 227.
-    Found 5-bit adder for signal <bit_cnt[4]_GND_22_o_add_27_OUT> created at line 307.
-    Found 5-bit adder for signal <bitcnt[4]_GND_22_o_add_92_OUT> created at line 502.
-    Found 3-bit adder for signal <samplecnt[2]_GND_22_o_add_99_OUT> created at line 531.
-    Found 1-bit comparator not equal for signal <n0053> created at line 286
-    Found 3-bit comparator greater for signal <samplecnt[2]_GND_22_o_LessThan_104_o> created at line 559
-    Found 3-bit comparator greater for signal <samplecnt[2]_PWR_21_o_LessThan_110_o> created at line 572
-    Found 5-bit comparator greater for signal <bitcnt[4]_PWR_21_o_LessThan_115_o> created at line 579
-    Found 5-bit comparator lessequal for signal <n0147> created at line 619
-    Found 5-bit comparator lessequal for signal <n0149> created at line 619
-    Found 3-bit comparator greater for signal <samplecnt[2]_GND_22_o_LessThan_149_o> created at line 623
-    Found 5-bit comparator lessequal for signal <n0155> created at line 627
+    Found 8-bit adder for signal <cnt[7]_GND_22_o_add_13_OUT> created at line 232.
+    Found 5-bit adder for signal <bit_cnt[4]_GND_22_o_add_25_OUT> created at line 324.
+    Found 5-bit adder for signal <bitcnt[4]_GND_22_o_add_90_OUT> created at line 527.
+    Found 3-bit adder for signal <samplecnt[2]_GND_22_o_add_97_OUT> created at line 556.
+    Found 3-bit comparator greater for signal <samplecnt[2]_GND_22_o_LessThan_102_o> created at line 584
+    Found 3-bit comparator greater for signal <samplecnt[2]_PWR_21_o_LessThan_108_o> created at line 597
+    Found 5-bit comparator greater for signal <bitcnt[4]_PWR_21_o_LessThan_113_o> created at line 604
+    Found 5-bit comparator lessequal for signal <n0147> created at line 644
+    Found 5-bit comparator lessequal for signal <n0149> created at line 644
+    Found 3-bit comparator greater for signal <samplecnt[2]_GND_22_o_LessThan_147_o> created at line 648
+    Found 5-bit comparator lessequal for signal <n0155> created at line 652
     Summary:
 	inferred   4 Adder/Subtractor(s).
-	inferred 202 D-type flip-flop(s).
-	inferred   8 Comparator(s).
+	inferred 203 D-type flip-flop(s).
+	inferred   7 Comparator(s).
 	inferred  10 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <core_1553_2> synthesized.
@@ -481,11 +491,11 @@ Macro Statistics
  7-bit adder                                           : 1
  8-bit adder                                           : 2
 # Registers                                            : 96
- 1-bit register                                        : 46
+ 1-bit register                                        : 48
  16-bit register                                       : 2
  17-bit register                                       : 3
  24-bit register                                       : 4
- 3-bit register                                        : 8
+ 3-bit register                                        : 6
  31-bit register                                       : 4
  40-bit register                                       : 3
  5-bit register                                        : 14
@@ -494,8 +504,7 @@ Macro Statistics
  8-bit register                                        : 3
 # Latches                                              : 16
  1-bit latch                                           : 16
-# Comparators                                          : 21
- 1-bit comparator not equal                            : 2
+# Comparators                                          : 19
  3-bit comparator greater                              : 6
  5-bit comparator greater                              : 5
  5-bit comparator lessequal                            : 6
@@ -512,8 +521,8 @@ Macro Statistics
  7-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 2
 # FSMs                                                 : 2
-# Xors                                                 : 5
- 1-bit xor16                                           : 3
+# Xors                                                 : 3
+ 1-bit xor16                                           : 1
  1-bit xor2                                            : 2
 
 =========================================================================
@@ -532,21 +541,39 @@ WARNING:Xst:1710 - FF/Latch <rtaddress_3> (without init value) has a constant va
 WARNING:Xst:1710 - FF/Latch <rtaddress_2> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <rtaddress_1> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <rtaddress_0> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_16> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_17> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_18> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_19> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_20> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_21> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_22> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_23> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_24> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_25> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_26> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_27> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_28> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_29> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_30> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:1710 - FF/Latch <data_sftreg_4> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cnt_enb> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <syncdw_d> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <synccsw_d> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_3> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_2> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_1> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_0> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_23> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_22> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_21> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_20> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_19> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_18> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_17> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_16> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_15> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_14> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_13> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_12> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_11> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_10> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_9> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_8> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_7> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_6> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_5> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_4> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_3> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_2> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_1> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_0> (without init value) has a constant value of 0 in block <u2_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <dword_int_0> of sequential type is unconnected in block <u1_core>.
 WARNING:Xst:2677 - Node <data_sftreg_out_16> of sequential type is unconnected in block <u1_core>.
 WARNING:Xst:2677 - Node <data_sftreg_out_17> of sequential type is unconnected in block <u1_core>.
 WARNING:Xst:2677 - Node <data_sftreg_out_18> of sequential type is unconnected in block <u1_core>.
@@ -562,63 +589,22 @@ WARNING:Xst:2677 - Node <data_sftreg_out_27> of sequential type is unconnected i
 WARNING:Xst:2677 - Node <data_sftreg_out_28> of sequential type is unconnected in block <u1_core>.
 WARNING:Xst:2677 - Node <data_sftreg_out_29> of sequential type is unconnected in block <u1_core>.
 WARNING:Xst:2677 - Node <data_sftreg_out_30> of sequential type is unconnected in block <u1_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_16> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_17> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_18> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_19> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_20> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_21> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_22> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_23> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_24> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_25> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_26> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_27> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_28> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_29> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_30> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_16> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_17> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_18> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_19> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_20> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_21> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_22> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_23> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_24> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_25> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_26> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_27> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_28> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_29> of sequential type is unconnected in block <u2_core>.
-WARNING:Xst:2677 - Node <data_sftreg_out_n_30> of sequential type is unconnected in block <u2_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_16> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_17> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_18> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_19> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_20> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_21> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_22> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_23> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_24> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_25> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_26> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_27> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_28> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_29> of sequential type is unconnected in block <u1_core>.
+WARNING:Xst:2677 - Node <data_sftreg_out_n_30> of sequential type is unconnected in block <u1_core>.
 WARNING:Xst:2677 - Node <rxdw_enc_2> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_14> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_15> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_16> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_17> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_18> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_19> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_20> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_21> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_22> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_23> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_24> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_25> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_26> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_27> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_28> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_29> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_30> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_31> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_32> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_33> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_34> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_35> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_36> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_37> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_38> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <tx_data_delay_39> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <dval_delay_14> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <dval_delay_15> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <dval_delay_16> of sequential type is unconnected in block <top_1553>.
@@ -645,6 +631,32 @@ WARNING:Xst:2677 - Node <dval_delay_36> of sequential type is unconnected in blo
 WARNING:Xst:2677 - Node <dval_delay_37> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <dval_delay_38> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <dval_delay_39> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_14> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_15> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_16> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_17> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_18> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_19> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_20> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_21> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_22> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_23> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_24> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_25> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_26> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_27> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_28> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_29> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_30> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_31> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_32> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_33> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_34> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_35> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_36> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_37> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_38> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <tx_data_delay_39> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <tx_data_delay_n_14> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <tx_data_delay_n_15> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <tx_data_delay_n_16> of sequential type is unconnected in block <top_1553>.
@@ -680,8 +692,8 @@ The following registers are absorbed into counter <bitcnt>: 1 register on signal
 Unit <core_1553_1> synthesized (advanced).
 
 Synthesizing (advanced) Unit <core_1553_2>.
-The following registers are absorbed into counter <samplecnt>: 1 register on signal <samplecnt>.
 The following registers are absorbed into counter <cnt>: 1 register on signal <cnt>.
+The following registers are absorbed into counter <samplecnt>: 1 register on signal <samplecnt>.
 The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
 The following registers are absorbed into counter <bitcnt>: 1 register on signal <bitcnt>.
 Unit <core_1553_2> synthesized (advanced).
@@ -871,10 +883,9 @@ Macro Statistics
  6-bit up counter                                      : 4
  7-bit up counter                                      : 1
  8-bit up counter                                      : 2
-# Registers                                            : 430
- Flip-Flops                                            : 430
-# Comparators                                          : 21
- 1-bit comparator not equal                            : 2
+# Registers                                            : 426
+ Flip-Flops                                            : 426
+# Comparators                                          : 19
  3-bit comparator greater                              : 6
  5-bit comparator greater                              : 5
  5-bit comparator lessequal                            : 6
@@ -887,8 +898,8 @@ Macro Statistics
  17-bit 2-to-1 multiplexer                             : 3
  5-bit 2-to-1 multiplexer                              : 2
 # FSMs                                                 : 2
-# Xors                                                 : 5
- 1-bit xor16                                           : 3
+# Xors                                                 : 3
+ 1-bit xor16                                           : 1
  1-bit xor2                                            : 2
 
 =========================================================================
@@ -914,6 +925,101 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dwcntmcode_0> (with
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tr_reg> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <sync_bits_3> in Unit <encoder_1553> is equivalent to the following 5 FFs/Latches, which will be removed : <sync_bits_4> <sync_bits_5> <sync_bits_n_0> <sync_bits_n_1> <sync_bits_n_2> 
 INFO:Xst:2261 - The FF/Latch <sync_bits_0> in Unit <encoder_1553> is equivalent to the following 5 FFs/Latches, which will be removed : <sync_bits_1> <sync_bits_2> <sync_bits_n_3> <sync_bits_n_4> <sync_bits_n_5> 
+INFO:Xst:2261 - The FF/Latch <data_sftreg_n_4> in Unit <core_1553_2> is equivalent to the following FF/Latch, which will be removed : <data_sftreg_4> 
+WARNING:Xst:1710 - FF/Latch <data_sftreg_n_4> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <syncdw_d> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <synccsw_d> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cnt_enb> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_csw_reg> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_dw_reg> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_n_3> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_3> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_n_2> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_2> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_n_1> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_1> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_n_0> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_0> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_23> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_23> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_22> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_22> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_21> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_21> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_20> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_20> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_19> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_19> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_18> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_18> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_17> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_17> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_16> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_16> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_15> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_15> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_14> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_14> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_13> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_13> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_12> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_12> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_11> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_11> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_10> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_10> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_9> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_9> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_8> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_8> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_7> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_7> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_6> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_6> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_5> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_5> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_4> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_4> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_3> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_3> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_2> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_2> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_1> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_1> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_n_0> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sync_sftreg_0> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_0> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_0> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_1> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_1> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_2> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_2> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_3> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_3> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_4> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_4> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_5> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_5> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_6> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_6> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_7> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_7> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_8> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_8> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_9> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_9> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_10> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_10> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_11> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_11> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_12> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_12> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_13> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_13> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_14> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_14> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_n_15> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_sftreg_out_15> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <u1_core/FSM_0> on signal <state[1:2]> with gray encoding.
 -------------------
@@ -934,6 +1040,58 @@ Optimizing FSM <u2_core/FSM_1> on signal <state[1:2]> with gray encoding.
  0100  | 11
  1000  | 10
 -------------------
+WARNING:Xst:1710 - FF/Latch <rx_dword_11> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_10> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_9> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_8> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_7> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_6> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_5> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_4> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_3> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_2> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_1> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_0> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_perr> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cnt_0> (without init value) has a constant value of 1 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cnt_1> (without init value) has a constant value of 1 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cnt_2> (without init value) has a constant value of 1 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cnt_3> (without init value) has a constant value of 1 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cnt_4> (without init value) has a constant value of 1 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cnt_5> (without init value) has a constant value of 1 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cnt_6> (without init value) has a constant value of 1 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cnt_7> (without init value) has a constant value of 1 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bit_cnt_0> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bit_cnt_1> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bit_cnt_2> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bit_cnt_3> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bit_cnt_4> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dval> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <encdata_en> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <enb> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <start_shift> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <paritybit> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_16> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_15> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_14> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_13> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_12> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_11> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_10> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_9> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_8> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_7> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_6> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_5> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_4> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_3> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_2> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_1> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dword_int_0> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_15> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_14> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_13> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rx_dword_12> (without init value) has a constant value of 0 in block <core_1553_2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <enc_cnt_4> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <enc_cnt_5> of sequential type is unconnected in block <top_1553>.
 INFO:Xst:2261 - The FF/Latch <tx_dword_2> in Unit <encoder_1553> is equivalent to the following 4 FFs/Latches, which will be removed : <tx_dword_4> <tx_dword_6> <tx_dword_7> <tx_dword_9> 
@@ -952,16 +1110,16 @@ INFO:Xst:2261 - The FF/Latch <data_reg_9> in Unit <encoder_1553> is equivalent t
 INFO:Xst:2261 - The FF/Latch <data_reg_15> in Unit <encoder_1553> is equivalent to the following 7 FFs/Latches, which will be removed : <data_reg_14> <data_reg_13> <data_reg_12> <data_reg_11> <data_reg_8> <data_reg_5> <data_reg_3> 
 WARNING:Xst:2677 - Node <u1_core/state_FSM_FFd2> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/state_FSM_FFd1> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u1_core/samplecnt_2> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u1_core/samplecnt_1> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u1_core/samplecnt_0> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/bitcnt_4> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/bitcnt_3> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/bitcnt_2> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/bitcnt_1> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/bitcnt_0> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u1_core/rx_perr> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/samplecnt_2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/samplecnt_1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/samplecnt_0> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/txdval> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/rx_perr> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/rx_dword_0> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/rx_dword_1> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/rx_dword_2> of sequential type is unconnected in block <top_1553>.
@@ -995,10 +1153,9 @@ WARNING:Xst:2677 - Node <u1_core/dword_int_12> of sequential type is unconnected
 WARNING:Xst:2677 - Node <u1_core/dword_int_13> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/dword_int_14> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/dword_int_15> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u1_core/dword_int_16> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u1_core/start_shift> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u1_core/paritybit> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/shift_data> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/paritybit> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u1_core/start_shift> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/dwcntmcode_0> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/dwcntmcode_1> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u1_core/dwcntmcode_2> of sequential type is unconnected in block <top_1553>.
@@ -1007,59 +1164,20 @@ WARNING:Xst:2677 - Node <u1_core/dwcntmcode_4> of sequential type is unconnected
 WARNING:Xst:2677 - Node <u1_core/rx_dval> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u2_core/state_FSM_FFd1> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u2_core/state_FSM_FFd2> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/samplecnt_2> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/samplecnt_1> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/samplecnt_0> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u2_core/bitcnt_4> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u2_core/bitcnt_3> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u2_core/bitcnt_2> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u2_core/bitcnt_1> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u2_core/bitcnt_0> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_perr> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/samplecnt_2> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/samplecnt_1> of sequential type is unconnected in block <top_1553>.
+WARNING:Xst:2677 - Node <u2_core/samplecnt_0> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u2_core/txdval> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_0> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_1> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_2> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_3> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_4> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_5> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_6> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_7> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_8> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_9> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_10> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_11> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_12> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_13> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_14> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dword_15> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_0> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_1> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_2> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_3> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_4> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_5> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_6> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_7> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_8> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_9> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_10> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_11> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_12> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_13> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_14> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_15> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/dword_int_16> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/start_shift> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/paritybit> of sequential type is unconnected in block <top_1553>.
 WARNING:Xst:2677 - Node <u2_core/shift_data> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/sync_dw_reg> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/sync_csw_reg> of sequential type is unconnected in block <top_1553>.
-WARNING:Xst:2677 - Node <u2_core/rx_dval> of sequential type is unconnected in block <top_1553>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top_1553, actual ratio is 3.
+Found area constraint ratio of 100 (+ 5) on block top_1553, actual ratio is 4.
 FlipFlop reset_slow has been replicated 4 time(s)
 
 Final Macro Processing ...
@@ -1070,22 +1188,18 @@ Processing Unit <top_1553> :
 	Found 14-bit shift register for signal <tx_data_delay_n_13>.
 	Found 45-bit shift register for signal <u1_core/data_sftreg_out_n_15>.
 	Found 16-bit shift register for signal <u1_core/data_sftreg_out_15>.
-	Found 45-bit shift register for signal <u2_core/data_sftreg_out_n_15>.
-	Found 16-bit shift register for signal <u2_core/data_sftreg_out_15>.
-	Found 4-bit shift register for signal <u2_core/sync_sftreg_23>.
 Unit <top_1553> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 198
- Flip-Flops                                            : 198
-# Shift Registers                                      : 8
+# Registers                                            : 152
+ Flip-Flops                                            : 152
+# Shift Registers                                      : 5
  14-bit shift register                                 : 3
- 16-bit shift register                                 : 2
- 4-bit shift register                                  : 1
- 45-bit shift register                                 : 2
+ 16-bit shift register                                 : 1
+ 45-bit shift register                                 : 1
 
 =========================================================================
 
@@ -1108,67 +1222,67 @@ Top Level Output File Name         : top_1553.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 231
+# BELS                             : 183
 #      GND                         : 3
 #      INV                         : 6
-#      LUT2                        : 40
+#      LUT2                        : 29
 #      LUT3                        : 15
-#      LUT4                        : 29
-#      LUT5                        : 37
-#      LUT6                        : 65
-#      MUXCY                       : 14
+#      LUT4                        : 22
+#      LUT5                        : 34
+#      LUT6                        : 53
+#      MUXCY                       : 7
 #      MUXF7                       : 3
 #      VCC                         : 3
-#      XORCY                       : 16
-# FlipFlops/Latches                : 276
+#      XORCY                       : 8
+# FlipFlops/Latches                : 224
 #      FD                          : 13
-#      FDC                         : 132
-#      FDCE                        : 101
-#      FDE                         : 8
-#      FDP                         : 17
+#      FDC                         : 98
+#      FDCE                        : 94
+#      FDE                         : 5
+#      FDP                         : 9
 #      LD                          : 5
 # RAMS                             : 2
 #      RAMB8BWER                   : 2
-# Shift Registers                  : 10
-#      SRLC16E                     : 6
-#      SRLC32E                     : 4
-# Clock Buffers                    : 5
-#      BUFG                        : 5
+# Shift Registers                  : 6
+#      SRLC16E                     : 4
+#      SRLC32E                     : 2
+# Clock Buffers                    : 4
+#      BUFG                        : 4
 # IO Buffers                       : 29
-#      IBUF                        : 8
+#      IBUF                        : 6
 #      IBUFG                       : 1
-#      OBUF                        : 20
+#      OBUF                        : 22
 # DCMs                             : 1
 #      DCM_SP                      : 1
 
 Device utilization summary:
 ---------------------------
 
-Selected Device : 6slx25ftg256-2 
+Selected Device : 6slx16ftg256-2 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             276  out of  30064     0%  
- Number of Slice LUTs:                  202  out of  15032     1%  
-    Number used as Logic:               192  out of  15032     1%  
-    Number used as Memory:               10  out of   3664     0%  
-       Number used as SRL:               10
+ Number of Slice Registers:             224  out of  18224     1%  
+ Number of Slice LUTs:                  165  out of   9112     1%  
+    Number used as Logic:               159  out of   9112     1%  
+    Number used as Memory:                6  out of   2176     0%  
+       Number used as SRL:                6
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    357
-   Number with an unused Flip Flop:      81  out of    357    22%  
-   Number with an unused LUT:           155  out of    357    43%  
-   Number of fully used LUT-FF pairs:   121  out of    357    33%  
-   Number of unique control sets:        18
+ Number of LUT Flip Flop pairs used:    288
+   Number with an unused Flip Flop:      64  out of    288    22%  
+   Number with an unused LUT:           123  out of    288    42%  
+   Number of fully used LUT-FF pairs:   101  out of    288    35%  
+   Number of unique control sets:        17
 
 IO Utilization: 
  Number of IOs:                          30
  Number of bonded IOBs:                  29  out of    186    15%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                1  out of     52     1%  
+ Number of Block RAM/FIFO:                1  out of     32     3%  
     Number using Block RAM only:          1
- Number of BUFG/BUFGCTRLs:                5  out of     16    31%  
+ Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1191,10 +1305,9 @@ Clock Information:
 -----------------------------------+----------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)      | Load  |
 -----------------------------------+----------------------------+-------+
-clk                                | DCM_SP:CLK0                | 24    |
+clk                                | DCM_SP:CLK2X               | 52    |
 clk                                | DCM_SP:CLKDV               | 52    |
-clk                                | DCM_SP:CLK2X               | 34    |
-clk                                | DCM_SP:CLKFX               | 175   |
+clk                                | DCM_SP:CLKFX               | 125   |
 u1_encoder/dwcnt_5                 | NONE(u1_encoder/tx_dword_0)| 5     |
 -----------------------------------+----------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -1207,7 +1320,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.872ns (Maximum Frequency: 205.241MHz)
+   Minimum period: 5.790ns (Maximum Frequency: 172.712MHz)
    Minimum input arrival time before clock: 2.083ns
    Maximum output required time after clock: 7.478ns
    Maximum combinational path delay: 7.869ns
@@ -1218,28 +1331,29 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.872ns (frequency: 205.241MHz)
-  Total number of paths / destination ports: 1900 / 571
+  Clock period: 5.790ns (frequency: 172.712MHz)
+  Total number of paths / destination ports: 1563 / 465
 -------------------------------------------------------------------------
-Delay:               2.436ns (Levels of Logic = 0)
+Delay:               2.895ns (Levels of Logic = 1)
   Source:            reset_slow_1 (FF)
-  Destination:       rx_data_BC_0 (FF)
-  Source Clock:      clk rising
+  Destination:       mem_wea_BC (FF)
+  Source Clock:      clk rising 2.0X
   Destination Clock: clk rising 2.0X
 
-  Data Path: reset_slow_1 to rx_data_BC_0
+  Data Path: reset_slow_1 to mem_wea_BC
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              28   0.525   1.452  reset_slow_1 (reset_slow_1)
-     FDC:CLR                   0.459          rx_data_BC_0
+     FD:C->Q               1   0.525   0.681  reset_slow_1 (reset_slow_1)
+     INV:I->O              9   0.255   0.975  reset_slow_inv1_INV_0 (reset_slow_inv)
+     FDC:CLR                   0.459          mem_wea_BC
     ----------------------------------------
-    Total                      2.436ns (0.984ns logic, 1.452ns route)
-                                       (40.4% logic, 59.6% route)
+    Total                      2.895ns (1.239ns logic, 1.656ns route)
+                                       (42.8% logic, 57.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 4 / 4
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
 Offset:              2.083ns (Levels of Logic = 1)
   Source:            rxa_p_BC (PAD)
@@ -1258,7 +1372,7 @@ Offset:              2.083ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 62 / 17
+  Total number of paths / destination ports: 64 / 19
 -------------------------------------------------------------------------
 Offset:              7.478ns (Levels of Logic = 3)
   Source:            u1_encoder/dwcnt_0 (FF)
@@ -1322,14 +1436,14 @@ clk            |    2.603|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.10 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.29 secs
  
 --> 
 
-Total memory usage is 298768 kilobytes
+Total memory usage is 299824 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  487 (   0 filtered)
-Number of infos    :   32 (   0 filtered)
+Number of warnings :  602 (   0 filtered)
+Number of infos    :   39 (   0 filtered)
 

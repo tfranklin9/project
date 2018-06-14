@@ -43,7 +43,9 @@ module core_1553 (
             sub_address,
             dwcnt_mcode,
             parity_bit,
-            debug
+            debug,
+            enc_data,
+            enc_data_en
             ) ;
 
 parameter      BC = 1'b1;     // BC->RT BC == 1, RT->BC BC == 0
@@ -73,6 +75,8 @@ output [0:4]   sub_address;
 output [0:4]   dwcnt_mcode;
 output         parity_bit;
 output [7:0]   debug;
+output         enc_data;
+output         enc_data_en;
 
 reg [0:15]     rx_dword ;
 reg            rx_dval ;
@@ -106,6 +110,7 @@ reg [0:4]  dword1;
 reg        dword2;
 reg [0:4]  dword3;
 reg [0:4]  dword4;
+reg [0:15] dword;
 reg [0:4]  rtaddress;
 reg [0:4]  subaddress;
 reg [0:4]  dwcntmcode;
@@ -245,6 +250,17 @@ always @(posedge dec_clk or negedge rst_n) begin
    else 
       dword_int <= dword_int ;
 end
+assign enc_data = dword_int[16];
+
+// Send serial stream of encoded data out
+reg encdata_en;
+always @(posedge dec_clk or negedge rst_n) begin
+   if (!rst_n )    
+      encdata_en <= 1'b0;
+   else
+      encdata_en <= data_sample;
+end 
+assign enc_data_en = encdata_en;
 
 // Register command and status sync patter type till the end 
 // of data word.
@@ -283,7 +299,8 @@ always @(posedge dec_clk or negedge rst_n) begin
    else if (cnt == 'd131) begin
       rx_dword <= dword_int[0:15] ;
       rx_dval  <= 1'b1 ;
-      rx_perr  <= ((^dword_int[0:15]) != dword_int[16]) ;
+      rx_perr  <= dword_int[16] ;  // parity bit.
+//      rx_perr  <= ((^dword_int[0:15]) != dword_int[16]) ;
 //      rx_csw   <= sync_csw_reg ;
 //      rx_dw    <= sync_dw_reg ;
    end
@@ -457,6 +474,14 @@ assign is_cw = sync_csw_reg && BC;
 assign is_sw = sync_csw_reg && BC;
 assign is_dw = sync_dw_reg;
 
+// Capture complete word
+//always @(posedge dec_clk or negedge rst_n) begin
+//   if ( !rst_n ) begin
+//      dword <= 16'h0000;
+//   end else if ( data_sample && ( bit_cnt <= 15 ) ) begin
+//      dword <= {dword[1:15],~data_sftreg[2]} ;
+//   end
+//end
 
 //////////////////////////////////////////////////
 // Line up outgoing 1553 with dec clock generate delayed edges.
