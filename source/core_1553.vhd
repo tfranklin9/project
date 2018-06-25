@@ -1,6 +1,6 @@
 -- =============================================================================
 -- Project          : 1553
--- File             : core_1553.v
+-- File             : core_1553.vhd
 -- Title            :
 -- Dependencies     : 
 -- Description      : This module implements 1553 decoding logic. 
@@ -14,13 +14,12 @@
 -- =============================================================================
 library ieee ;
 use ieee.std_logic_1164.all ;
---use ieee.std_logic_arith.all ;
 USE ieee.std_logic_unsigned.all;
 USE ieee.numeric_std.ALL;
 
 entity core_1553 is
 generic (
-            BC      : std_logic
+            BC      : std_logic 
 );
 port (
             -- Clock and Reset
@@ -31,18 +30,18 @@ port (
             -- Inputs
             rx_data     : in std_logic;  --serial data input
             rx_data_n   : in std_logic;
-            mem_wea     : in std_logic_vector(0 downto 0);
-            mem_addra   : in std_logic_vector(6 downto 0);
-            mem_datin   : in std_logic_vector(17 downto 0);
-            bypass      : in std_logic;            
-            
+            mem_wea     : in std_logic_vector(0 downto 0);         
+            mem_addra   : in std_logic_vector(6 downto 0);         
+            mem_datin   : in std_logic_vector(17 downto 0);         
+            bypass      : in std_logic;         
+    
             -- Outputs
-            rx_dword    : out std_logic_vector(15 downto 0) ; -- Output data word receive.
-            rx_dval     : out std_logic ;                     -- Indicates data on "rx_data" is valid.
-            rx_csw      : out std_logic ;                     -- "rx_dword" has command or status word.
-            rx_dw       : out std_logic ;                     -- "rx_dword" has data word.
-            rx_perr     : out std_logic ;                     -- Indicates parity error in "rx_dword".
-            
+            rx_dword    : out std_logic_vector(15 downto 0) ; 
+            rx_dval     : out std_logic ;                     
+            rx_csw      : out std_logic ;                     
+            rx_dw       : out std_logic ;                     
+            rx_perr     : out std_logic ;                     
+
             tx_data     : out std_logic ;
             tx_data_n   : out std_logic ;
             tx_dval     : out std_logic ;
@@ -51,13 +50,6 @@ port (
 end core_1553 ;
 
 architecture Behavioral of core_1553 is
-
-
---signal rx_dword : std_logic_vector(15 downto 0);
---signal rx_dval  : std_logic ;
---signal rx_csw   : std_logic ;
---signal rx_dw    : std_logic ;
---signal rx_perr  : std_logic ;
 
 signal data_sftreg      : std_logic_vector(0 to 5);
 signal data_sftreg_n    : std_logic_vector(0 to 5);
@@ -72,7 +64,7 @@ signal data_sftreg_out_n : std_logic_vector(0 to 31);
 signal cnt_enb          : std_logic ;
 signal cnt              : std_logic_vector(7 downto 0) ;
 signal bit_cnt          : std_logic_vector(4 downto 0) ;
-signal dword_int        : std_logic_vector(16 downto 0) ;
+signal dword_int        : std_logic_vector(0 downto 16) ;
 signal sync_csw_signal  : std_logic ;
 signal sync_dw_signal   : std_logic ;
 
@@ -81,8 +73,6 @@ signal sync_csw         : std_logic ;
 signal sync_csw_reg     : std_logic ;
 signal sync_dw_reg      : std_logic ;
 signal sync_dw          : std_logic ;
-signal csw_sync         : std_logic ;
-signal dw_sync          : std_logic ;
 signal data_sample      : std_logic ;
 signal parity           : std_logic ;
 signal parity_bit       : std_logic ;
@@ -119,8 +109,8 @@ signal passthru             : std_logic_vector(17 downto 0);
 
 signal start_shift          : std_logic;
 signal shift_data           : std_logic;
---signal bitcnt               : std_logic_vector(4 downto 0);
-signal bitcnt               : integer range 0 to 17;
+--signal bitcnt               : integer range 0 to 17;
+signal bitcnt               : std_logic_vector(4 downto 0);
 signal enc_bit              : std_logic;
 signal enc_bit_n            : std_logic;
 signal change               : std_logic;
@@ -134,6 +124,10 @@ signal data_signal          : std_logic_vector(16 downto 0);
 signal mem_addrb            : std_logic_vector(6 downto 0);         
 signal data_reg             : std_logic_vector(17 downto 0);         
 signal nodata               : std_logic;
+signal sync_found           : std_logic;
+signal syncdw_d, synccsw_d  : std_logic;
+signal synccsw, syncdw      : std_logic;
+signal syncdword, synccsword : std_logic;
 
 CONSTANT SIZE   : integer := 4;
 CONSTANT IDLE   : std_logic_vector(3 downto 0) := "0001";
@@ -188,15 +182,30 @@ end process;
 -- Detect transitions.
 data_edge <= data_sftreg(3) XOR data_sftreg(4) ;
 
+synccsw <= '1' when (sync_sftreg = X"7FF000" or sync_sftreg = X"7FF800" or sync_sftreg = X"FFE001" or sync_sftreg = X"FFF000") else '0';
+syncdw  <= '1' when (sync_sftreg = X"0007FF" or sync_sftreg = X"001FFF" or sync_sftreg = X"000FFF" or sync_sftreg = X"000FFF") else '0' ;
+
+sync_found <= '1' when (synccsw = '1' or syncdw = '1') else '0';
+
+syncs: process (rst_n, dec_clk)
+begin
+   if (rst_n = '0' ) then    
+      syncdw_d  <= '0' ;
+      synccsw_d <= '0' ;
+   elsif rising_edge(dec_clk) then
+      syncdw_d  <= syncdw ;
+      synccsw_d <= synccsw ;
+   end if;
+end process;
+
+syncdword  <= syncdw  or syncdw_d;
+synccsword <= synccsw or synccsw_d;
+
 -- Detect sync pattern for command and status word
---sync_csw <= (sync_sftreg = x"FFF000") AND data_edge ;
-csw_sync <= '1' when sync_sftreg = x"FFF000" else '0';
-sync_csw <= csw_sync AND data_edge ;
+sync_csw <= synccsword AND data_edge ;
 
 -- Detect sync pattern for data word
---sync_dw  <= (sync_sftreg = x"000FFF") AND data_edge ; 
-dw_sync  <= '1' when sync_sftreg = x"000FFF" else '0';
-sync_dw  <= dw_sync AND data_edge ; 
+sync_dw  <= syncdword AND data_edge ; 
 
 -- Count number of clocks to get complete word after 
 -- detecting the sync pattern
@@ -227,7 +236,6 @@ begin
 end process;
 
 -- Generate data sample points.
---assign data_sample =  (~cnt[2] & ~cnt[1] & ~cnt[0]) ;
 data_sample <= not(cnt(2)) AND not(cnt(1)) AND not(cnt(0));
 
 -- register data at every sample point through shift register.
@@ -281,27 +289,24 @@ begin
       rx_dword <= (others => '0') ;
       rx_dval  <= '0' ;
       rx_perr  <= '0' ;
-      rx_csw   <= '0' ;
-      rx_dw    <= '0' ;
    elsif rising_edge(dec_clk) then
       if (cnt = 131) then
          rx_dword <= dword_int(0 to 15) ;
          rx_dval  <= '1' ;
-         rx_csw   <= sync_csw_reg ;
-         rx_dw    <= sync_dw_reg ;
          for i in dword_int'range loop
-            parity_rx := parity_rx xor dword_int(i);
+            parity_rx := parity_rx xnor dword_int(i);
          end loop;
          rx_perr <= parity_rx;
       else
          rx_dword <= (others => '0') ;
          rx_dval  <= '0' ;
          rx_perr  <= '0' ;
-         rx_csw   <= '0' ;
-         rx_dw    <= '0' ;
       end if;
    end if;
 end process;
+
+rx_dw  <= sync_dw_reg;
+rx_csw <= sync_csw_reg;
    
 -- Bit counter for 1553 Word fields
 bit_counter : process(dec_clk,rst_n,cnt_enb,data_sample)
@@ -511,10 +516,10 @@ end process;
 bitcntr : process(dec_clk,rst_n,bit_cnt,bitcnt,samplecnt,shift_data)
 begin
    if ( rst_n = '0' ) then
-      bitcnt <= 0; -- (others => '0') ;
+      bitcnt <= (others => '0') ;
    elsif rising_edge(dec_clk) then
       if (bit_cnt = 5 OR bitcnt = 17 OR shift_data = '0') then
-         bitcnt <= 0; -- (others => '0') ;
+         bitcnt <= (others => '0'); 
       elsif (samplecnt = 7) then
          bitcnt <= bitcnt + 1;
       end if;
@@ -584,10 +589,10 @@ begin
 
          WHEN SHIFT1 => 
             if (samplecnt < 3) then
-               if (data_reg(bitcnt) = '0') then
-                  enc_bit <= passthru(bitcnt);
+               if (data_reg(to_integer(unsigned(bitcnt))) = '0') then
+                  enc_bit <= passthru(to_integer(unsigned(bitcnt)));
                else
-                  enc_bit <= NOT passthru(bitcnt);
+                  enc_bit <= NOT passthru(to_integer(unsigned(bitcnt)));
                   change  <= '1';
                end if;
             else
@@ -598,11 +603,11 @@ begin
 
          WHEN SHIFT2 => 
             if (samplecnt < 7) then
-               if (data_reg(bitcnt) = '0') then
-                  enc_bit <= NOT passthru(bitcnt);
+               if (data_reg(to_integer(unsigned(bitcnt))) = '0') then
+                  enc_bit <= NOT passthru(to_integer(unsigned(bitcnt)));
                else 
                   change  <= '1';
-                  enc_bit <= passthru(bitcnt);
+                  enc_bit <= passthru(to_integer(unsigned(bitcnt)));
                end if;
             elsif (bitcnt < 16 AND samplecnt = 7) then
                state <= SHIFT1;
@@ -661,8 +666,8 @@ begin
 end process;
 
 tx_dval   <= txdval;
-tx_data   <= txdata;
-tx_data_n <= txdata_n;
+tx_data   <= data_sftreg_out(17);
+tx_data_n <= data_sftreg_out_n(17);
 
 -- Memory RAM control signals
 lookup_en: process(dec_clk,rst_n,bit_cnt,cnt)
@@ -688,7 +693,7 @@ blk_mem_1553_inst : blk_mem_1553
     doutb => data_reg
   );
   
-debug <= start_shift & data_sftreg_out(13) & cw & dw & sw & std_logic_vector(to_unsigned(bitcnt,5));
+debug <= synccsword & syncdword & sync_found & sync_dw & data_edge & bitcnt(2 downto 0);
 
 end Behavioral;
 
