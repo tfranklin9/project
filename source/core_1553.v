@@ -26,7 +26,8 @@ module core_1553 (
             mem_addra,
             mem_datin,
             bypass,            
-            
+            lastword,
+
             // Outputs
             rx_dword , 
             rx_dval , 
@@ -37,7 +38,14 @@ module core_1553 (
             tx_data,
             tx_data_n,
             tx_dval,
-            debug
+            rt_address,
+            tr,
+            sub_address,
+            dwcnt_mcode,
+            parity_bit,
+            debug,
+            enc_data,
+            enc_data_en
             ) ;
 
 parameter      BC = 1'b1;     // BC->RT BC == 1, RT->BC BC == 0
@@ -47,10 +55,11 @@ input          rst_n ;     // Asynchronous reset.
 
 input          rx_data ;   // Serial transmit data input. 
 input          rx_data_n ;   // Serial transmit data input. 
-input          mem_wea ;
+input  [0:0]   mem_wea ;
 input  [6:0]   mem_addra ;
 input  [17:0]  mem_datin ;
 input          bypass ;
+input          lastword ;
 
 output [0:15]  rx_dword ;  // Output data word receive.
 output         rx_dval ;   // Indicates data on "rx_data" is valid.
@@ -60,12 +69,19 @@ output         rx_perr ;   // Indicates parity error in "rx_dword".
 output         tx_data;
 output         tx_data_n;
 output         tx_dval;
-output [9:0]   debug;
+output [0:4]   rt_address;
+output         tr;
+output [0:4]   sub_address;
+output [0:4]   dwcnt_mcode;
+output         parity_bit;
+output [7:0]   debug;
+output         enc_data;
+output         enc_data_en;
 
 reg [0:15]     rx_dword ;
 reg            rx_dval ;
-reg            rx_csw ;
-reg            rx_dw ;
+//reg            rx_csw ;
+//reg            rx_dw ;
 reg            rx_perr ;
 
 reg [0:23]     sync_sftreg ;
@@ -82,9 +98,9 @@ reg            sync_dw_reg ;
 wire           data_edge ;
 wire           sync_csw ;
 wire           sync_dw ;
+wire           sync_found ;
 wire           data_sample ;
 wire           parity ;
-reg            parity_bit ;
 
 // Bit fields 
 wire       is_cw;
@@ -94,10 +110,12 @@ reg [0:4]  dword1;
 reg        dword2;
 reg [0:4]  dword3;
 reg [0:4]  dword4;
-reg [0:4]  rt_address;
-reg [0:4]  sub_address;
-reg [0:4]  dwcnt_mcode;
-reg        tr;
+reg [0:15] dword;
+reg [0:4]  rtaddress;
+reg [0:4]  subaddress;
+reg [0:4]  dwcntmcode;
+reg        tr_reg;
+reg        paritybit ;
 reg [0:2]  rsvd;
 reg        message_error;
 reg        inst;
@@ -164,11 +182,35 @@ end
 // Detect transitions.
 assign data_edge =  data_sftreg[3] ^ data_sftreg[4] ;
 
+wire synccsw, syncdw, syncdword, synccsword;
+reg  syncdw_d, synccsw_d;
+assign synccsw = (sync_sftreg == 24'h7FF_000) || (sync_sftreg == 24'h7FF_800) || (sync_sftreg == 24'hFFE_001) || (sync_sftreg == 24'hFFF_000) ;
+assign syncdw  = (sync_sftreg == 24'h000_7FF) || (sync_sftreg == 24'h001_FFF) || (sync_sftreg == 24'h000_FFF) || (sync_sftreg == 24'h000_FFF) ;
+//assign sync_found = (sync_sftreg == 24'hFFF_000) || (sync_sftreg == 24'h000_FFF);
+assign sync_found = synccsw || syncdw;
+
+always @(posedge dec_clk or negedge rst_n) begin
+   if ( !rst_n ) begin   
+      syncdw_d <= 1'b0 ;
+      synccsw_d <= 1'b0 ;
+      end
+   else  begin 
+      syncdw_d <= syncdw;
+      synccsw_d <= synccsw ;
+   end
+end
+assign syncdword = syncdw || syncdw_d;
+assign synccsword = synccsw || synccsw_d;
+
 // Detect sync pattern for command and status word
-assign sync_csw = (sync_sftreg == 24'hFFF_000) & data_edge ;
+//assign sync_csw = (sync_sftreg == 24'hFFF_000) & data_edge ;
+//assign sync_csw = synccsw && data_edge ;
+assign sync_csw = synccsword && data_edge ;
 
 // Detect sync pattern for data word
-assign sync_dw =  (sync_sftreg == 24'h000_FFF) & data_edge ; 
+//assign sync_dw =  (sync_sftreg == 24'h000_FFF) & data_edge ; 
+assign sync_dw = syncdword && data_edge ; 
+
 
 // Count number of clocks to get complete word after 
 // detecting the sync pattern
@@ -208,6 +250,17 @@ always @(posedge dec_clk or negedge rst_n) begin
    else 
       dword_int <= dword_int ;
 end
+assign enc_data = dword_int[16];
+
+// Send serial stream of encoded data out
+reg encdata_en;
+always @(posedge dec_clk or negedge rst_n) begin
+   if (!rst_n )    
+      encdata_en <= 1'b0;
+   else
+      encdata_en <= data_sample;
+end 
+assign enc_data_en = encdata_en;
 
 // Register command and status sync patter type till the end 
 // of data word.
@@ -240,24 +293,28 @@ always @(posedge dec_clk or negedge rst_n) begin
       rx_dword <= 16'h0000 ;
       rx_dval  <= 1'b0 ;
       rx_perr  <= 1'b0 ;
-      rx_csw   <= 1'b0 ;
-      rx_dw    <= 1'b0 ;
+//      rx_csw   <= 1'b0 ;
+//      rx_dw    <= 1'b0 ;
    end
    else if (cnt == 'd131) begin
       rx_dword <= dword_int[0:15] ;
       rx_dval  <= 1'b1 ;
-      rx_perr  <= ((^dword_int[0:15]) != dword_int[16]) ;
-      rx_csw   <= sync_csw_reg ;
-      rx_dw    <= sync_dw_reg ;
+      rx_perr  <= dword_int[16] ;  // parity bit.
+//      rx_perr  <= ((^dword_int[0:15]) != dword_int[16]) ;
+//      rx_csw   <= sync_csw_reg ;
+//      rx_dw    <= sync_dw_reg ;
    end
    else  begin
       rx_dword <= 16'h0000 ;
       rx_dval  <= 1'b0 ;
       rx_perr  <= 1'b0 ;
-      rx_csw   <= 1'b0 ;
-      rx_dw    <= 1'b0 ;
+//      rx_csw   <= 1'b0 ;
+//      rx_dw    <= 1'b0 ;
    end
 end
+
+assign rx_dw  = sync_dw_reg;
+assign rx_csw = sync_csw_reg;
 
 // Bit counter for 1553 Word fields
 always @(posedge dec_clk or negedge rst_n) begin
@@ -277,47 +334,63 @@ end
 // Command word fields
 //////////////////////////////////////////////////
 // Create RAM address for lookup
-assign mem_addrb = {1'b0,rt_address};
+assign mem_addrb = {1'b0,rtaddress};
 
 // RT Address
 always @(posedge dec_clk or negedge rst_n) begin
    if (!rst_n )    
-      rt_address <= 5'h00 ;
+      rtaddress <= 5'h00 ;
+   else if ( lastword ) 
+      rtaddress <= 5'h00 ;
    else if ( (is_cw || is_sw) && data_sample && bit_cnt < 5)
-      rt_address <= {rt_address[1:4],~data_sftreg[2]} ;
+      rtaddress <= {rtaddress[1:4],~data_sftreg[2]} ;
    end
+
+assign rt_address = rtaddress;
 
 // Generate Transmit/Receive
 always @(posedge dec_clk or negedge rst_n) begin
    if (!rst_n )    
-      tr <= 1'b0 ;
+      tr_reg <= 1'b0 ;
+   else if ( lastword ) 
+      tr_reg <= 1'b0 ;
    else if ( is_cw && data_sample && bit_cnt == 5)
-      tr <=  ~data_sftreg[2] ;
+      tr_reg <=  ~data_sftreg[2] ;
    end
+
+assign tr = tr_reg;
 
 // Sub Address
 always @(posedge dec_clk or negedge rst_n) begin
    if (!rst_n )    
-      sub_address <= 5'h00 ;
+      subaddress <= 5'h00 ;
+   else if ( lastword ) 
+      subaddress <= 5'h00 ;
    else if ( is_cw && data_sample && ( bit_cnt > 5 && bit_cnt <= 10 ) )
-      sub_address <= {sub_address[1:4],~data_sftreg[2]} ;
+      subaddress <= {subaddress[1:4],~data_sftreg[2]} ;
    end
+
+assign sub_address = subaddress;
 
 // Data Word Count/Mode Code 
 always @(posedge dec_clk or negedge rst_n) begin
    if (!rst_n )    
-      dwcnt_mcode <= 5'h00 ;
+      dwcntmcode <= 5'h00 ;
    else if ( is_cw && data_sample && ( bit_cnt > 10 && bit_cnt <= 15 ) )
-      dwcnt_mcode <= {dwcnt_mcode[1:4],~data_sftreg[2]} ;
+      dwcntmcode <= {dwcntmcode[1:4],~data_sftreg[2]} ;
    end
+
+assign dwcnt_mcode = dwcntmcode;
 
 // Parity bit in
 always @(posedge dec_clk or negedge rst_n) begin
    if (!rst_n )    
-      parity_bit <= 1'b0 ;
+      paritybit <= 1'b0 ;
    else if ( data_sample && bit_cnt == 16 )
-      parity_bit <= ~data_sftreg[2] ;
+      paritybit <= ~data_sftreg[2] ;
    end
+
+assign parity_bit = paritybit;
 
 //////////////////////////////////////////////////
 // Status word fields
@@ -398,9 +471,17 @@ always @(posedge dec_clk or negedge rst_n) begin
 end
 
 assign is_cw = sync_csw_reg && BC;
-assign is_sw = sync_csw_reg && !BC;
+assign is_sw = sync_csw_reg && BC;
 assign is_dw = sync_dw_reg;
 
+// Capture complete word
+//always @(posedge dec_clk or negedge rst_n) begin
+//   if ( !rst_n ) begin
+//      dword <= 16'h0000;
+//   end else if ( data_sample && ( bit_cnt <= 15 ) ) begin
+//      dword <= {dword[1:15],~data_sftreg[2]} ;
+//   end
+//end
 
 //////////////////////////////////////////////////
 // Line up outgoing 1553 with dec clock generate delayed edges.
@@ -536,11 +617,11 @@ always @(posedge dec_clk or negedge rst_n) begin
   
   assign enc_bit_n = ~enc_bit;
   assign select   = {BC,cw,dw,sw};
-  assign passthru =  ({BC,cw,dw,sw} == 4'b1100) ? {rt_address,tr,sub_address,dwcnt_mcode,parity_bit} :  // BC->RT CW
-                     ({BC,cw,dw,sw} == 4'b1010) ? {dword1,dword2,dword3,dword4,parity_bit} :   // BC->RT DW
-                     ({BC,cw,dw,sw} == 4'b0010) ? {dword1,dword2,dword3,dword4,parity_bit} :   // RT->BC DW
+  assign passthru =  ({BC,cw,dw,sw} == 4'b1100) ? {rtaddress,tr_reg,subaddress,dwcntmcode,paritybit} :  // BC->RT CW
+                     ({BC,cw,dw,sw} == 4'b1010) ? {dword1,dword2,dword3,dword4,paritybit} :   // BC->RT DW
+                     ({BC,cw,dw,sw} == 4'b0010) ? {dword1,dword2,dword3,dword4,paritybit} :   // RT->BC DW
                      ({BC,cw,dw,sw} == 4'b0001) ?                        // RT->BC SW
-                             {rt_address,message_error,inst,srv_rqst,rsvd,bc_rcvd,busy,sub_flag,dbctrl_acc,term_flag,parity_bit}:
+                             {rtaddress,message_error,inst,srv_rqst,rsvd,bc_rcvd,busy,sub_flag,dbctrl_acc,term_flag,paritybit}:
                              17'd0;
 
 wire nodata;
@@ -558,30 +639,32 @@ always @(posedge dec_clk or negedge rst_n) begin
 //      txdata_n <= 1'b0;
    end else if (bypass == 1) begin
       txdval   <= 1'b0 ;
-      txdata   <= data_sftreg_out[12] ;
-      txdata_n <= data_sftreg_out_n[12] ;
+      txdata   <= data_sftreg_out[17] ;
+      txdata_n <= data_sftreg_out_n[17] ;
    end else if (bit_cnt >= 3 && bit_cnt <= 5)  begin   
       txdval   <= 1'b0 ;
-      txdata   <= data_sftreg_out[12] ;
-      txdata_n <= data_sftreg_out_n[12] ;
+      txdata   <= data_sftreg_out[17] ;
+      txdata_n <= data_sftreg_out_n[17] ;
    end else if (bit_cnt == 6 && samplecnt < 2 )  begin   
       txdval   <= 1'b0 ;
-      txdata   <= data_sftreg_out[12] ;
-      txdata_n <= data_sftreg_out_n[12] ;
+      txdata   <= data_sftreg_out[17] ;
+      txdata_n <= data_sftreg_out_n[17] ;
    end else if (shift_data || bit_cnt >= 6) begin  
       txdval   <= 1'b1 ;
       txdata   <= enc_bit ;
       txdata_n <= enc_bit_n ;
    end else begin   
       txdval   <= 1'b0 ;
-      txdata   <= data_sftreg_out[12] ;
-      txdata_n   <= data_sftreg_out_n[12] ;
+      txdata   <= data_sftreg_out[17] ;
+      txdata_n   <= data_sftreg_out_n[17] ;
    end
 end
 
 assign tx_dval   = txdval;
-assign tx_data   = txdata;
-assign tx_data_n = txdata_n;
+//assign tx_data   = txdata;
+assign tx_data_n = data_sftreg_out_n[16];
+
+assign tx_data = data_sftreg_out[16];
 
 // Memory RAM control signals
 always @(posedge dec_clk or negedge rst_n) begin
@@ -605,7 +688,7 @@ blk_mem_1553 blk_mem_1553_INST (
   .doutb(data_reg) // output [17 : 0] doutb
 );
 
-assign debug = {start_shift,data_sftreg_out[13],cw,dw,sw,bitcnt};
+assign debug = {synccsword,syncdword,sync_found,sync_dw,data_edge,bitcnt[2:0]};
 
 endmodule
 
