@@ -23,6 +23,10 @@
 *.cmd_log
 *_beh.prj
 *.ncd
+CoPilot
+core_1553_v*
+dword_vivado
+ztex_hardware
 isim
 db
 incremental_db
