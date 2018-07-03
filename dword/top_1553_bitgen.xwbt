@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\tfranklin9\projects\1553\dword\top_1553.ncd
-OUTFILE=C:\Users\tfranklin9\projects\1553\dword\top_1553.bit
-FAMILY=Spartan6
-PART=xc6slx16-2ftg256
-WORKINGDIR=C:\Users\tfranklin9\projects\1553\dword
-LICENSE=WebPack
-USER_INFO=176899011_0_0_850

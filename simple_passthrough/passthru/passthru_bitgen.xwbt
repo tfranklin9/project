@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\tfranklin9\projects\1553\simple_passthrough\passthru\passthru.ncd
-OUTFILE=C:\Users\tfranklin9\projects\1553\simple_passthrough\passthru\passthru.bit
-FAMILY=Spartan6
-PART=xc6slx25-2ftg256
-WORKINGDIR=C:\Users\tfranklin9\projects\1553\simple_passthrough\passthru
-LICENSE=WebPack
-USER_INFO=176899011_0_0_850
