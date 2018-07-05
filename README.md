@@ -110,6 +110,8 @@ There are three triggers, triggerA, triggerB, and triggerC. There is a maximum d
 
 A timing diagram of the trigger delays is shown below.
 
+![Alt text](trigger_timing.png?raw=true "Trigger Timing")
+
 Use the NO\_HLD generic if there is no need for the trigger. Use the NO\_DLY generic to start the trigger immediately after DELAY\_MAX.
 
 Note that the current code does not support '0' values and the units are in microseconds.
