@@ -136,7 +136,7 @@ Setting the triggers is done by setting the generics in the top level vhdl file 
 >
 > *constant NO\_DLYC : std\_logic := \'0\';*
 
-WAIT\_MAX is the duration, in microseconds, of inactivity on the rx bus before searching for and triggering on an incoming command/status sync word. DELAY\_MAX is the duration, in microseconds, that the user expects the complete transaction to take. After DELAY\_MAX, the user can assert triggers of different delays and lengths. Currently the duration of the bus transactions and gaps have to be obtained by the User prior to build time. The FPGA can be used to view the bus transaction timing before hand by examining csw, dw, enc\_data, and enc\_data\_en on a scope or logic analyzer.
+WAIT\_MAX is the duration, in microseconds, of inactivity on the rx bus before searching for and triggering on an incoming command/status sync word. DELAY\_MAX is the duration, in microseconds, that the user expects the complete transaction to take. After DELAY\_MAX, the user can assert triggers of different delays and lengths. Currently the duration of the bus transactions and gaps have to be obtained by the User prior to build time. The FPGA can be used to view the bus transaction timing beforehand by examining csw, dw, enc\_data, and enc\_data\_en on a scope or logic analyzer.
 
 There are three triggers, triggerA, triggerB, and triggerC. Each trigger has a maximum delay, DLY\_MAX, and a maximum hold time, HLD\_MAX. DLY\_MAX is the wait between the DELAY\_MAX of the transaction and the assertion of the trigger. HLD\_MAX is the duration of the asserted trigger.
 
