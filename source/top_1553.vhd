@@ -12,6 +12,8 @@
 -- =============================================================================
 -- REVISION HISTORY
 -- Version          : 1.0
+--// To do: There are some registers that do not have a clock included. This was a
+--// mistake from changing to vhdl from verilog
 -- =============================================================================
 library ieee , UNISIM;
 use ieee.std_logic_1164.all ;
@@ -474,7 +476,8 @@ u1_core : core_1553
             mem_addra  => mem_addra_BC,
             mem_datin  => mem_datin_BC,
             bypass     => bypass_BC,
-            lastword   => lastword,
+--            lastword   => lastword,
+            lastword   => eop,
 
             -- Outputs
             rx_dword   => rx_dword_BC, 
@@ -599,8 +602,10 @@ filter_proc : process(enc_clk,reset_slow,address_match,end_of_payload)
             filtermatch <= '0';
         elsif ( address_match = '1' ) then 
             filtermatch <= '1';
-        elsif ( end_of_payload = '1' ) then 
-            filtermatch <= '0'; 
+        elsif ( address_match = '0' ) then 
+            filtermatch <= '0';
+--        elsif ( end_of_payload = '1' ) then 
+--            filtermatch <= '0'; 
         end if;
     end process;
 
@@ -660,19 +665,22 @@ u1_encoder : encoder_1553
             tx_dval        => tx_dval_enc 
          );
 
-eopyld : process(enc_clk,reset_slow)
+eopyld : process(dec_clk,reset_slow)
     begin
         if ( reset_slow = '1' ) then 
           eop_d   <= '0';
           eop_dd  <= '0';
           eop_ddd <= '0';
-        elsif rising_edge(enc_clk) then 
+--        elsif rising_edge(enc_clk) then 
+        elsif rising_edge(dec_clk) then 
           eop_d   <= end_of_payload;
           eop_dd  <= eop_d;
           eop_ddd <= eop_dd;
         end if;
     end process;
-eop <= end_of_payload or eop_d or eop_dd ;
+--eop <= end_of_payload or eop_d or eop_dd ;
+-- detect falling edge of end of payload flag. Will reset the rt_address, sub_address, etc...
+eop <= not eop_d and eop_dd;
 
 ----------------------------------------------------------------------
 -- create encoded 1553 from delayed output from encode
@@ -700,12 +708,15 @@ dlyenc : process(sys_clk,reset_slow)
     txa_p_BC <= tx_data_BC when (bypass = '1') else 
                 tx_data_BC when (tx_dval_csw = '1') else
 --                tx_data_BC when (not ((txdval_enc and filter_match) or (txdval_enc and not filter_match)) = '1') else
-                tx_data_delay(13) when (txdval_enc and filter_match) = '1' or (lastword or eop) = '1' else
+--                tx_data_delay(13) when (txdval_enc and filter_match) = '1' or (lastword or eop) = '1' else
+                tx_data_delay(13) when (txdval_enc and filter_match) = '1' else
                 tx_data_BC;
+                
     txa_n_BC <= tx_data_n_BC when (bypass = '1') else 
                 tx_data_n_BC when (tx_dval_csw = '1') else
 --                tx_data_n_BC when (not ((txdval_enc and filter_match) or (txdval_enc and not filter_match)) = '1') else
-                tx_data_delay_n(13) when (txdval_enc and filter_match) = '1' or (lastword or eop) = '1' else
+--                tx_data_delay_n(13) when (txdval_enc and filter_match) = '1' or (lastword or eop) = '1' else
+                tx_data_delay_n(13) when (txdval_enc and filter_match) = '1' else
                 tx_data_n_BC; -- when (txdval_enc and filter_match) = '0' else
                 --tx_data_delay_n(13);
 
@@ -813,7 +824,6 @@ begin
     end if;
 end process;
 
---mem_datin_BC <= mem_data(mem_addra_BC);
 --------------------------------------------------------
 
 end behavioral;
