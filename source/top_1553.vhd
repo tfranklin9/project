@@ -132,6 +132,7 @@ signal txdval       : std_logic;
 signal tx_data_delay   : std_logic_vector(40 downto 0);
 signal tx_data_delay_n : std_logic_vector(40 downto 0);
 signal dval_delay      : std_logic_vector(40 downto 0);
+signal lw_delay        : std_logic_vector(40 downto 0);
 
 -- Receive Signals
 signal rx_dword_RT : std_logic_vector(15 downto 0);
@@ -204,6 +205,7 @@ signal lastword        : std_logic;
 signal lastword_RT     : std_logic;
 signal txdval_enc      : std_logic;
 signal txdval_ddd,txdval_dd,txdval_d : std_logic;
+signal eop, eop_d,eop_dd,eop_ddd     : std_logic;
 
 
 -- Memory signals
@@ -458,8 +460,7 @@ begin
 end process;
 
 u1_core : core_1553
-         generic map ( 
-            BC => '1' )
+         generic map ( BC => '1' )
          port map (
             -- Clock and Reset
             dec_clk    => dec_clk,
@@ -555,7 +556,7 @@ begin
        rxdw_enc(0)          <= rx_data_word;
     end if;
 end process;
-rxdw_edge <= rxdw_enc(2) and not (rxdw_enc(3));
+rxdw_edge <= rxdw_enc(1) and not (rxdw_enc(2));
 
 csw_edge: process(reset_slow,dec_clk)
 begin
@@ -659,15 +660,32 @@ u1_encoder : encoder_1553
             tx_dval        => tx_dval_enc 
          );
 
+eopyld : process(enc_clk,reset_slow)
+    begin
+        if ( reset_slow = '1' ) then 
+          eop_d   <= '0';
+          eop_dd  <= '0';
+          eop_ddd <= '0';
+        elsif rising_edge(enc_clk) then 
+          eop_d   <= end_of_payload;
+          eop_dd  <= eop_d;
+          eop_ddd <= eop_dd;
+        end if;
+    end process;
+eop <= end_of_payload or eop_d or eop_dd ;
+
 ----------------------------------------------------------------------
 -- create encoded 1553 from delayed output from encode
 dlyenc : process(sys_clk,reset_slow)
     begin
         if ( reset_slow = '1' ) then 
+          lw_delay        <= (others => '0') ;
           dval_delay      <= (others => '0') ;
           tx_data_delay   <= (others => '0') ;
           tx_data_delay_n <= (others => '0') ;
         else
+          lw_delay(40 downto 1)        <= lw_delay(39 downto 0);
+          lw_delay(0)                  <= lastword;
           dval_delay(40 downto 1)      <= dval_delay(39 downto 0);
           dval_delay(0)                <= tx_dval_enc;
           tx_data_delay(40 downto 1)   <= tx_data_delay(39 downto 0);
@@ -681,12 +699,15 @@ dlyenc : process(sys_clk,reset_slow)
 -- This needs to be rethought and corrected. Mainly using 48Mhz clock.
     txa_p_BC <= tx_data_BC when (bypass = '1') else 
                 tx_data_BC when (tx_dval_csw = '1') else
-                tx_data_BC when (not ((txdval_enc and filter_match) or (txdval_enc and not filter_match)) = '1') else
-                tx_data_delay(13);
+--                tx_data_BC when (not ((txdval_enc and filter_match) or (txdval_enc and not filter_match)) = '1') else
+                tx_data_delay(13) when (txdval_enc and filter_match) = '1' or (lastword or eop) = '1' else
+                tx_data_BC;
     txa_n_BC <= tx_data_n_BC when (bypass = '1') else 
                 tx_data_n_BC when (tx_dval_csw = '1') else
-                tx_data_n_BC when (not ((txdval_enc and filter_match) or (txdval_enc and not filter_match)) = '1') else
-                tx_data_delay_n(13);
+--                tx_data_n_BC when (not ((txdval_enc and filter_match) or (txdval_enc and not filter_match)) = '1') else
+                tx_data_delay_n(13) when (txdval_enc and filter_match) = '1' or (lastword or eop) = '1' else
+                tx_data_n_BC; -- when (txdval_enc and filter_match) = '0' else
+                --tx_data_delay_n(13);
 
 -- Assigns
 -- Command word sync and Data Word sync used for scope captures.
@@ -734,7 +755,7 @@ trigger_module : trigger
 --------------------------------------------------------
 -- debug logic 
 --------------------------------------------------------
-debug_out <= (rxdw_edge or rxcsw_edge) & subadd_match & filter_match & txdval_enc & rtadd_match & tx_data_dw & tx_data_BC & lastword; --{rx_csw & rx_dw & rx_dval & rx_dword};          
+    debug_out <= (lastword or eop or filter_match)  & end_of_payload & (rxdw_edge or rxcsw_edge) & txdval_enc & rtadd_match & tx_data_dw & tx_data_BC & lastword; --{rx_csw & rx_dw & rx_dval & rx_dword};          
 --inputs
 bypass <= switch7;
 bypass_BC <= switch8 ;

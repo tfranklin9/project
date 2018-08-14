@@ -293,23 +293,16 @@ always @(posedge dec_clk or negedge rst_n) begin
       rx_dword <= 16'h0000 ;
       rx_dval  <= 1'b0 ;
       rx_perr  <= 1'b0 ;
-//      rx_csw   <= 1'b0 ;
-//      rx_dw    <= 1'b0 ;
    end
    else if (cnt == 'd131) begin
       rx_dword <= dword_int[0:15] ;
       rx_dval  <= 1'b1 ;
       rx_perr  <= dword_int[16] ;  // parity bit.
-//      rx_perr  <= ((^dword_int[0:15]) != dword_int[16]) ;
-//      rx_csw   <= sync_csw_reg ;
-//      rx_dw    <= sync_dw_reg ;
    end
    else  begin
       rx_dword <= 16'h0000 ;
       rx_dval  <= 1'b0 ;
       rx_perr  <= 1'b0 ;
-//      rx_csw   <= 1'b0 ;
-//      rx_dw    <= 1'b0 ;
    end
 end
 

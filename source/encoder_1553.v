@@ -125,7 +125,6 @@ reg [0:5] dwcnt_mcode_reg;
 always @(posedge enc_clk or negedge rst_n) begin
    if (!rst_n) begin  
       dwcnt_mcode_reg <= 5'd0 ;
-   //end else if (tx_dw && tx_dval_csw ) begin
    end else begin
       dwcnt_mcode_reg <= 5'd22; //dwcnt_mcode ;
    end
@@ -143,11 +142,9 @@ always @(posedge enc_clk or negedge rst_n) begin
    end
 end
 assign firstword = tx_dw && dwcnt == 0;
-//assign endofpayload = (dwcnt == 32 ) && ~cnt_en && cnt_en_reg;
 assign endofpayload = (dwcnt == dwcnt_mcode_reg) && ~cnt_en && cnt_en_reg;
 assign endofword = ~cnt_en && cnt_en_reg;
 assign dword = (firstword || endofword) && !endofpayload;
-//assign end_of_payload = (dwcnt == dwcnt_mcode_reg) && endofword ;
 assign last_word = (dwcnt == dwcnt_mcode_reg); 
 
 reg end_of_payload_d;
@@ -165,7 +162,7 @@ assign end_of_payload = end_of_payload_d;
 always @(posedge enc_clk or negedge rst_n) begin
    if (!rst_n) begin  
       cnt_en <= 1'b0 ;
-   end else if ( dword ) begin //tx_dw ) begin
+   end else if ( dword ) begin
       cnt_en <= 1'b1 ;
    end else if (busy_cnt == 'd38) begin
       cnt_en <= 1'b0 ;
@@ -249,7 +246,6 @@ assign parity = ^~(tx_dword) ;
 always @(posedge enc_clk or negedge rst_n) begin
    if (!rst_n)  
       data_reg <= 17'h0000 ;
-   //else if ( tx_dw && !cnt_en) 
    else if ( dword && !cnt_en) 
       data_reg <= {tx_dword, parity} ;
    else if (!cnt_en ) 
@@ -266,7 +262,6 @@ always @(posedge enc_clk or negedge rst_n) begin
    end else if (tx_csw) begin
       sync_bits <= 6'b111_000 ;
       sync_bits_n <= 6'b000_111 ;
-   //end else if (tx_dw) begin
    end else if (dword) begin
       sync_bits <= 6'b000_111 ;
       sync_bits_n <= 6'b111_000 ;
