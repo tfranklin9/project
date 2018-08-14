@@ -39,7 +39,7 @@ reg        tx_dw ;
 
 reg        tx_write ;
 
-top_1553 #( .SIM_VIVADO(0))
+top_1553 #( .SIM_VIVADO(1))
          DUT(
             // Clock and Reset
             .clk     ( sysclk ),
